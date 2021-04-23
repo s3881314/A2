@@ -7,12 +7,19 @@
 public class AbleCareHome {
     public static void main(String[] args) {
 
-        // Only Doctor, Nurse, Patient, Manager objects can be created.
+        // show menu
+        Menu menu = new Menu();
 
-        Resident r = new Resident();
-        // show menu0
+        // Only Resident, Doctor, Nurse, Manager objects can be created.
+        Resident r;
+        Doctor d;
+        Nurse n;
+        Manager m;
+        Bed b;
+        Ward w;
 
         // add any member(Non medical/medical staff or resident)?
+
 
         // other functions
 
