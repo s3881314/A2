@@ -9,4 +9,6 @@ public abstract class NonMedicalStaff {
     protected abstract void ModifyShiftDayTime(String id);  // Medical staff's id
     // Allow manager to add new residents to one of the vacant beds
     protected abstract void AddResidentToBed(String id1, String id2); // Resident id, bed id
+    /////
+    123456
 }
