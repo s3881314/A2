@@ -11,14 +11,23 @@ public class AbleCareHome {
         Menu menu = new Menu();
 
         // Only Resident, Doctor, Nurse, Manager objects can be created.
-        Resident r;
         Doctor d;
         Nurse n;
-        Manager m;
+        Manager m = new Manager("0", "0");
+        Resident r;
         Bed b;
-        Ward w;
+        Ward w1 = new Ward("W1",0);
+        Ward w2 = new Ward("W2",0);
+
 
         // add any member(Non medical/medical staff or resident)?
+        m.AddDoctor("1", "1");
+        m.AddDoctor("2", "2");
+        m.AddDoctor("3", "3");
+        m.AddNurse("4", "4");
+        m.AddNurse("5", "5");
+        m.AddNurse("6", "6");
+
 
 
         // other functions

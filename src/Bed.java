@@ -1,11 +1,13 @@
 public class Bed {
+    private String ID;
     private boolean empty = true;
 
-    Bed(boolean e){
-        empty = e;
+    Bed(String id, boolean e){
+        this.ID = id;
+        this.empty = e;
     }
 
-    void addMember(boolean b){
-        Bed n = new Bed(b);
+    void addResident(boolean b){
+        this.empty  = b;
     }
 }

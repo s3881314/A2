@@ -1,28 +1,28 @@
 public class Doctor extends MedicalStaff{
     private String ID;
     private String Password;
+    private String Shift;
 
     Doctor(String id, String p){
         this.ID = id;
         this.Password = p;
     }
 
-    public void AddMember(String id, String p){
-
+    // Manager only
+    public void ModifyPassword(String id, String np){  // Staff ID, new Password
+        this.Password = np;
     }
-    public void AssignShift(String id){
 
+    // Manager only
+    public void ModifyID(String id){
+        this.ID = id;
     }
-    public void CheckResidentDetail(String id){
 
-    }
-    public void CheckAdministeringMedicine(String id){
+    // Manager only
+    public void AssignShift(String id, String sft){ this.Shift = sft; }
 
-    }
-    public void AttachPrescription(String id){  // Bed id
-
-    }
-    public void UpdateMedicine(String id){
-
+    // Manager only
+    public void ModifyShift(String id, String sft){
+        this.Shift = sft;
     }
 }

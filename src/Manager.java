@@ -7,22 +7,16 @@ public class Manager extends NonMedicalStaff{
         this.Password = p;
     }
 
-    public void AddMedicalMember(String id, String p){
-
+    public void AddDoctor(String id, String p){
+        Doctor n = new Doctor(id, p);
     }
-    public void ModifyPassword(String id){
 
+    public void AddNurse(String id, String p){
+        Nurse n = new Nurse(id, p);
     }
-    public void ModifyID(String id){
 
-    }
-    public void AssignShift(String id){
-
-    }
-    public void ModifyShiftDayTime(String id){
-
-    }
-    public void AddResidentToBed(String id1, String id2){
+    public void AddNewResidentToBed(String id,String g, String b, String w){  // Resident ID, ,Gender, Bed ID, Ward ID
+        Resident n = new Resident(id, g, b, w);
 
     }
 }
