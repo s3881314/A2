@@ -1,2 +1,3 @@
-package PACKAGE_NAME;public class Ward {
+public class Ward {
+    private String Name;
 }

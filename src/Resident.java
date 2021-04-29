@@ -1,15 +1,79 @@
-public class Resident {
-    private String ID;
-    private String Gender;
-    private String Bed;
-    private String Ward;
-    private String Medicine = null;
+import java.io.*;
+import java.util.*;
+import java.time.*;
+import java.text.*;
 
-    Resident(String id, String g, String b, String w){
-        this.ID = id;
+public class Resident {
+    private String Name;
+    private String Gender;
+    private String ID;
+    private LocalDate DateOfBirthday;
+    private LocalDate Admitted;
+    private LocalDate Discharged = null;
+
+    Resident(String n, String g, String id, LocalDate dob){
+        LocalDate ld = LocalDate.now(); // Create a date object
+        this.Name = n;
         this.Gender = g;
-        this.Bed = b;
-        this.Ward = w;
+        this.ID = id;
+        this.DateOfBirthday = dob;
+        this.Admitted = ld;
+
+        try {
+            File myObj = new File("./Archive/ResidentList.txt");
+            if (myObj.createNewFile()) {
+               // System.out.println("File created: " + myObj.getName());
+
+            } else {
+               // System.out.println("File already exists.");
+            }
+        } catch (IOException e) {
+            System.out.println("An error occurred while creating ResidentList.txt.");
+            e.printStackTrace();
+        }
+        int flag1 = 0;
+        // check if the id exist
+        try {
+            File myObj = new File("./Archive/ResidentList.txt");
+            Scanner myReader = new Scanner(myObj);
+            while (myReader.hasNextLine()) {
+                String data = myReader.nextLine();
+                // if id is the same with ID
+                // flag = 1
+                String a[] = data.split(",");
+                for(int i = 0 ; i < data.length(); i++){
+                    if(a[0].equals(id)){
+                        flag1 = 1;
+                    }
+                }
+            }
+            myReader.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("An error occurred while reading ResidentList.txt.");
+            e.printStackTrace();
+        }
+
+        if(flag1 == 0){
+            // ID not exist
+            // write file
+            try {
+                File file = new File("./Archive/ResidentList.txt");
+                FileWriter fr = new FileWriter(file, true);
+                BufferedWriter br = new BufferedWriter(fr);
+                PrintWriter pr = new PrintWriter(br);
+                pr.println(id + "," + n + "," + g + "," + dob + "," + ld);  //  ld = Admitted
+                pr.close();
+                br.close();
+                fr.close();
+                //System.out.println("Successfully wrote to the file.");
+            } catch (IOException e) {
+                System.out.println("An error occurred while writing ResidentList.txt.");
+                e.printStackTrace();
+            }
+        }
+        else{
+            System.out.println("Resident ID exist.");
+        }
     }
 
     // Doctor and Nurse only
@@ -17,8 +81,6 @@ public class Resident {
     public void CheckResidentDetail(String id){
         System.out.println("Resident ID: " + this.ID);
         System.out.println("Resident Gender: " + this.Gender);
-        System.out.println("Resident Bed: " + this.Bed);
-        System.out.println("Resident Ward: " + this.Ward);
     }
 
     // Nurse only
@@ -34,8 +96,8 @@ public class Resident {
 
     }
 
-    // Doctor and Nurse only
-    // Updating the details of medicines administered for a resident in the selected bed
+    // Nurse only
+    // Administer medication, Updating the details of medicines administered for a resident in the selected bed
     public void UpdateMedicine(String id, String m){  // Bed id, Medicine statement
 
     }

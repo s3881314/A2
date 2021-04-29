@@ -1,2 +1,5 @@
-package PACKAGE_NAME;public class Shift {
+public class Shift{
+    private int DayOfWeek;
+    private int StartTime;
+    private int EndTime;
 }

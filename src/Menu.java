@@ -18,12 +18,12 @@ public class Menu extends JFrame{
         public void AddResidentToBed(String id1, String id2);
         */
 
-        JFrame f=new JFrame("Button Example");
+        /*JFrame f=new JFrame("Button Example");
         JButton b=new JButton("Click Here");
         b.setBounds(50,100,95,30);
         f.add(b);
         f.setSize(1000,1000);
         f.setLayout(null);
-        f.setVisible(true);
+        f.setVisible(true);*/
     }
 }

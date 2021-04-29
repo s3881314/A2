@@ -1,2 +1,4 @@
-package PACKAGE_NAME;public class AdminTimeSlot {
+public class AdminTimeSlot {
+    private int hour;
+    private int min;
 }
