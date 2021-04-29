@@ -6,6 +6,7 @@ import java.time.format.*;
 public class Doctor extends Staff{
     Doctor(String n, String id, String p, String pw){
         super(n, id, p, pw);
+        // (ID, NAME, PHONE, PASSWORD)---DoctorList.txt
         // open DoctorList.txt
         // save information
         // create file

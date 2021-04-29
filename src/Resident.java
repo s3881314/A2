@@ -12,6 +12,7 @@ public class Resident {
     private LocalDate Discharged = null;
 
     Resident(String n, String g, String id, LocalDate dob){
+        // (Resident ID, NAME, GENDER, Day Of Birth, ADMITTED)---Bed.txt
         LocalDate ld = LocalDate.now(); // Create a date object
         this.Name = n;
         this.Gender = g;

@@ -3,8 +3,8 @@ import java.util.Scanner;
 
 public class Bed {
     private int bNum;
-
     Bed(String rid, String WName, int rn){  // Resident ID, Ward name, Room number
+        // (Ward Name, Room Number, Number Of Bed, Resident ID)---Bed.txt
         try {
             File myObj = new File("./Archive/Bed.txt");
             if (myObj.createNewFile()) {
@@ -43,7 +43,7 @@ public class Bed {
                 FileWriter fr = new FileWriter(file, true);
                 BufferedWriter br = new BufferedWriter(fr);
                 PrintWriter pr = new PrintWriter(br);
-                pr.println(WName + "," + rn + "," + (c+1));
+                pr.println(WName + "," + rn + "," + (c+1) + "," + rid);
                 pr.close();
                 br.close();
                 fr.close();

@@ -2,8 +2,8 @@ import java.io.*;
 import java.util.Scanner;
 
 public class Nurse extends Staff{
-
     Nurse(String n, String id, String p, String pw){
+        // (ID, NAME, PHONE, PASSWORD)---NurseList.txt
         super(n, id, p, pw);
         // open DoctorList.txt
         // save information
