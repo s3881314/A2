@@ -70,3 +70,14 @@
 02/05/2021 12:11:29,Manager,1, Update nurse shift
 02/05/2021 12:11:29,Manager,1, Discharge resident.
 02/05/2021 12:18:24,Manager,1, Add new resident.
+02/05/2021 23:09:01,Manager,1, Check medicine details.
+02/05/2021 23:10:01,Manager,1, Check medicine details.
+02/05/2021 23:12:08,Manager,1, Update resident's prescription
+02/05/2021 23:12:22,Manager,1, Update resident's prescription
+02/05/2021 23:12:22,Manager,1, Update resident's prescription
+02/05/2021 23:12:22,Manager,1, Check medicine details.
+02/05/2021 23:25:16,Manager,1, Check resident details.
+02/05/2021 23:25:16,Manager,1, Update resident's prescription
+02/05/2021 23:25:16,Manager,1, Update resident's prescription
+02/05/2021 23:25:16,Manager,1, Check prescription details.
+02/05/2021 23:25:16,Manager,1, Check medicine details.

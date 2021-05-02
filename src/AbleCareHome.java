@@ -13,21 +13,27 @@ import java.time.LocalDateTime;
 import java.text.SimpleDateFormat;
 
 public class AbleCareHome {
+    // Manager only
     static void AddManager(String sid, String p2, String n, String id, String p, String pw){
         Manager m = new Manager(sid,p2, n,id, p, pw);
     }
+    // Manager only
     static void AddDoctor(String sid, String p2, String n, String id, String p, String pw){
         Doctor ne = new Doctor(sid, p2, n, id, p, pw);
     }
+    // Manager only
     static void AddNurse(String sid, String p2, String n, String id, String p, String pw){
         Nurse ne = new Nurse(sid, p2, n, id, p, pw);
     }
+
     static void AddResident(String sid, String p2, String n, String g, String id, LocalDate dob){
         Resident ne = new Resident(sid, p2, n, g, id, dob);
     }
+
     static void AddNewResidentToBed(String sid, String p2, String rid, String WName, int rn){  // Resident ID, Ward name, Room number
         Bed bed = new Bed(sid, p2, rid, WName, rn);
     }
+    // Manager only
     static void UpdatePassword(String sid, String p2, String p, String id, String np){  // Staff ID, new Password
         String n = "";
         if(p.equals("Doctor")) {
@@ -385,13 +391,231 @@ public class AbleCareHome {
             }
             myReader.close();
             System.out.println(buff);
+
+            // Record action
+            try {
+                File file = new File("./Archive/Action.txt");
+                FileWriter fr = new FileWriter(file, true);
+                BufferedWriter br = new BufferedWriter(fr);
+                PrintWriter pr = new PrintWriter(br);
+                pr.println(dtf.format(now) + "," + p2 + "," + sid + ", Check resident details.");
+                pr.close();
+                br.close();
+                fr.close();
+            } catch (IOException e) {
+                System.out.println("An error occurred while writing Action.txt in DischargeResident.");
+                e.printStackTrace();
+            }
         } catch (FileNotFoundException e) {
             System.out.println("An error occurred while reading ResidentList.txt.");
             e.printStackTrace();
         }
         return buff;
     }
-    public static void main(String[] args) throws ParseException {
+
+    // Doctor only
+    static void AttachNewPrescription(String sid, String p2, String rid, String p){
+        Prescription pre = new Prescription(sid, p2, rid, p);
+    }
+    // Doctor only
+    static void UpdatePrescription(String sid, String p2, String rid, String p) {
+        String n = "";
+        try {
+            File myObj = new File("./Archive/Prescription.txt");
+            Scanner myReader = new Scanner(myObj);
+            while (myReader.hasNextLine()) {
+                String data = myReader.nextLine();
+                // search for the specific Resident id
+                // modify the prescription
+                String a[] = data.split(",");
+                n = n + a[0] + ",";
+                if (a[0].equals(rid)) {
+                    n = n + p + "\n";
+                } else {
+                    n = n + a[1] + "\n";
+                }
+            }
+            myReader.close();
+            try {
+                FileWriter fw = new FileWriter("./Archive/Prescription.txt");
+                fw.write(n); // 將字串寫到檔案裡
+                fw.close();
+
+                // Record in Action.txt
+                try {
+                    DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+                    LocalDateTime now = LocalDateTime.now();
+
+                    File file = new File("./Archive/Action.txt");
+                    FileWriter fr = new FileWriter(file, true);
+                    BufferedWriter br = new BufferedWriter(fr);
+                    PrintWriter pr = new PrintWriter(br);
+                    pr.println(dtf.format(now) + "," + p2 + "," + sid + ", Update resident's prescription");
+                    pr.close();
+                    br.close();
+                    fr.close();
+                } catch (IOException e) {
+                    System.out.println("An error occurred while writing Action.txt.");
+                    e.printStackTrace();
+                }
+            } catch (IOException e) {
+                System.out.println("Updating resident's prescription error.");
+                e.printStackTrace();
+            }
+        } catch (FileNotFoundException e) {
+            System.out.println("An error occurred while updating prescription to Prescription.txt.");
+            e.printStackTrace();
+        }
+    }
+    // Medical staff only
+    static String CheckPrescription(String sid, String p2, String rid){
+        String buff = "";
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+        LocalDateTime now = LocalDateTime.now();
+
+        try {
+            File myObj = new File("./Archive/Prescription.txt");
+            Scanner myReader = new Scanner(myObj);
+            while (myReader.hasNextLine()) {
+                String data = myReader.nextLine();
+                String a[] = data.split(",");
+                if(a[0].equals(rid)) {
+                    buff = buff + data + "\n";
+                }
+            }
+            myReader.close();
+            System.out.println(buff);
+
+            // Record action
+            try {
+                File file = new File("./Archive/Action.txt");
+                FileWriter fr = new FileWriter(file, true);
+                BufferedWriter br = new BufferedWriter(fr);
+                PrintWriter pr = new PrintWriter(br);
+                pr.println(dtf.format(now) + "," + p2 + "," + sid + ", Check prescription details.");
+                pr.close();
+                br.close();
+                fr.close();
+            } catch (IOException e) {
+                System.out.println("An error occurred while writing Action.txt in CheckPrescription.");
+                e.printStackTrace();
+            }
+        } catch (FileNotFoundException e) {
+            System.out.println("An error occurred while reading ResidentList.txt.");
+            e.printStackTrace();
+        }
+        return buff;
+    }
+    // Nurse only
+    static void AttachMedicine(String sid, String p2, String rid, String m){  // Bed id, Medicine statement
+        Medicine nm = new Medicine(sid, p2, rid, m);
+    }
+    // Nurse only
+    static void UpdateMedicine(String sid, String p2, String rid, String m){
+        String n = "";
+        try {
+            File myObj = new File("./Archive/Medicine.txt");
+            Scanner myReader = new Scanner(myObj);
+            while (myReader.hasNextLine()) {
+                String data = myReader.nextLine();
+                // search for the specific Resident id
+                // modify the prescription
+                String a[] = data.split(",");
+                n = n + a[0] + "," ;
+                if (a[0].equals(rid)) {
+                    n = n + m + "\n";
+                } else {
+                    n = n + a[1] + "\n";
+                }
+            }
+            myReader.close();
+            try {
+                FileWriter fw = new FileWriter("./Archive/Medicine.txt");
+                fw.write(n); // 將字串寫到檔案裡
+                fw.close();
+
+                // Record in Action.txt
+                try {
+                    DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+                    LocalDateTime now = LocalDateTime.now();
+
+                    File file = new File("./Archive/Action.txt");
+                    FileWriter fr = new FileWriter(file, true);
+                    BufferedWriter br = new BufferedWriter(fr);
+                    PrintWriter pr = new PrintWriter(br);
+                    pr.println(dtf.format(now) + "," + p2 + "," + sid + ", Update resident's prescription");
+                    pr.close();
+                    br.close();
+                    fr.close();
+                } catch (IOException e) {
+                    System.out.println("An error occurred while writing Action.txt.");
+                    e.printStackTrace();
+                }
+            } catch (IOException e) {
+                System.out.println("Updating resident's prescription error.");
+                e.printStackTrace();
+            }
+        } catch (FileNotFoundException e) {
+            System.out.println("An error occurred while updating prescription to Prescription.txt.");
+            e.printStackTrace();
+        }
+    }
+    // Medical staff only
+    static String CheckAdministeringMedicine(String sid, String p2, String rid){
+        String buff = "";
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+        LocalDateTime now = LocalDateTime.now();
+
+        try {
+            File myObj = new File("./Archive/Medicine.txt");
+            Scanner myReader = new Scanner(myObj);
+            while (myReader.hasNextLine()) {
+                String data = myReader.nextLine();
+                String a[] = data.split(",");
+                if(a[0].equals(rid)) {
+                    buff = buff + data + "\n";
+                }
+            }
+            myReader.close();
+            System.out.println(buff);
+
+            // Record action
+            try {
+                File file = new File("./Archive/Action.txt");
+                FileWriter fr = new FileWriter(file, true);
+                BufferedWriter br = new BufferedWriter(fr);
+                PrintWriter pr = new PrintWriter(br);
+                pr.println(dtf.format(now) + "," + p2 + "," + sid + ", Check medicine details.");
+                pr.close();
+                br.close();
+                fr.close();
+            } catch (IOException e) {
+                System.out.println("An error occurred while writing Action.txt in CheckAdministeringMedicine.");
+                e.printStackTrace();
+            }
+        } catch (FileNotFoundException e) {
+            System.out.println("An error occurred while reading ResidentList.txt.");
+            e.printStackTrace();
+        }
+        return buff;
+
+    }
+
+
+    public static void main(String[] args) {
+        // Create action file
+        try {
+            File myObj = new File("./Archive/Action.txt");
+            if (myObj.createNewFile()) {
+                //System.out.println("File created: " + myObj.getName());
+            } else {
+                //System.out.println("File already exists.");
+            }
+        } catch (IOException e) {
+            System.out.println("An error occurred while creating DoctorList.txt.");
+            e.printStackTrace();
+        }
+
         // MENU
         //Menu menu = new Menu();
 
@@ -425,7 +649,16 @@ public class AbleCareHome {
         DischargeResident("1","Manager","1");
         */
 
+        /*
         CheckResidentDetails("1","Manager","1");
+        AttachNewPrescription("1","Manager","1", "New prescription");
+        UpdatePrescription("1","Manager","1", "Update prescription");
+
+        AttachMedicine("1","Manager","1", "New Medicine");
+        UpdateMedicine("1","Manager","1", "Update Medicine");
+        CheckPrescription("1","Manager", "1");
+        CheckAdministeringMedicine("1","Manager", "1");
+        */
 
         // GUI
 

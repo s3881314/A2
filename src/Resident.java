@@ -94,21 +94,4 @@ public class Resident {
             System.out.println("Resident ID exist.");
         }
     }
-    // Doctor only
-    // Attach prescription
-    public void AttachPrescription(String id, String p){  // Bed id, Prescription
-
-    }
-
-    // Nurse only
-    // Administer medication, Updating the details of medicines administered for a resident in the selected bed
-    public void UpdateMedicine(String id, String m){  // Bed id, Medicine statement
-
-    }
-
-    // Doctor and Nurse only
-    // Check administering medicine
-    public void CheckAdministeringMedicine(String id){
-
-    }
 }
