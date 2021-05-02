@@ -1,4 +1,5 @@
 import java.io.*;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.time.*;
 import java.text.*;
@@ -11,7 +12,7 @@ public class Resident {
     private LocalDate Admitted;
     private LocalDate Discharged = null;
 
-    Resident(String n, String g, String id, LocalDate dob){
+    Resident(String sid, String p2, String n, String g, String id, LocalDate dob){
         // (Resident ID, NAME, GENDER, Day Of Birth, ADMITTED)---Bed.txt
         LocalDate ld = LocalDate.now(); // Create a date object
         this.Name = n;
@@ -71,26 +72,28 @@ public class Resident {
                 System.out.println("An error occurred while writing ResidentList.txt.");
                 e.printStackTrace();
             }
+            // Record in Action.txt
+            try {
+                DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+                LocalDateTime now = LocalDateTime.now();
+
+                File file = new File("./Archive/Action.txt");
+                FileWriter fr = new FileWriter(file, true);
+                BufferedWriter br = new BufferedWriter(fr);
+                PrintWriter pr = new PrintWriter(br);
+                pr.println(dtf.format(now) + "," + p2 + "," + sid + ", Add new resident.");
+                pr.close();
+                br.close();
+                fr.close();
+            } catch (IOException e) {
+                System.out.println("An error occurred while writing Action.txt.");
+                e.printStackTrace();
+            }
         }
         else{
             System.out.println("Resident ID exist.");
         }
     }
-
-    // Doctor and Nurse only
-    // medical staff is able to check resident's detail
-    public void CheckResidentDetail(String id){
-        System.out.println("Resident ID: " + this.ID);
-        System.out.println("Resident Gender: " + this.Gender);
-    }
-
-    // Nurse only
-    public void MovingResident(String id1, String id2){ // Resident id, bed id
-        // check the status of the bed
-        // if it is empty, move resident
-        // else print message
-    }
-
     // Doctor only
     // Attach prescription
     public void AttachPrescription(String id, String p){  // Bed id, Prescription

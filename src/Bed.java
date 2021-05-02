@@ -1,9 +1,11 @@
 import java.io.*;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class Bed {
     private int bNum;
-    Bed(String rid, String WName, int rn){  // Resident ID, Ward name, Room number
+    Bed(String sid, String p2, String rid, String WName, int rn){  // Resident ID, Ward name, Room number
         // (Ward Name, Room Number, Number Of Bed, Resident ID)---Bed.txt
         try {
             File myObj = new File("./Archive/Bed.txt");
@@ -47,7 +49,24 @@ public class Bed {
                 pr.close();
                 br.close();
                 fr.close();
-                //System.out.println("Successfully wrote to the file.");
+
+                // Record in Action.txt
+                try {
+                    DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+                    LocalDateTime now = LocalDateTime.now();
+
+                    File file2 = new File("./Archive/Action.txt");
+                    FileWriter fr2 = new FileWriter(file, true);
+                    BufferedWriter br2 = new BufferedWriter(fr);
+                    PrintWriter pr2 = new PrintWriter(br);
+                    pr2.println(dtf.format(now) + "," + p2 + "," + sid + ", Add new Resident to bed.");
+                    pr2.close();
+                    br2.close();
+                    fr2.close();
+                } catch (IOException e) {
+                    System.out.println("An error occurred while writing Action.txt.");
+                    e.printStackTrace();
+                }
             } catch (IOException e) {
                 System.out.println("An error occurred.");
                 e.printStackTrace();

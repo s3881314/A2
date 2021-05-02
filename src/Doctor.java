@@ -4,7 +4,7 @@ import java.time.*;
 import java.time.format.*;
 
 public class Doctor extends Staff{
-    Doctor(String n, String id, String p, String pw){
+    Doctor(String sid, String p2, String n, String id, String p, String pw){
         super(n, id, p, pw);
         // (ID, NAME, PHONE, PASSWORD)---DoctorList.txt
         // open DoctorList.txt
@@ -57,6 +57,23 @@ public class Doctor extends Staff{
                 //System.out.println("Successfully wrote to the file.");
             } catch (IOException e) {
                 System.out.println("An error occurred while writing DoctorList.txt.");
+                e.printStackTrace();
+            }
+            // Record in Action.txt
+            try {
+                DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+                LocalDateTime now = LocalDateTime.now();
+
+                File file = new File("./Archive/Action.txt");
+                FileWriter fr = new FileWriter(file, true);
+                BufferedWriter br = new BufferedWriter(fr);
+                PrintWriter pr = new PrintWriter(br);
+                pr.println(dtf.format(now) + "," + p2 + "," + sid + ", Add doctor.");
+                pr.close();
+                br.close();
+                fr.close();
+            } catch (IOException e) {
+                System.out.println("An error occurred while writing Action.txt.");
                 e.printStackTrace();
             }
         }

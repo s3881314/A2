@@ -1,8 +1,10 @@
 import java.io.*;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class Nurse extends Staff{
-    Nurse(String n, String id, String p, String pw){
+    Nurse(String sid, String p2, String n, String id, String p, String pw){
         // (ID, NAME, PHONE, PASSWORD)---NurseList.txt
         super(n, id, p, pw);
         // open DoctorList.txt
@@ -52,7 +54,24 @@ public class Nurse extends Staff{
                 pr.close();
                 br.close();
                 fr.close();
-                //System.out.println("Successfully wrote to the file.");
+
+                // Record in Action.txt
+                try {
+                    DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+                    LocalDateTime now = LocalDateTime.now();
+
+                    File file2 = new File("./Archive/Action.txt");
+                    FileWriter fr2 = new FileWriter(file, true);
+                    BufferedWriter br2 = new BufferedWriter(fr);
+                    PrintWriter pr2 = new PrintWriter(br);
+                    pr2.println(dtf.format(now) + "," + p2 + "," + sid + ", Add nurse.");
+                    pr2.close();
+                    br2.close();
+                    fr2.close();
+                } catch (IOException e) {
+                    System.out.println("An error occurred while writing Action.txt.");
+                    e.printStackTrace();
+                }
             } catch (IOException e) {
                 System.out.println("An error occurred while writing NurseList.txt.");
                 e.printStackTrace();

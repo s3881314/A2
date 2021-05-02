@@ -1,5 +1,6 @@
 import java.io.*;
 import java.time.*;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 /*
@@ -8,7 +9,7 @@ DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss
         String formattedDate = ct.format(myFormatObj);*/
 
 public class Manager extends Staff{
-    Manager(String n, String id, String p, String pw){
+    Manager(String sid, String p2, String n, String id, String p, String pw){
         // (ID, NAME, PHONE, PASSWORD)---ManagerList.txt
         super(n, id, p, pw);
         try {
@@ -60,6 +61,23 @@ public class Manager extends Staff{
                 //System.out.println("Successfully wrote to the file.");
             } catch (IOException e) {
                 System.out.println("An error occurred while writing ManagerList.txt.");
+                e.printStackTrace();
+            }
+            // Record in Action.txt
+            try {
+                DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+                LocalDateTime now = LocalDateTime.now();
+
+                File file = new File("./Archive/Action.txt");
+                FileWriter fr = new FileWriter(file, true);
+                BufferedWriter br = new BufferedWriter(fr);
+                PrintWriter pr = new PrintWriter(br);
+                pr.println(dtf.format(now) + "," + p2 + "," + sid + ", Add new manager.");
+                pr.close();
+                br.close();
+                fr.close();
+            } catch (IOException e) {
+                System.out.println("An error occurred while writing Action.txt.");
                 e.printStackTrace();
             }
         }

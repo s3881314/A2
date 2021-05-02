@@ -1,0 +1,72 @@
+02/05/2021 09:33:31,User,1, Add new manager.
+02/05/2021 09:33:31,Manager,1, Add doctor.
+02/05/2021 09:33:31,Manager,1, Add doctor.
+02/05/2021 09:33:31,Manager,1, Add doctor.
+02/05/2021 09:33:31,Manager,1, Add doctor.
+02/05/2021 09:33:31,Manager,1, Add doctor.
+02/05/2021 09:33:31,Manager,1, Add new resident.
+02/05/2021 09:33:31,Manager,1, Update doctor password
+02/05/2021 09:33:31,Manager,1, Update nurse password
+02/05/2021 09:33:31,Manager,1, Update doctor shift
+02/05/2021 09:33:31,Manager,1, Update nurse shift
+02/05/2021 09:33:31,Nurse,1,Move resident to other bed.
+02/05/2021 09:35:53,Manager,1, Update doctor password
+02/05/2021 09:35:53,Manager,1, Update nurse password
+02/05/2021 09:35:53,Manager,1, Update doctor shift
+02/05/2021 09:35:53,Manager,1, Update nurse shift
+02/05/2021 12:02:37,Manager,1, Update doctor password
+02/05/2021 12:02:37,Manager,1, Update nurse password
+02/05/2021 12:02:37,Manager,1, Update doctor shift
+02/05/2021 12:02:37,Manager,1, Update nurse shift
+02/05/2021 12:02:37,Manager,1, Discharge resident.
+02/05/2021 12:03:41,Manager,1, Update doctor password
+02/05/2021 12:03:41,Manager,1, Update nurse password
+02/05/2021 12:03:41,Manager,1, Update doctor shift
+02/05/2021 12:03:41,Manager,1, Update nurse shift
+02/05/2021 12:03:41,Manager,1, Discharge resident.
+02/05/2021 12:06:31,Manager,1, Update doctor password
+02/05/2021 12:06:31,Manager,1, Update nurse password
+02/05/2021 12:06:31,Manager,1, Update doctor shift
+02/05/2021 12:06:31,Manager,1, Update nurse shift
+02/05/2021 12:06:31,Manager,1, Discharge resident.
+02/05/2021 12:07:11,Manager,1, Update doctor password
+02/05/2021 12:07:11,Manager,1, Update nurse password
+02/05/2021 12:07:11,Manager,1, Update doctor shift
+02/05/2021 12:07:11,Manager,1, Update nurse shift
+02/05/2021 12:07:11,Manager,1, Discharge resident.
+02/05/2021 12:07:48,Manager,1, Update doctor password
+02/05/2021 12:07:48,Manager,1, Update nurse password
+02/05/2021 12:07:48,Manager,1, Update doctor shift
+02/05/2021 12:07:48,Manager,1, Update nurse shift
+02/05/2021 12:07:48,Manager,1, Discharge resident.
+02/05/2021 12:08:12,Manager,1, Update doctor password
+02/05/2021 12:08:12,Manager,1, Update nurse password
+02/05/2021 12:08:12,Manager,1, Update doctor shift
+02/05/2021 12:08:12,Manager,1, Update nurse shift
+02/05/2021 12:08:12,Manager,1, Discharge resident.
+02/05/2021 12:09:09,Manager,1, Update doctor password
+02/05/2021 12:09:09,Manager,1, Update nurse password
+02/05/2021 12:09:09,Manager,1, Update doctor shift
+02/05/2021 12:09:09,Manager,1, Update nurse shift
+02/05/2021 12:09:09,Manager,1, Discharge resident.
+02/05/2021 12:09:48,Manager,1, Update doctor password
+02/05/2021 12:09:48,Manager,1, Update nurse password
+02/05/2021 12:09:48,Manager,1, Update doctor shift
+02/05/2021 12:09:48,Manager,1, Update nurse shift
+02/05/2021 12:09:48,Manager,1, Discharge resident.
+02/05/2021 12:10:40,Manager,1, Update doctor password
+02/05/2021 12:10:40,Manager,1, Update nurse password
+02/05/2021 12:10:40,Manager,1, Update doctor shift
+02/05/2021 12:10:40,Manager,1, Update nurse shift
+02/05/2021 12:10:40,Manager,1, Discharge resident.
+02/05/2021 12:11:06,Manager,1, Update doctor password
+02/05/2021 12:11:06,Manager,1, Update nurse password
+02/05/2021 12:11:06,Manager,1, Update doctor shift
+02/05/2021 12:11:06,Manager,1, Update nurse shift
+02/05/2021 12:11:06,Manager,1, Discharge resident.
+02/05/2021 12:11:29,Manager,1, Update doctor password
+02/05/2021 12:11:29,Manager,1, Update nurse password
+02/05/2021 12:11:29,Manager,1, Update doctor shift
+02/05/2021 12:11:29,Manager,1, Update nurse shift
+02/05/2021 12:11:29,Manager,1, Discharge resident.
+02/05/2021 12:18:24,Manager,1, Add new resident.
