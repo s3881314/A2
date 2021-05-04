@@ -1,0 +1,22 @@
+04/05/2021 19:20:33,Manager,M1, Add new manager.
+04/05/2021 19:20:33,Manager,M1, Add new resident.
+04/05/2021 19:20:33,Manager,M1, Add new resident.
+04/05/2021 19:20:33,Manager,M1, Add new resident.
+04/05/2021 19:20:33,Manager,M1, Add new resident.
+04/05/2021 19:20:33,Manager,M1, Add new resident.
+04/05/2021 19:20:33,Doctor,D1, Check prescription details.
+04/05/2021 19:20:33,Doctor,D1, Update resident's prescription
+04/05/2021 19:20:33,Manager,M1, Add doctor.
+04/05/2021 19:20:33,Manager,M1, Add doctor.
+04/05/2021 19:20:33,Manager,M1, Add doctor.
+04/05/2021 19:20:33,Manager,M1, Add doctor.
+04/05/2021 19:20:33,Manager,M1, Add doctor.
+04/05/2021 19:20:33,Manager,M1, Update doctor password
+04/05/2021 19:20:33,Manager,M1, Update nurse password
+04/05/2021 19:20:38,Doctor,D1, Check medicine details.
+04/05/2021 19:20:38,Doctor,D1, Check prescription details.
+04/05/2021 19:20:38,Manager,M1, Update doctor shift
+04/05/2021 19:20:38,Doctor,D1, Update resident's prescription
+04/05/2021 19:20:38,Manager,M1, Check medicine details.
+04/05/2021 19:20:38,Manager,M1, Update doctor password
+04/05/2021 19:20:38,Manager,M1, Update nurse password
