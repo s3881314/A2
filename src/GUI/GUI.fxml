@@ -10,37 +10,37 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #171717;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
-   <left>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-         <children>
-            <ImageView fitHeight="400.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../image/istockphoto-988112594-170667a.jpg" />
-               </image>
-            </ImageView>
-         </children>
-      </AnchorPane>
-   </left>
-   <right>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-         <children>
-            <TextField fx:id="Username" layoutX="18.0" layoutY="135.0" prefHeight="40.0" prefWidth="150.0" promptText="Username" />
-            <PasswordField fx:id="Password" layoutX="19.0" layoutY="200.0" prefHeight="40.0" prefWidth="150.0" promptText="Password" />
-            <Button fx:id="LogInBT" layoutX="68.0" layoutY="278.0" mnemonicParsing="false" text="Log In" />
-            <Label layoutX="29.0" layoutY="32.0" text="Welcome to" textFill="WHITE">
-               <font>
-                  <Font size="24.0" />
-               </font>
-            </Label>
-            <Label layoutX="20.0" layoutY="67.0" text="Able Care Home" textAlignment="CENTER" textFill="WHITE">
-               <font>
-                  <Font size="22.0" />
-               </font>
-            </Label>
-            <Label fx:id="WrongLogIn" layoutX="79.0" layoutY="108.0" textFill="RED" />
-         </children>
-      </AnchorPane>
-   </right>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #171717;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.LogIn">
+    <left>
+        <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <children>
+                <ImageView fitHeight="400.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../image/istockphoto-988112594-170667a.jpg" />
+                    </image>
+                </ImageView>
+            </children>
+        </AnchorPane>
+    </left>
+    <right>
+        <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <children>
+                <TextField fx:id="Username" layoutX="17.0" layoutY="171.0" prefHeight="40.0" prefWidth="150.0" promptText="Username" />
+                <PasswordField fx:id="Password" layoutX="17.0" layoutY="230.0" prefHeight="40.0" prefWidth="150.0" promptText="Password" />
+                <Button fx:id="LogInBT" layoutX="69.0" layoutY="298.0" mnemonicParsing="false" onAction="#LogInBT" text="Log In" />
+                <Label layoutX="29.0" layoutY="32.0" text="Welcome to" textFill="WHITE">
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                </Label>
+                <Label layoutX="20.0" layoutY="67.0" text="Able Care Home" textAlignment="CENTER" textFill="WHITE">
+                    <font>
+                        <Font size="22.0" />
+                    </font>
+                </Label>
+                <Label fx:id="WrongLogIn" layoutX="79.0" layoutY="108.0" textFill="RED" />
+            <TextField fx:id="Position" layoutX="17.0" layoutY="117.0" prefHeight="40.0" prefWidth="150.0" promptText="Position" />
+            </children>
+        </AnchorPane>
+    </right>
 </BorderPane>

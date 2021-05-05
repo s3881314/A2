@@ -1,3 +1,5 @@
+package GUI;
+
 import java.io.*;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
@@ -13,7 +15,7 @@ public class Manager extends Staff{
         // (ID, NAME, PHONE, PASSWORD)---ManagerList.txt
         super(n, id, p, pw);
         try {
-            File myObj = new File("./Archive/ManagerList.txt");
+            File myObj = new File("F:\\Textbook\\MasterOfIT\\COSC1295 Advanced Programming\\Assignment\\Assignment2\\A2_1\\src\\Archive\\ManagerList.txt");
             if (myObj.createNewFile()) {
                 try {
                     FileWriter fr = new FileWriter(myObj, true);
@@ -38,7 +40,7 @@ public class Manager extends Staff{
         int flag1 = 0;
         // check if the id exist
         try {
-            File myObj = new File("./Archive/ManagerList.txt");
+            File myObj = new File("F:\\Textbook\\MasterOfIT\\COSC1295 Advanced Programming\\Assignment\\Assignment2\\A2_1\\src\\Archive\\ManagerList.txt");
             Scanner myReader = new Scanner(myObj);
             while (myReader.hasNextLine()) {
                 String data = myReader.nextLine();
@@ -61,7 +63,7 @@ public class Manager extends Staff{
             // ID not exist
             // write file
             try {
-                File file = new File("./Archive/ManagerList.txt");
+                File file = new File("F:\\Textbook\\MasterOfIT\\COSC1295 Advanced Programming\\Assignment\\Assignment2\\A2_1\\src\\Archive\\ManagerList.txt");
                 FileWriter fr = new FileWriter(file, true);
                 BufferedWriter br = new BufferedWriter(fr);
                 PrintWriter pr = new PrintWriter(br);
@@ -79,7 +81,7 @@ public class Manager extends Staff{
                 DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
                 LocalDateTime now = LocalDateTime.now();
 
-                File file = new File("./Archive/Action.txt");
+                File file = new File("F:\\Textbook\\MasterOfIT\\COSC1295 Advanced Programming\\Assignment\\Assignment2\\A2_1\\src\\Archive\\Action.txt");
                 FileWriter fr = new FileWriter(file, true);
                 BufferedWriter br = new BufferedWriter(fr);
                 PrintWriter pr = new PrintWriter(br);

@@ -1,3 +1,5 @@
+package GUI;
+
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 import java.io.*;
@@ -5,7 +7,6 @@ import java.time.LocalDate;
 import java.util.*;
 import java.time.format.DateTimeFormatter;
 import java.time.LocalDateTime;
-
 
 class AbleCareHomeTest {
 
@@ -38,16 +39,11 @@ class AbleCareHomeTest {
     @Test
     void addResident() {
         AbleCareHome a = new AbleCareHome();
-        LocalDate d = LocalDate.of(1997, 1, 2);
-        a.AddResident("M1","Manager", "Laura", "F", "R1", d);
-        d = LocalDate.of(1996, 1, 10);
-        a.AddResident("M1","Manager", "Maureen", "F", "R2", d);
-        d = LocalDate.of(1995, 3, 2);
-        a.AddResident("M1","Manager", "Mark", "M", "R3", d);
-        d = LocalDate.of(1980, 4, 20);
-        a.AddResident("M1","Manager", "Luke", "M", "R4", d);
-        d = LocalDate.of(1985, 12, 2);
-        a.AddResident("M1","Manager", "Harold", "M", "R5", d);
+        a.AddResident("M1","Manager", "Laura", "F", "R1", "05/05/1997");
+        a.AddResident("M1","Manager", "Maureen", "F", "R2", "04/05/1997");
+        a.AddResident("M1","Manager", "Mark", "M", "R3", "03/05/1997");
+        a.AddResident("M1","Manager", "Luke", "M", "R4", "02/05/1997");
+        a.AddResident("M1","Manager", "Harold", "M", "R5", "01/05/1997");
     }
 
     @Test

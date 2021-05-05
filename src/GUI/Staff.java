@@ -1,3 +1,5 @@
+package GUI;
+
 public class Staff {
     private String Name;
     private String ID;

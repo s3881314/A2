@@ -1,14 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="$CONTROLLER_NAME$"
-            prefHeight="400.0" prefWidth="600.0" >
-
-</AnchorPane>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #171717;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AfterLogIn">
+   <top>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="Logout" layoutX="490.0" layoutY="258.0" mnemonicParsing="false" onAction="#UserLogOut" text="Log Out" />
+            <Button fx:id="addmanager" layoutX="80.0" layoutY="74.0" mnemonicParsing="false" onAction="#AddManagerBT" prefHeight="31.0" prefWidth="123.0" text="Add Manager" />
+            <Button fx:id="addresident" layoutX="79.0" layoutY="190.0" mnemonicParsing="false" onAction="#AddResidentBT" prefHeight="31.0" prefWidth="123.0" text="Add Resident" />
+            <Button fx:id="adddoctor" layoutX="80.0" layoutY="115.0" mnemonicParsing="false" onAction="#AddDoctorBT" prefHeight="31.0" prefWidth="123.0" text="Add Doctor" />
+            <Button fx:id="addnurse" layoutX="80.0" layoutY="155.0" mnemonicParsing="false" onAction="#AddNurseBT" prefHeight="6.0" prefWidth="123.0" text="Add Nurse" />
+            <Button fx:id="addnewresidenttobed" layoutX="56.0" layoutY="229.0" mnemonicParsing="false" onAction="#AddNewResidentToBedBT" prefHeight="31.0" prefWidth="171.0" text="Add New Resident To Bed" />
+            <Button fx:id="updatepassword" layoutX="80.0" layoutY="270.0" mnemonicParsing="false" onAction="#UpdatePasswordBT" prefHeight="31.0" prefWidth="123.0" text="Update Password" />
+            <Button fx:id="assignshift" layoutX="80.0" layoutY="313.0" mnemonicParsing="false" onAction="#AssignShiftBT" prefHeight="31.0" prefWidth="123.0" text="Assign Shift" />
+            <Button fx:id="updateshift" layoutX="80.0" layoutY="356.0" mnemonicParsing="false" onAction="#UpdateShiftBT" prefHeight="31.0" prefWidth="123.0" text="Update Shift" />
+            <Button fx:id="moveresident" layoutX="288.0" layoutY="74.0" mnemonicParsing="false" onAction="#MoveResidentBT" prefHeight="31.0" prefWidth="123.0" text="Move Resident" />
+            <Button fx:id="attachnewprescription" layoutX="273.0" layoutY="190.0" mnemonicParsing="false" onAction="#AttachNewPrescriptionBT" prefHeight="31.0" prefWidth="150.0" text="Attach New Prescription" />
+            <Button fx:id="dischargeresident" layoutX="288.0" layoutY="115.0" mnemonicParsing="false" onAction="#DischargeResidentBT" prefHeight="31.0" prefWidth="123.0" text="Discharge Resident" />
+            <Button fx:id="readresidentdetails" layoutX="279.0" layoutY="154.0" mnemonicParsing="false" onAction="#ReadResidentDetailsBT" prefHeight="26.0" prefWidth="138.0" text="Read Resident Details" />
+            <Button fx:id="updateprescription" layoutX="288.0" layoutY="229.0" mnemonicParsing="false" onAction="#UpdatePrescriptionBT" prefHeight="31.0" prefWidth="123.0" text="Update Prescription" />
+            <Button fx:id="readprescription" layoutX="287.0" layoutY="270.0" mnemonicParsing="false" onAction="#ReadPrescriptionBT" prefHeight="31.0" prefWidth="123.0" text="Read Prescription" />
+            <Button fx:id="administeringmedicine" layoutX="276.0" layoutY="313.0" mnemonicParsing="false" onAction="#AdministeringMedicineBT" prefHeight="31.0" prefWidth="148.0" text="Administering Medicine" />
+            <Button fx:id="readadministeringmedicine" layoutX="258.0" layoutY="356.0" mnemonicParsing="false" onAction="#ReadAdministeringMedicineBT" prefHeight="31.0" prefWidth="182.0" text="Read Administering Medicine" />
+            <Label layoutX="457.0" layoutY="128.0" prefHeight="45.0" prefWidth="125.0" style="-fx-background-color: white;" />
+            <Label layoutX="457.0" layoutY="192.0" prefHeight="45.0" prefWidth="125.0" style="-fx-background-color: white;" />
+            <Label layoutX="194.0" layoutY="14.0" prefHeight="58.0" prefWidth="127.0" text="MENU" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font size="43.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </top>
+</BorderPane>

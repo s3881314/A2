@@ -1,3 +1,5 @@
+package GUI;
+
 import java.io.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -11,7 +13,7 @@ public class Nurse extends Staff{
         // save information
         // create file
         try {
-            File myObj = new File("./Archive/NurseList.txt");
+            File myObj = new File("F:\\Textbook\\MasterOfIT\\COSC1295 Advanced Programming\\Assignment\\Assignment2\\A2_1\\src\\Archive\\NurseList.txt");
             if (myObj.createNewFile()) {
                 //System.out.println("File created: " + myObj.getName());
 
@@ -25,7 +27,7 @@ public class Nurse extends Staff{
         int flag1 = 0;
         // check if the id exist
         try {
-            File myObj = new File("./Archive/NurseList.txt");
+            File myObj = new File("F:\\Textbook\\MasterOfIT\\COSC1295 Advanced Programming\\Assignment\\Assignment2\\A2_1\\src\\Archive\\NurseList.txt");
             Scanner myReader = new Scanner(myObj);
             while (myReader.hasNextLine()) {
                 String data = myReader.nextLine();
@@ -46,7 +48,7 @@ public class Nurse extends Staff{
             // ID not exist
             // write file
             try {
-                File file = new File("./Archive/NurseList.txt");
+                File file = new File("F:\\Textbook\\MasterOfIT\\COSC1295 Advanced Programming\\Assignment\\Assignment2\\A2_1\\src\\Archive\\NurseList.txt");
                 FileWriter fr = new FileWriter(file, true);
                 BufferedWriter br = new BufferedWriter(fr);
                 PrintWriter pr = new PrintWriter(br);
@@ -60,7 +62,7 @@ public class Nurse extends Staff{
                     DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
                     LocalDateTime now = LocalDateTime.now();
 
-                    File file2 = new File("./Archive/Action.txt");
+                    File file2 = new File("F:\\Textbook\\MasterOfIT\\COSC1295 Advanced Programming\\Assignment\\Assignment2\\A2_1\\src\\Archive\\Action.txt");
                     FileWriter fr2 = new FileWriter(file, true);
                     BufferedWriter br2 = new BufferedWriter(fr);
                     PrintWriter pr2 = new PrintWriter(br);
