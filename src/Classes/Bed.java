@@ -1,3 +1,5 @@
+package Classes;
+
 import java.io.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -8,7 +10,7 @@ public class Bed {
     Bed(String sid, String p2, String WName, String rn, String b, String rid){  // Resident ID, Ward name, Room number
         // (Ward Name, Room Number, Number Of Bed, Resident ID)---Bed.txt
         try {
-            File myObj = new File("./Archive/Bed.txt");
+            File myObj = new File("./src/Archive/Bed.txt");
             myObj.createNewFile();
         } catch (IOException e) {
             System.out.println("An error occurred.");
@@ -18,7 +20,7 @@ public class Bed {
         boolean empty = true;
         // check if the id exist
         try {
-            File myObj = new File("./Archive/Bed.txt");
+            File myObj = new File("./src/Archive/Bed.txt");
             Scanner myReader = new Scanner(myObj);
             while (myReader.hasNextLine()) {
                 String data = myReader.nextLine();
@@ -37,7 +39,7 @@ public class Bed {
             // Resident could be add in vacant bed
             // write file
             try {
-                File file = new File("./Archive/Bed.txt");
+                File file = new File("./src/Archive/Bed.txt");
                 FileWriter fr = new FileWriter(file, true);
                 BufferedWriter br = new BufferedWriter(fr);
                 PrintWriter pr = new PrintWriter(br);
@@ -45,26 +47,24 @@ public class Bed {
                 pr.close();
                 br.close();
                 fr.close();
-
-                // Record in Action.txt
-                try {
-                    DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
-                    LocalDateTime now = LocalDateTime.now();
-
-                    File file2 = new File("./Archive/Action.txt");
-                    FileWriter fr2 = new FileWriter(file, true);
-                    BufferedWriter br2 = new BufferedWriter(fr);
-                    PrintWriter pr2 = new PrintWriter(br);
-                    pr2.println(dtf.format(now) + "," + p2 + "," + sid + ", Add new Resident to bed.");
-                    pr2.close();
-                    br2.close();
-                    fr2.close();
-                } catch (IOException e) {
-                    System.out.println("An error occurred while writing Action.txt.");
-                    e.printStackTrace();
-                }
             } catch (IOException e) {
                 System.out.println("An error occurred.");
+                e.printStackTrace();
+            }
+            // Record in Action.txt
+            try {
+                DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+                LocalDateTime now = LocalDateTime.now();
+
+                File file = new File("./src/Archive/Action.txt");
+                FileWriter fr = new FileWriter(file, true);
+                BufferedWriter br = new BufferedWriter(fr);
+                PrintWriter pr = new PrintWriter(br);
+                pr.println(dtf.format(now) + "," + p2 + "," + sid + ", Add new resident to bed.");
+                pr.close();
+                br.close();
+                fr.close();
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         }

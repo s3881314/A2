@@ -10,11 +10,11 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #171717;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.LogIn">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #171717;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.LogIn">
     <left>
         <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
             <children>
-                <ImageView fitHeight="400.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fitHeight="333.0" fitWidth="371.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@../image/istockphoto-988112594-170667a.jpg" />
                     </image>
@@ -23,23 +23,23 @@
         </AnchorPane>
     </left>
     <right>
-        <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <AnchorPane prefHeight="400.0" prefWidth="240.0" BorderPane.alignment="CENTER">
             <children>
-                <TextField fx:id="Username" layoutX="17.0" layoutY="171.0" prefHeight="40.0" prefWidth="150.0" promptText="Username" />
-                <PasswordField fx:id="Password" layoutX="17.0" layoutY="230.0" prefHeight="40.0" prefWidth="150.0" promptText="Password" />
-                <Button fx:id="LogInBT" layoutX="69.0" layoutY="298.0" mnemonicParsing="false" onAction="#LogInBT" text="Log In" />
-                <Label layoutX="29.0" layoutY="32.0" text="Welcome to" textFill="WHITE">
+                <TextField fx:id="Username" layoutX="41.0" layoutY="221.0" prefHeight="40.0" prefWidth="150.0" promptText="Username" />
+                <PasswordField fx:id="Password" layoutX="41.0" layoutY="273.0" prefHeight="40.0" prefWidth="150.0" promptText="Password" />
+                <Button fx:id="LogInBT" layoutX="91.0" layoutY="334.0" mnemonicParsing="false" onAction="#LogInBT" text="Log In" />
+                <Label layoutX="53.0" layoutY="31.0" text="Welcome to" textFill="WHITE">
                     <font>
                         <Font size="24.0" />
                     </font>
                 </Label>
-                <Label layoutX="20.0" layoutY="67.0" text="Able Care Home" textAlignment="CENTER" textFill="WHITE">
+                <Label layoutX="37.0" layoutY="66.0" text="Able Care Home" textAlignment="CENTER" textFill="WHITE">
                     <font>
                         <Font size="22.0" />
                     </font>
                 </Label>
-                <Label fx:id="WrongLogIn" layoutX="79.0" layoutY="108.0" textFill="RED" />
-            <TextField fx:id="Position" layoutX="17.0" layoutY="117.0" prefHeight="40.0" prefWidth="150.0" promptText="Position" />
+                <Label fx:id="WrongLogIn" layoutX="1.0" layoutY="109.0" prefHeight="43.0" prefWidth="230.0" textFill="RED" />
+            <TextField fx:id="Position" layoutX="41.0" layoutY="169.0" prefHeight="40.0" prefWidth="150.0" promptText="Position" />
             </children>
         </AnchorPane>
     </right>

@@ -1,3 +1,5 @@
+package Classes;
+
 import java.io.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -13,7 +15,7 @@ public class Medicine {
         LocalDateTime now = LocalDateTime.now();
         // Create file
         try {
-            File myObj = new File("./Archive/AdministeringMedicine.txt");
+            File myObj = new File("./src/Archive/AdministeringMedicine.txt");
             myObj.createNewFile();
         } catch (IOException e) {
             System.out.println("An error occurred while creating AdministeringMedicine.txt.");
@@ -23,7 +25,7 @@ public class Medicine {
         try {
             // check if the id exist in Prescription.txt
             boolean flag = false;
-            File myObj = new File("./Archive/Prescription.txt");
+            File myObj = new File("./src/Archive/Prescription.txt");
             Scanner myReader = new Scanner(myObj);
             while (myReader.hasNextLine()) {
                 String data = myReader.nextLine();
@@ -40,7 +42,7 @@ public class Medicine {
                     String n = "";
                     boolean flag2 = false;
 
-                    File myObj2 = new File("./Archive/AdministeringMedicine.txt");
+                    File myObj2 = new File("./src/Archive/AdministeringMedicine.txt");
                     Scanner myReader2 = new Scanner(myObj2);
                     while (myReader2.hasNextLine()) {
                         String data = myReader2.nextLine();
@@ -70,13 +72,13 @@ public class Medicine {
                     // if it has old medicine data
                     if(flag2 == true) {
                         // Update old data
-                        FileWriter fw = new FileWriter("./Archive/AdministeringMedicine.txt");
+                        FileWriter fw = new FileWriter("./src/Archive/AdministeringMedicine.txt");
                         fw.write(n); // 將字串寫到檔案裡
                         fw.close();
                     }
                     // create new administering medicine data
                     else{
-                        File file = new File("./Archive/AdministeringMedicine.txt");
+                        File file = new File("./src/Archive/AdministeringMedicine.txt");
                         FileWriter fr = new FileWriter(file, true);
                         BufferedWriter br = new BufferedWriter(fr);
                         PrintWriter pr = new PrintWriter(br);
@@ -88,7 +90,7 @@ public class Medicine {
                     // Record action
                     try {
 
-                        File file2 = new File("./Archive/Action.txt");
+                        File file2 = new File("./src/Archive/Action.txt");
                         FileWriter fr2 = new FileWriter(file2, true);
                         BufferedWriter br2 = new BufferedWriter(fr2);
                         PrintWriter pr2 = new PrintWriter(br2);

@@ -1,3 +1,5 @@
+package Classes;
+
 import java.io.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -5,40 +7,38 @@ import java.util.Scanner;
 
 public class Nurse extends Staff{
     Nurse(String sid, String p2, String n, String id, String p, String pw){
-        // (ID, NAME, PHONE, PASSWORD)---NurseList.txt
         super(n, id, p, pw);
-        // open DoctorList.txt
+        // (ID, NAME, PHONE, PASSWORD)---NurseList.txt
+        // open NurseList.txt
         // save information
         // create file
         try {
-            File myObj = new File("./Archive/NurseList.txt");
-            if (myObj.createNewFile()) {
-                //System.out.println("File created: " + myObj.getName());
-
-            } else {
-               // System.out.println("File already exists.");
-            }
+            File myObj = new File("./src/Archive/NurseList.txt");
+            myObj.createNewFile();
         } catch (IOException e) {
-            System.out.println("An error occurred while creating NurseList.txt.");
             e.printStackTrace();
         }
         int flag1 = 0;
         // check if the id exist
         try {
-            File myObj = new File("./Archive/NurseList.txt");
-            Scanner myReader = new Scanner(myObj);
-            while (myReader.hasNextLine()) {
-                String data = myReader.nextLine();
-                // if id is the same with ID
-                // flag = 1
-                String a[] = data.split(",");
-                if(a[0].equals(id)){
-                        flag1 = 1;
-                }
+            File myObj = new File("./src/Archive/NurseList.txt");
+            if(myObj.length() == 0){
+                flag1 = 0;
             }
-            myReader.close();
+            else {
+                Scanner myReader = new Scanner(myObj);
+                while (myReader.hasNextLine()) {
+                    String data = myReader.nextLine();
+                    // if id is the same with ID
+                    // flag = 1
+                    String a[] = data.split(",");
+                    if (a[0].equals(id)) {
+                        flag1 = 1;
+                    }
+                }
+                myReader.close();
+            }
         } catch (FileNotFoundException e) {
-            System.out.println("An error occurred while reading NurseList.txt.");
             e.printStackTrace();
         }
 
@@ -46,7 +46,7 @@ public class Nurse extends Staff{
             // ID not exist
             // write file
             try {
-                File file = new File("./Archive/NurseList.txt");
+                File file = new File("./src/Archive/NurseList.txt");
                 FileWriter fr = new FileWriter(file, true);
                 BufferedWriter br = new BufferedWriter(fr);
                 PrintWriter pr = new PrintWriter(br);
@@ -54,31 +54,29 @@ public class Nurse extends Staff{
                 pr.close();
                 br.close();
                 fr.close();
-
-                // Record in Action.txt
-                try {
-                    DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
-                    LocalDateTime now = LocalDateTime.now();
-
-                    File file2 = new File("./Archive/Action.txt");
-                    FileWriter fr2 = new FileWriter(file, true);
-                    BufferedWriter br2 = new BufferedWriter(fr);
-                    PrintWriter pr2 = new PrintWriter(br);
-                    pr2.println(dtf.format(now) + "," + p2 + "," + sid + ", Add nurse.");
-                    pr2.close();
-                    br2.close();
-                    fr2.close();
-                } catch (IOException e) {
-                    System.out.println("An error occurred while writing Action.txt.");
-                    e.printStackTrace();
-                }
+                //System.out.println("Successfully wrote to the file.");
             } catch (IOException e) {
-                System.out.println("An error occurred while writing NurseList.txt.");
+                e.printStackTrace();
+            }
+            // Record in Action.txt
+            try {
+                DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+                LocalDateTime now = LocalDateTime.now();
+
+                File file = new File("./src/Archive/Action.txt");
+                FileWriter fr = new FileWriter(file, true);
+                BufferedWriter br = new BufferedWriter(fr);
+                PrintWriter pr = new PrintWriter(br);
+                pr.println(dtf.format(now) + "," + p2 + "," + sid + ", Add nurse.");
+                pr.close();
+                br.close();
+                fr.close();
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         }
         else{
-            System.out.println("Nurse ID exist.");
+            System.out.println("Doctor ID exist.");
         }
     }
 }

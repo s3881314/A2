@@ -6,11 +6,11 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #171717;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AfterLogIn">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #171717;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AfterLogIn">
    <top>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="Logout" layoutX="490.0" layoutY="258.0" mnemonicParsing="false" onAction="#UserLogOut" text="Log Out" />
+            <Button fx:id="Logout" layoutX="490.0" layoutY="316.0" mnemonicParsing="false" onAction="#UserLogOut" text="Log Out" />
             <Button fx:id="addmanager" layoutX="80.0" layoutY="74.0" mnemonicParsing="false" onAction="#AddManagerBT" prefHeight="31.0" prefWidth="123.0" text="Add Manager" />
             <Button fx:id="addresident" layoutX="79.0" layoutY="190.0" mnemonicParsing="false" onAction="#AddResidentBT" prefHeight="31.0" prefWidth="123.0" text="Add Resident" />
             <Button fx:id="adddoctor" layoutX="80.0" layoutY="115.0" mnemonicParsing="false" onAction="#AddDoctorBT" prefHeight="31.0" prefWidth="123.0" text="Add Doctor" />
@@ -27,13 +27,14 @@
             <Button fx:id="readprescription" layoutX="287.0" layoutY="270.0" mnemonicParsing="false" onAction="#ReadPrescriptionBT" prefHeight="31.0" prefWidth="123.0" text="Read Prescription" />
             <Button fx:id="administeringmedicine" layoutX="276.0" layoutY="313.0" mnemonicParsing="false" onAction="#AdministeringMedicineBT" prefHeight="31.0" prefWidth="148.0" text="Administering Medicine" />
             <Button fx:id="readadministeringmedicine" layoutX="258.0" layoutY="356.0" mnemonicParsing="false" onAction="#ReadAdministeringMedicineBT" prefHeight="31.0" prefWidth="182.0" text="Read Administering Medicine" />
-            <Label layoutX="457.0" layoutY="128.0" prefHeight="45.0" prefWidth="125.0" style="-fx-background-color: white;" />
-            <Label layoutX="457.0" layoutY="192.0" prefHeight="45.0" prefWidth="125.0" style="-fx-background-color: white;" />
+            <Label fx:id="loginp" layoutX="457.0" layoutY="128.0" prefHeight="45.0" prefWidth="125.0" style="-fx-background-color: white;" />
+            <Label fx:id="loginn" layoutX="457.0" layoutY="192.0" prefHeight="45.0" prefWidth="125.0" style="-fx-background-color: white;" />
             <Label layoutX="194.0" layoutY="14.0" prefHeight="58.0" prefWidth="127.0" text="MENU" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font size="43.0" />
                </font>
             </Label>
+            <Button fx:id="showuser" layoutX="470.0" layoutY="266.0" mnemonicParsing="false" onAction="#ShowUser" prefHeight="38.0" prefWidth="98.0" text="Show User" />
          </children>
       </AnchorPane>
    </top>

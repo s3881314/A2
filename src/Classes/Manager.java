@@ -1,3 +1,5 @@
+package Classes;
+
 import java.io.*;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
@@ -13,32 +15,28 @@ public class Manager extends Staff{
         // (ID, NAME, PHONE, PASSWORD)---ManagerList.txt
         super(n, id, p, pw);
         try {
-            File myObj = new File("./Archive/ManagerList.txt");
-            if (myObj.createNewFile()) {
+            File myObj = new File("./src/Archive/ManagerList.txt");
+            if(myObj.createNewFile()) {
                 try {
                     FileWriter fr = new FileWriter(myObj, true);
                     BufferedWriter br = new BufferedWriter(fr);
                     PrintWriter pr = new PrintWriter(br);
-                    pr.println("M1,John,0423456789,M111");
+                    pr.println("0,root,0,root");
                     pr.close();
                     br.close();
                     fr.close();
-                    //System.out.println("Successfully wrote to the file.");
                 } catch (IOException e) {
-                    System.out.println("An error occurred while writing ManagerList.txt.");
                     e.printStackTrace();
                 }
-            } else {
-                //System.out.println("File already exists.");
             }
         } catch (IOException e) {
-            System.out.println("An error occurred while creating ManagerList.txt.");
             e.printStackTrace();
         }
+
         int flag1 = 0;
         // check if the id exist
         try {
-            File myObj = new File("./Archive/ManagerList.txt");
+            File myObj = new File("./src/Archive/ManagerList.txt");
             Scanner myReader = new Scanner(myObj);
             while (myReader.hasNextLine()) {
                 String data = myReader.nextLine();
@@ -53,7 +51,6 @@ public class Manager extends Staff{
             }
             myReader.close();
         } catch (FileNotFoundException e) {
-            System.out.println("An error occurred while reading ManagerList.txt.");
             e.printStackTrace();
         }
 
@@ -61,7 +58,7 @@ public class Manager extends Staff{
             // ID not exist
             // write file
             try {
-                File file = new File("./Archive/ManagerList.txt");
+                File file = new File("./src/Archive/ManagerList.txt");
                 FileWriter fr = new FileWriter(file, true);
                 BufferedWriter br = new BufferedWriter(fr);
                 PrintWriter pr = new PrintWriter(br);
@@ -69,9 +66,7 @@ public class Manager extends Staff{
                 pr.close();
                 br.close();
                 fr.close();
-                //System.out.println("Successfully wrote to the file.");
             } catch (IOException e) {
-                System.out.println("An error occurred while writing ManagerList.txt.");
                 e.printStackTrace();
             }
             // Record in Action.txt
@@ -79,7 +74,7 @@ public class Manager extends Staff{
                 DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
                 LocalDateTime now = LocalDateTime.now();
 
-                File file = new File("./Archive/Action.txt");
+                File file = new File("./src/Archive/Action.txt");
                 FileWriter fr = new FileWriter(file, true);
                 BufferedWriter br = new BufferedWriter(fr);
                 PrintWriter pr = new PrintWriter(br);
@@ -88,7 +83,6 @@ public class Manager extends Staff{
                 br.close();
                 fr.close();
             } catch (IOException e) {
-                System.out.println("An error occurred while writing Action.txt.");
                 e.printStackTrace();
             }
         }

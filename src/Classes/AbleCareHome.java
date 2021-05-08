@@ -1,48 +1,54 @@
 // each action should be noted with day+time and id of staff member
 // exception should be raised if staff is not authorized to do the action or is not rostered in for that day+time
 // 2 wards and 6 rooms, each room has 1 to 4 beds
-
+package Classes;
 import java.io.*;
-import java.time.LocalDate;
 import java.util.*;
 import java.time.format.DateTimeFormatter;
 import java.time.LocalDateTime;
 
 public class AbleCareHome {
     // Manager only
-    void AddManager(String sid, String p2, String n, String id, String p, String pw){
+    public void AddManager(String sid, String p2, String n, String id, String p, String pw){
         Manager m = new Manager(sid,p2, n,id, p, pw);
     }
     // Manager only
-    void AddDoctor(String sid, String p2, String n, String id, String p, String pw){
+    public void AddDoctor(String sid, String p2, String n, String id, String p, String pw){
         Doctor ne = new Doctor(sid, p2, n, id, p, pw);
     }
     // Manager only
-    void AddNurse(String sid, String p2, String n, String id, String p, String pw){
+    public void AddNurse(String sid, String p2, String n, String id, String p, String pw){
         Nurse ne = new Nurse(sid, p2, n, id, p, pw);
     }
 
-    void AddResident(String sid, String p2, String n, String g, String id, LocalDate dob){
+    public void AddResident(String sid, String p2, String n, String g, String id, String dob){
         Resident ne = new Resident(sid, p2, n, g, id, dob);
     }
 
-    void AddNewResidentToBed(String sid, String p2, String ward, String room, String bed, String rid){  // Resident ID, Ward name, Room number
+    public void AddNewResidentToBed(String sid, String p2, String ward, String room, String bed, String rid){  // Resident ID, Ward name, Room number
         try {
             // check if the id exist in Bed.txt
             boolean flag = false;
-            File myObj = new File("./Archive/Bed.txt");
-            Scanner myReader = new Scanner(myObj);
-            while (myReader.hasNextLine()) {
-                String data = myReader.nextLine();
-                String a[] = data.split(",");
-                if (a[3].equals(rid)) {
-                    flag = true;
+            File myObj = new File("./src/Archive/Bed.txt");
+            try {
+                myObj.createNewFile();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            if(!(myObj.length() == 0)) {
+                Scanner myReader = new Scanner(myObj);
+                while (myReader.hasNextLine()) {
+                    String data = myReader.nextLine();
+                    String a[] = data.split(",");
+                    if (a[3].equals(rid)) {
+                        flag = true;
+                    }
                 }
             }
-            if(flag == false){
+
+            if (flag == false) {
                 Bed nbed = new Bed(sid, p2, ward, room, bed, rid);
-            }
-            else{
+            } else {
                 System.out.println("Resident exist. Please use MoveResident function.");
             }
         } catch (IOException e) {
@@ -52,52 +58,60 @@ public class AbleCareHome {
 
     }
     // Manager only
-    void UpdatePassword(String sid, String p2, String p, String id, String np){  // Staff ID, new Password
+    public void UpdatePassword(String sid, String p2, String p, String id, String np){  // Staff ID, new Password
         String n = "";
         if(p.equals("Doctor")) {
             try {
-                File myObj = new File("./Archive/DoctorList.txt");
-                Scanner myReader = new Scanner(myObj);
-                while (myReader.hasNextLine()) {
-                    String data = myReader.nextLine();
-                    // search for the specific doctor id
-                    // modify the password
-                    String a[] = data.split(",");
-                    n = n + a[0] + "," + a[1] + "," + a[2] + ",";
-                    if (a[0].equals(id)) {
-                        n = n + np + "\n";
-                    } else {
-                        n = n + a[3] + "\n";
-                    }
-
-                }
+                File myObj = new File("./src/Archive/DoctorList.txt");
                 try {
-                    FileWriter fw = new FileWriter("./Archive/DoctorList.txt");
-                    fw.write(n); // 將字串寫到檔案裡
-                    fw.close();
-
-                    // Record in Action.txt
-                    try {
-                        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
-                        LocalDateTime now = LocalDateTime.now();
-
-                        File file = new File("./Archive/Action.txt");
-                        FileWriter fr = new FileWriter(file, true);
-                        BufferedWriter br = new BufferedWriter(fr);
-                        PrintWriter pr = new PrintWriter(br);
-                        pr.println(dtf.format(now) + "," + p2 + "," + sid + ", Update doctor password");
-                        pr.close();
-                        br.close();
-                        fr.close();
-                    } catch (IOException e) {
-                        System.out.println("An error occurred while writing Action.txt.");
-                        e.printStackTrace();
-                    }
+                    myObj.createNewFile();
                 } catch (IOException e) {
-                    System.out.println("Updating Doctor password error.");
                     e.printStackTrace();
                 }
-                myReader.close();
+                if(!(myObj.length() == 0)) {
+                    Scanner myReader = new Scanner(myObj);
+                    while (myReader.hasNextLine()) {
+                        String data = myReader.nextLine();
+                        // search for the specific doctor id
+                        // modify the password
+                        String a[] = data.split(",");
+                        n = n + a[0] + "," + a[1] + "," + a[2] + ",";
+                        if (a[0].equals(id)) {
+                            n = n + np + "\n";
+                        } else {
+                            n = n + a[3] + "\n";
+                        }
+                    }
+                    try {
+                        FileWriter fw = new FileWriter("./src/Archive/DoctorList.txt");
+                        fw.write(n); // 將字串寫到檔案裡
+                        fw.close();
+
+                        // Record in Action.txt
+                        try {
+                            DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+                            LocalDateTime now = LocalDateTime.now();
+
+                            File file = new File("./src/Archive/Action.txt");
+                            FileWriter fr = new FileWriter(file, true);
+                            BufferedWriter br = new BufferedWriter(fr);
+                            PrintWriter pr = new PrintWriter(br);
+                            pr.println(dtf.format(now) + "," + p2 + "," + sid + ", Update doctor password");
+                            pr.close();
+                            br.close();
+                            fr.close();
+                        } catch (IOException e) {
+                            System.out.println("An error occurred while writing Action.txt.");
+                            e.printStackTrace();
+                        }
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    myReader.close();
+                }
+                else{
+                    System.out.println("DoctorList is empty.");
+                }
             } catch (FileNotFoundException e) {
                 System.out.println("An error occurred while updating password to DoctorList.txt.");
                 e.printStackTrace();
@@ -105,50 +119,58 @@ public class AbleCareHome {
         }
         else if(p.equals("Nurse")){
             try {
-                File myObj = new File("./Archive/NurseList.txt");
-                Scanner myReader = new Scanner(myObj);
-                while (myReader.hasNextLine()) {
-                    String data = myReader.nextLine();
-                    // search for the specific doctor id
-                    // modify the password
-                    String a[] = data.split(",");
-                    n = n + a[0] + "," + a[1] + "," + a[2] + ",";
-                    if(a[0].equals(id)){
-                        n = n + np + "\n";
-                    }
-                    else{
-                        n = n + a[3] + "\n";
-                    }
-
-                }
+                File myObj = new File("./src/Archive/NurseList.txt");
                 try {
-                    FileWriter fw = new FileWriter("./Archive/NurseList.txt");
-                    fw.write(n); // 將字串寫到檔案裡
-                    fw.close();
-
-                    // Record in Action.txt
-                    try {
-                        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
-                        LocalDateTime now = LocalDateTime.now();
-
-                        File file = new File("./Archive/Action.txt");
-                        FileWriter fr = new FileWriter(file, true);
-                        BufferedWriter br = new BufferedWriter(fr);
-                        PrintWriter pr = new PrintWriter(br);
-                        pr.println(dtf.format(now) + "," + p2 + "," + sid + ", Update nurse password");
-                        pr.close();
-                        br.close();
-                        fr.close();
-                    } catch (IOException e) {
-                        System.out.println("An error occurred while writing Action.txt.");
-                        e.printStackTrace();
-                    }
-                }
-                catch (IOException e) {
-                    System.out.println("Updating Nurse password error.");
+                    myObj.createNewFile();
+                } catch (IOException e) {
                     e.printStackTrace();
                 }
-                myReader.close();
+                if(!(myObj.length() == 0)) {
+                    Scanner myReader = new Scanner(myObj);
+                    while (myReader.hasNextLine()) {
+                        String data = myReader.nextLine();
+                        // search for the specific doctor id
+                        // modify the password
+                        String a[] = data.split(",");
+                        n = n + a[0] + "," + a[1] + "," + a[2] + ",";
+                        if (a[0].equals(id)) {
+                            n = n + np + "\n";
+                        } else {
+                            n = n + a[3] + "\n";
+                        }
+
+                    }
+                    try {
+                        FileWriter fw = new FileWriter("./src/Archive/NurseList.txt");
+                        fw.write(n); // 將字串寫到檔案裡
+                        fw.close();
+
+                        // Record in Action.txt
+                        try {
+                            DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+                            LocalDateTime now = LocalDateTime.now();
+
+                            File file = new File("./src/Archive/Action.txt");
+                            FileWriter fr = new FileWriter(file, true);
+                            BufferedWriter br = new BufferedWriter(fr);
+                            PrintWriter pr = new PrintWriter(br);
+                            pr.println(dtf.format(now) + "," + p2 + "," + sid + ", Update nurse password");
+                            pr.close();
+                            br.close();
+                            fr.close();
+                        } catch (IOException e) {
+                            System.out.println("An error occurred while writing Action.txt.");
+                            e.printStackTrace();
+                        }
+                    } catch (IOException e) {
+                        System.out.println("Updating Nurse password error.");
+                        e.printStackTrace();
+                    }
+                    myReader.close();
+                }
+                else{
+                    System.out.println("NurseList is empty.");
+                }
             } catch (FileNotFoundException e) {
                 System.out.println("An error occurred while updating password to NurseList.txt.");
                 e.printStackTrace();
@@ -156,19 +178,29 @@ public class AbleCareHome {
         }
     }
 
-    void AssignShift(String sid, String p2, String p, String id, String dow, String st, String et) throws ShiftException {
+    public void AssignShift(String sid, String p2, String p, String id, String dow, String st, String et) throws ShiftException {
         // Position, id, give 24hr time
         if(checkComplience(p, dow, st, et)){
             boolean flag = false;
             if(p.equals("Doctor")) {
                 try {
-                    File myObj = new File("./Archive/DoctorShift.txt");
-                    Scanner myReader = new Scanner(myObj);
-                    while (myReader.hasNextLine()) {
-                        String data = myReader.nextLine();
-                        String a[] = data.split(",");
-                        if (a[0].equals(id) && a[1].equals(dow) && a[2].equals(st) && a[3].equals(et)) {
-                            flag = true;
+                    File myObj = new File("./src/Archive/DoctorShift.txt");
+                    try {
+                        myObj.createNewFile();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    if(myObj.length() == 0){
+                        flag = false;
+                    }
+                    else {
+                        Scanner myReader = new Scanner(myObj);
+                        while (myReader.hasNextLine()) {
+                            String data = myReader.nextLine();
+                            String a[] = data.split(",");
+                            if (a[0].equals(id) && a[1].equals(dow) && a[2].equals(st) && a[3].equals(et)) {
+                                flag = true;
+                            }
                         }
                     }
                 } catch (FileNotFoundException e) {
@@ -177,13 +209,23 @@ public class AbleCareHome {
             }
             else if(p.equals("Nurse")){
                 try {
-                    File myObj = new File("./Archive/NurseShift.txt");
-                    Scanner myReader = new Scanner(myObj);
-                    while (myReader.hasNextLine()) {
-                        String data = myReader.nextLine();
-                        String a[] = data.split(",");
-                        if (a[0].equals(id) && a[1].equals(dow) && a[2].equals(st) && a[3].equals(et)) {
-                            flag = true;
+                    File myObj = new File("./src/Archive/NurseShift.txt");
+                    try {
+                        myObj.createNewFile();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    if(myObj.length() == 0){
+                        flag = false;
+                    }
+                    else {
+                        Scanner myReader = new Scanner(myObj);
+                        while (myReader.hasNextLine()) {
+                            String data = myReader.nextLine();
+                            String a[] = data.split(",");
+                            if (a[0].equals(id) && a[1].equals(dow) && a[2].equals(st) && a[3].equals(et)) {
+                                flag = true;
+                            }
                         }
                     }
                 } catch (FileNotFoundException e) {
@@ -203,12 +245,12 @@ public class AbleCareHome {
     }
 
     // error: I can't overwrite the file. The old data is not able to be deleted.
-    void UpdateShift(String sid, String p2, String p, String id, String dow, String st, String et) throws ShiftException {
+    public void UpdateShift(String sid, String p2, String p, String id, String dow, String st, String et) throws ShiftException {
         if(checkComplience(p,dow,st,et)) {
             if (p.equals("Doctor")) {
                 boolean exist = false;
                 try {
-                    File myObj = new File("./Archive/DoctorShift.txt");
+                    File myObj = new File("F:\\Textbook\\MasterOfIT\\COSC1295 Advanced Programming\\Assignment\\Assignment2\\A2_1\\src\\Archive\\DoctorShift.txt");
                     Scanner myReader = new Scanner(myObj);
                     while (myReader.hasNextLine()) {
                         String data = myReader.nextLine();
@@ -224,7 +266,7 @@ public class AbleCareHome {
                 if(exist == false) {
                     String n = "";
                     try {
-                        File myObj = new File("./Archive/DoctorShift.txt");
+                        File myObj = new File("F:\\Textbook\\MasterOfIT\\COSC1295 Advanced Programming\\Assignment\\Assignment2\\A2_1\\src\\Archive\\DoctorShift.txt");
                         Scanner myReader = new Scanner(myObj);
                         while (myReader.hasNextLine()) {
                             String data = myReader.nextLine();
@@ -236,7 +278,7 @@ public class AbleCareHome {
                             }
                         }
                         try {
-                            FileWriter fileWriter =new FileWriter("./Archive/DoctorShift.txt");
+                            FileWriter fileWriter =new FileWriter("F:\\Textbook\\MasterOfIT\\COSC1295 Advanced Programming\\Assignment\\Assignment2\\A2_1\\src\\Archive\\DoctorShift.txt");
                             fileWriter.write(n);
                             fileWriter.close();
 
@@ -246,7 +288,7 @@ public class AbleCareHome {
                                 DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
                                 LocalDateTime now = LocalDateTime.now();
 
-                                File file = new File("./Archive/Action.txt");
+                                File file = new File("F:\\Textbook\\MasterOfIT\\COSC1295 Advanced Programming\\Assignment\\Assignment2\\A2_1\\src\\Archive\\Action.txt");
                                 FileWriter fr = new FileWriter(file, true);
                                 BufferedWriter br = new BufferedWriter(fr);
                                 PrintWriter pr = new PrintWriter(br);
@@ -274,7 +316,7 @@ public class AbleCareHome {
             } else if (p.equals("Nurse")) {
                 boolean exist = false;
                 try {
-                    File myObj = new File("./Archive/NurseShift.txt");
+                    File myObj = new File("F:\\Textbook\\MasterOfIT\\COSC1295 Advanced Programming\\Assignment\\Assignment2\\A2_1\\src\\Archive\\NurseShift.txt");
                     Scanner myReader = new Scanner(myObj);
                     while (myReader.hasNextLine()) {
                         String data = myReader.nextLine();
@@ -289,7 +331,7 @@ public class AbleCareHome {
                 if(exist == false) {
                     try {
                         String n = "";
-                        File myObj = new File("./Archive/NurseShift.txt");
+                        File myObj = new File("F:\\Textbook\\MasterOfIT\\COSC1295 Advanced Programming\\Assignment\\Assignment2\\A2_1\\src\\Archive\\NurseShift.txt");
                         Scanner myReader = new Scanner(myObj);
                         while (myReader.hasNextLine()) {
                             String data = myReader.nextLine();
@@ -301,7 +343,7 @@ public class AbleCareHome {
                             }
                         }
                         try {
-                            FileWriter fw = new FileWriter("./Archive/NurseShift.txt");
+                            FileWriter fw = new FileWriter("F:\\Textbook\\MasterOfIT\\COSC1295 Advanced Programming\\Assignment\\Assignment2\\A2_1\\src\\Archive\\NurseShift.txt");
                             fw.write(n); // 將字串寫到檔案裡
                             fw.close();
                             // Record in Action.txt
@@ -309,7 +351,7 @@ public class AbleCareHome {
                                 DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
                                 LocalDateTime now = LocalDateTime.now();
 
-                                File file = new File("./Archive/Action.txt");
+                                File file = new File("F:\\Textbook\\MasterOfIT\\COSC1295 Advanced Programming\\Assignment\\Assignment2\\A2_1\\src\\Archive\\Action.txt");
                                 FileWriter fr = new FileWriter(file, true);
                                 BufferedWriter br = new BufferedWriter(fr);
                                 PrintWriter pr = new PrintWriter(br);
@@ -340,7 +382,7 @@ public class AbleCareHome {
             throw new ShiftException();
         }
     }
-    boolean checkComplience(String p, String dow, String st, String et) throws ShiftException {
+    public boolean checkComplience(String p, String dow, String st, String et) throws ShiftException {
         int ndow,nst,net;
         ndow = Integer.parseInt(dow);
         nst = Integer.parseInt(st);
@@ -367,12 +409,12 @@ public class AbleCareHome {
     }
 
     // Nurse only
-    void MoveResident(String sid, String p2, String w, String r, String b, String rid){
+    public void MoveResident(String sid, String p2, String w, String r, String b, String rid){
         // Staff position, Staff ID, Resident ID, Ward Name, Room, Bed
         // Check the status of bed to be empty
         boolean empty = true;
         try {
-            File myObj = new File("./Archive/Bed.txt");
+            File myObj = new File("F:\\Textbook\\MasterOfIT\\COSC1295 Advanced Programming\\Assignment\\Assignment2\\A2_1\\src\\Archive\\Bed.txt");
             Scanner myReader = new Scanner(myObj);
             while (myReader.hasNextLine()) {
                 String data = myReader.nextLine();
@@ -390,10 +432,10 @@ public class AbleCareHome {
         if(empty == true){
             // Delete old data
             try{
-                FileWriter myWriter = new FileWriter("./Archive/Bed.txt");
+                FileWriter myWriter = new FileWriter("F:\\Textbook\\MasterOfIT\\COSC1295 Advanced Programming\\Assignment\\Assignment2\\A2_1\\src\\Archive\\Bed.txt");
 
                 String NewFile = "";
-                File myObj = new File("./Archive/Bed.txt");
+                File myObj = new File("F:\\Textbook\\MasterOfIT\\COSC1295 Advanced Programming\\Assignment\\Assignment2\\A2_1\\src\\Archive\\Bed.txt");
                 Scanner myReader = new Scanner(myObj);
                 while (myReader.hasNextLine()) {
                     String data = myReader.nextLine();
@@ -412,7 +454,7 @@ public class AbleCareHome {
 
             // Move resident
             try {
-                File file = new File("./Archive/Bed.txt");
+                File file = new File("F:\\Textbook\\MasterOfIT\\COSC1295 Advanced Programming\\Assignment\\Assignment2\\A2_1\\src\\Archive\\Bed.txt");
                 FileWriter fr = new FileWriter(file, true);
                 BufferedWriter br = new BufferedWriter(fr);
                 PrintWriter pr = new PrintWriter(br);
@@ -430,7 +472,7 @@ public class AbleCareHome {
                 DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
                 LocalDateTime now = LocalDateTime.now();
 
-                File file = new File("./Archive/Action.txt");
+                File file = new File("F:\\Textbook\\MasterOfIT\\COSC1295 Advanced Programming\\Assignment\\Assignment2\\A2_1\\src\\Archive\\Action.txt");
                 FileWriter fr = new FileWriter(file, true);
                 BufferedWriter br = new BufferedWriter(fr);
                 PrintWriter pr = new PrintWriter(br);
@@ -446,14 +488,14 @@ public class AbleCareHome {
         else{ System.out.println("Resident didn't move.");}
     }
 
-    void DischargeResident(String sid, String p2, String rid){
+    public void DischargeResident(String sid, String p2, String rid){
         int flag = 0;
         String buff = "";
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
         LocalDateTime now = LocalDateTime.now();
         // check if the id exist
         try {
-            File myObj = new File("./Archive/ResidentList.txt");
+            File myObj = new File("F:\\Textbook\\MasterOfIT\\COSC1295 Advanced Programming\\Assignment\\Assignment2\\A2_1\\src\\Archive\\ResidentList.txt");
             Scanner myReader = new Scanner(myObj);
             while (myReader.hasNextLine()) {
                 String data = myReader.nextLine();
@@ -470,7 +512,7 @@ public class AbleCareHome {
             if(flag == 1){
                 // Replace old resident data
                 try {
-                    FileWriter myWriter = new FileWriter("./Archive/ResidentList.txt");
+                    FileWriter myWriter = new FileWriter("F:\\Textbook\\MasterOfIT\\COSC1295 Advanced Programming\\Assignment\\Assignment2\\A2_1\\src\\Archive\\ResidentList.txt");
                     myWriter.write(buff);
                     myWriter.close();
                 } catch (IOException e) {
@@ -479,7 +521,7 @@ public class AbleCareHome {
                 }
                 // delete old bed data
                 buff ="";
-                File myObj2 = new File("./Archive/Bed.txt");
+                File myObj2 = new File("F:\\Textbook\\MasterOfIT\\COSC1295 Advanced Programming\\Assignment\\Assignment2\\A2_1\\src\\Archive\\Bed.txt");
                 Scanner myReader2 = new Scanner(myObj2);
                 while (myReader2.hasNextLine()) {
                     String data = myReader2.nextLine();
@@ -489,7 +531,7 @@ public class AbleCareHome {
                     }
                 }
                 try {
-                    FileWriter myWriter = new FileWriter("./Archive/Bed.txt");
+                    FileWriter myWriter = new FileWriter("F:\\Textbook\\MasterOfIT\\COSC1295 Advanced Programming\\Assignment\\Assignment2\\A2_1\\src\\Archive\\Bed.txt");
                     myWriter.write(buff);
                     myWriter.close();
                 } catch (IOException e) {
@@ -499,7 +541,7 @@ public class AbleCareHome {
 
                 // Record action
                 try {
-                    File file = new File("./Archive/Action.txt");
+                    File file = new File("F:\\Textbook\\MasterOfIT\\COSC1295 Advanced Programming\\Assignment\\Assignment2\\A2_1\\src\\Archive\\Action.txt");
                     FileWriter fr = new FileWriter(file, true);
                     BufferedWriter br = new BufferedWriter(fr);
                     PrintWriter pr = new PrintWriter(br);
@@ -522,13 +564,13 @@ public class AbleCareHome {
         }
     }
 
-    String ReadResidentDetails(String sid, String p2, String ward, String room, String bed){
+    public String ReadResidentDetails(String sid, String p2, String ward, String room, String bed){
         String rid ="";
         // get resident id via bed
         try {
             // check if the id exist in Prescription.txt
             boolean flag = false;
-            File myObj = new File("./Archive/Bed.txt");
+            File myObj = new File("F:\\Textbook\\MasterOfIT\\COSC1295 Advanced Programming\\Assignment\\Assignment2\\A2_1\\src\\Archive\\Bed.txt");
             Scanner myReader = new Scanner(myObj);
             while (myReader.hasNextLine()) {
                 String data = myReader.nextLine();
@@ -547,7 +589,7 @@ public class AbleCareHome {
         LocalDateTime now = LocalDateTime.now();
 
         try {
-            File myObj = new File("./Archive/ResidentList.txt");
+            File myObj = new File("F:\\Textbook\\MasterOfIT\\COSC1295 Advanced Programming\\Assignment\\Assignment2\\A2_1\\src\\Archive\\ResidentList.txt");
             Scanner myReader = new Scanner(myObj);
             while (myReader.hasNextLine()) {
                 String data = myReader.nextLine();
@@ -557,11 +599,10 @@ public class AbleCareHome {
                 }
             }
             myReader.close();
-            System.out.println(buff);
 
             // Record action
             try {
-                File file = new File("./Archive/Action.txt");
+                File file = new File("F:\\Textbook\\MasterOfIT\\COSC1295 Advanced Programming\\Assignment\\Assignment2\\A2_1\\src\\Archive\\Action.txt");
                 FileWriter fr = new FileWriter(file, true);
                 BufferedWriter br = new BufferedWriter(fr);
                 PrintWriter pr = new PrintWriter(br);
@@ -582,9 +623,9 @@ public class AbleCareHome {
 
     // Doctor only
     // error: skip the first line while reading Bed.txt
-    void AttachNewPrescription(String sid, String p2, String ward, String room, String bed, String p){
+    public void AttachNewPrescription(String sid, String p2, String ward, String room, String bed, String p){
         try {
-            File myObj = new File("./Archive/Prescription.txt");
+            File myObj = new File("F:\\Textbook\\MasterOfIT\\COSC1295 Advanced Programming\\Assignment\\Assignment2\\A2_1\\src\\Archive\\Prescription.txt");
             myObj.createNewFile();
         } catch (IOException e) {
             System.out.println("An error occurred while creating Prescription.txt.");
@@ -594,7 +635,7 @@ public class AbleCareHome {
         String rid ="";
         // get resident id via bed
         try {
-            File myObj = new File("./Archive/Bed.txt");
+            File myObj = new File("F:\\Textbook\\MasterOfIT\\COSC1295 Advanced Programming\\Assignment\\Assignment2\\A2_1\\src\\Archive\\Bed.txt");
             Scanner myReader = new Scanner(myObj);
             while (myReader.hasNextLine()) {
                 String data = myReader.nextLine();
@@ -616,11 +657,11 @@ public class AbleCareHome {
     }
     // Doctor only
     // error: Only read first line while reading Bed.txt
-    void UpdatePrescription(String sid, String p2, String ward, String room, String bed, String p) {
+    public void UpdatePrescription(String sid, String p2, String ward, String room, String bed, String p) {
         String rid="";
         // get resident id via bed
         try {
-            File myObj = new File("./Archive/Bed.txt");
+            File myObj = new File("F:\\Textbook\\MasterOfIT\\COSC1295 Advanced Programming\\Assignment\\Assignment2\\A2_1\\src\\Archive\\Bed.txt");
             Scanner myReader = new Scanner(myObj);
             while (myReader.hasNextLine()) {
                 String data = myReader.nextLine();
@@ -634,7 +675,7 @@ public class AbleCareHome {
         }
         String n = "";
         try {
-            File myObj = new File("./Archive/Prescription.txt");
+            File myObj = new File("F:\\Textbook\\MasterOfIT\\COSC1295 Advanced Programming\\Assignment\\Assignment2\\A2_1\\src\\Archive\\Prescription.txt");
             Scanner myReader = new Scanner(myObj);
             while (myReader.hasNextLine()) {
                 String data = myReader.nextLine();
@@ -649,7 +690,7 @@ public class AbleCareHome {
             }
             myReader.close();
             try {
-                FileWriter fw = new FileWriter("./Archive/Prescription.txt");
+                FileWriter fw = new FileWriter("F:\\Textbook\\MasterOfIT\\COSC1295 Advanced Programming\\Assignment\\Assignment2\\A2_1\\src\\Archive\\Prescription.txt");
                 fw.write(n); // 將字串寫到檔案裡
                 fw.close();
 
@@ -658,7 +699,7 @@ public class AbleCareHome {
                     DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
                     LocalDateTime now = LocalDateTime.now();
 
-                    File file = new File("./Archive/Action.txt");
+                    File file = new File("F:\\Textbook\\MasterOfIT\\COSC1295 Advanced Programming\\Assignment\\Assignment2\\A2_1\\src\\Archive\\Action.txt");
                     FileWriter fr = new FileWriter(file, true);
                     BufferedWriter br = new BufferedWriter(fr);
                     PrintWriter pr = new PrintWriter(br);
@@ -680,13 +721,13 @@ public class AbleCareHome {
         }
     }
     // Medical staff only
-    String ReadPrescription(String sid, String p2, String ward, String room, String bed){
+    public String ReadPrescription(String sid, String p2, String ward, String room, String bed){
         String rid="";
         // get resident id via bed
         try {
             // check if the id exist in Prescription.txt
             boolean flag = false;
-            File myObj = new File("./Archive/Bed.txt");
+            File myObj = new File("F:\\Textbook\\MasterOfIT\\COSC1295 Advanced Programming\\Assignment\\Assignment2\\A2_1\\src\\Archive\\Bed.txt");
             Scanner myReader = new Scanner(myObj);
             while (myReader.hasNextLine()) {
                 String data = myReader.nextLine();
@@ -696,7 +737,6 @@ public class AbleCareHome {
                 }
             }
         } catch (IOException e) {
-            System.out.println("An error occurred while reading Bed.txt in ReadPrescription.");
             e.printStackTrace();
         }
 
@@ -705,7 +745,7 @@ public class AbleCareHome {
         LocalDateTime now = LocalDateTime.now();
 
         try {
-            File myObj = new File("./Archive/Prescription.txt");
+            File myObj = new File("F:\\Textbook\\MasterOfIT\\COSC1295 Advanced Programming\\Assignment\\Assignment2\\A2_1\\src\\Archive\\Prescription.txt");
             Scanner myReader = new Scanner(myObj);
             while (myReader.hasNextLine()) {
                 String data = myReader.nextLine();
@@ -719,7 +759,7 @@ public class AbleCareHome {
 
             // Record action
             try {
-                File file = new File("./Archive/Action.txt");
+                File file = new File("F:\\Textbook\\MasterOfIT\\COSC1295 Advanced Programming\\Assignment\\Assignment2\\A2_1\\src\\Archive\\Action.txt");
                 FileWriter fr = new FileWriter(file, true);
                 BufferedWriter br = new BufferedWriter(fr);
                 PrintWriter pr = new PrintWriter(br);
@@ -739,11 +779,11 @@ public class AbleCareHome {
     }
 
     // Nurse only
-    void AdministeringMedicine(String sid, String p2, String ward, String room, String bed, String m){
+    public void AdministeringMedicine(String sid, String p2, String ward, String room, String bed, String m){
         String rid="";
         // get resident id via bed
         try {
-            File myObj = new File("./Archive/Bed.txt");
+            File myObj = new File("F:\\Textbook\\MasterOfIT\\COSC1295 Advanced Programming\\Assignment\\Assignment2\\A2_1\\src\\Archive\\Bed.txt");
             Scanner myReader = new Scanner(myObj);
             while (myReader.hasNextLine()) {
                 String data = myReader.nextLine();
@@ -764,11 +804,11 @@ public class AbleCareHome {
             System.out.println("It has some medicines which is not listed in prescription.");
         }
     }
-    boolean checkMedicineWithPrescription(String rid, String m){
+    public boolean checkMedicineWithPrescription(String rid, String m){
         try {
             String b[] = m.split(",");
 
-            File myObj = new File("./Archive/Prescription.txt");
+            File myObj = new File("F:\\Textbook\\MasterOfIT\\COSC1295 Advanced Programming\\Assignment\\Assignment2\\A2_1\\src\\Archive\\Prescription.txt");
             Scanner myReader = new Scanner(myObj);
             while (myReader.hasNextLine()) {
                 boolean flag = false;
@@ -795,23 +835,32 @@ public class AbleCareHome {
         return true;
     }
     // Medical staff only
-    String ReadAdministeringMedicine(String sid, String p2, String ward, String room, String bed){
+    public String ReadAdministeringMedicine(String sid, String p2, String ward, String room, String bed){
         String rid="";
         // get resident id via bed
         try {
             // check if the id exist in Prescription.txt
+            File myObj = new File("./src/Archive/Bed.txt");
+            try {
+                myObj.createNewFile();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
             boolean flag = false;
-            File myObj = new File("./Archive/Bed.txt");
-            Scanner myReader = new Scanner(myObj);
-            while (myReader.hasNextLine()) {
-                String data = myReader.nextLine();
-                String a[] = data.split(",");
-                if (a[0].equals(ward) && a[1].equals(room) && a[2].equals(bed)) {
-                    rid = a[3];
+            if(myObj.length() == 0){
+                flag = false;
+            }
+            else {
+                Scanner myReader = new Scanner(myObj);
+                while (myReader.hasNextLine()) {
+                    String data = myReader.nextLine();
+                    String a[] = data.split(",");
+                    if (a[0].equals(ward) && a[1].equals(room) && a[2].equals(bed)) {
+                        rid = a[3];
+                    }
                 }
             }
         } catch (IOException e) {
-            System.out.println("An error occurred while reading Bed.txt in ReadAdministeringMedicine.");
             e.printStackTrace();
         }
 
@@ -820,37 +869,41 @@ public class AbleCareHome {
         LocalDateTime now = LocalDateTime.now();
 
         try {
-            File myObj = new File("./Archive/AdministeringMedicine.txt");
-            Scanner myReader = new Scanner(myObj);
-            while (myReader.hasNextLine()) {
-                String data = myReader.nextLine();
-                String a[] = data.split(",");
-                if(a[0].equals(rid)) {
-                    buff = buff + data + "\n";
-                }
-            }
-            myReader.close();
-            System.out.println(buff);
-
-            // Record action
+            File myObj = new File("./src/Archive/AdministeringMedicine.txt");
             try {
-                File file = new File("./Archive/Action.txt");
-                FileWriter fr = new FileWriter(file, true);
-                BufferedWriter br = new BufferedWriter(fr);
-                PrintWriter pr = new PrintWriter(br);
-                pr.println(dtf.format(now) + "," + p2 + "," + sid + ", Check medicine details.");
-                pr.close();
-                br.close();
-                fr.close();
+                myObj.createNewFile();
             } catch (IOException e) {
-                System.out.println("An error occurred while writing Action.txt in ReadAdministeringMedicine.");
                 e.printStackTrace();
             }
+            if(!(myObj.length() == 0)) {
+                Scanner myReader = new Scanner(myObj);
+                while (myReader.hasNextLine()) {
+                    String data = myReader.nextLine();
+                    String a[] = data.split(",");
+                    if (a[0].equals(rid)) {
+                        buff = buff + data + "\n";
+                    }
+                }
+                myReader.close();
+                System.out.println(buff);
+
+                // Record action
+                try {
+                    File file = new File("./src/Archive/AdministeringMedicine.txt");
+                    FileWriter fr = new FileWriter(file, true);
+                    BufferedWriter br = new BufferedWriter(fr);
+                    PrintWriter pr = new PrintWriter(br);
+                    pr.println(dtf.format(now) + "," + p2 + "," + sid + ", Check medicine details.");
+                    pr.close();
+                    br.close();
+                    fr.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
         } catch (FileNotFoundException e) {
-            System.out.println("An error occurred while reading ResidentList.txt.");
-            e.printStackTrace();
+           e.printStackTrace();
         }
         return buff;
-
     }
 }

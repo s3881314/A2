@@ -1,3 +1,5 @@
+package Classes;
+
 import java.io.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -17,33 +19,33 @@ public class Shift{
 
         if(p.equals("Doctor")) {
             try {
-                File myObj = new File("./Archive/DoctorShift.txt");
+                File myObj = new File("./src/Archive/DoctorShift.txt");
                 myObj.createNewFile();
             } catch (IOException e) {
-                System.out.println("An error occurred while creating DoctorShift.txt.");
                 e.printStackTrace();
             }
 
             // Check the exist shift
             boolean flag = false;
             try {
-                File myObj = new File("./Archive/DoctorShift.txt");
-                Scanner myReader = new Scanner(myObj);
-                while (myReader.hasNextLine()) {
-                    String data = myReader.nextLine();
-                    String a[] = data.split(",");
-                    if(a[0].equals(id) && a[1].equals(dow) && a[2].equals(st) && a[3].equals(et)){
-                        flag = true;
+                File myObj = new File("./src/Archive/DoctorShift.txt");
+                if(!(myObj.length() == 0)) {
+                    Scanner myReader = new Scanner(myObj);
+                    while (myReader.hasNextLine()) {
+                        String data = myReader.nextLine();
+                        String a[] = data.split(",");
+                        if (a[0].equals(id) && a[1].equals(dow) && a[2].equals(st) && a[3].equals(et)) {
+                            flag = true;
+                        }
                     }
+                    myReader.close();
                 }
-                myReader.close();
             } catch (FileNotFoundException e) {
-                System.out.println("An error occurred while reading DoctorShift.txt.");
                 e.printStackTrace();
             }
             if(flag == false) {
                 try {
-                    File file = new File("./Archive/DoctorShift.txt");
+                    File file = new File("./src/Archive/DoctorShift.txt");
                     FileWriter fr = new FileWriter(file, true);
                     BufferedWriter br = new BufferedWriter(fr);
                     PrintWriter pr = new PrintWriter(br);
@@ -57,7 +59,7 @@ public class Shift{
                         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
                         LocalDateTime now = LocalDateTime.now();
 
-                        File file2 = new File("./Archive/Action.txt");
+                        File file2 = new File("./src/Archive/Action.txt");
                         FileWriter fr2 = new FileWriter(file, true);
                         BufferedWriter br2 = new BufferedWriter(fr);
                         PrintWriter pr2 = new PrintWriter(br);
@@ -80,33 +82,33 @@ public class Shift{
         }
         else if(p.equals("Nurse")) {
             try {
-                File myObj = new File("./Archive/NurseShift.txt");
+                File myObj = new File("./src/Archive/NurseShift.txt");
                 myObj.createNewFile();
             } catch (IOException e) {
-                System.out.println("An error occurred while creating NurseShift.txt.");
                 e.printStackTrace();
             }
 
             // Check the exist shift
             boolean flag = false;
             try {
-                File myObj = new File("./Archive/NurseShift.txt");
-                Scanner myReader = new Scanner(myObj);
-                while (myReader.hasNextLine()) {
-                    String data = myReader.nextLine();
-                    String a[] = data.split(",");
-                    if (a[0].equals(id) && a[1].equals(dow) && a[2].equals(st) && a[3].equals(et)) {
-                        flag = true;
+                File myObj = new File("./src/Archive/NurseShift.txt");
+                if(!(myObj.length() == 0)) {
+                    Scanner myReader = new Scanner(myObj);
+                    while (myReader.hasNextLine()) {
+                        String data = myReader.nextLine();
+                        String a[] = data.split(",");
+                        if (a[0].equals(id) && a[1].equals(dow) && a[2].equals(st) && a[3].equals(et)) {
+                            flag = true;
+                        }
                     }
+                    myReader.close();
                 }
-                myReader.close();
             } catch (FileNotFoundException e) {
-                System.out.println("An error occurred while reading NurseShift.txt.");
-                e.printStackTrace();
+               e.printStackTrace();
             }
             if (flag == false) {
                 try {
-                    File file = new File("./Archive/NurseShift.txt");
+                    File file = new File("./src/Archive/NurseShift.txt");
                     FileWriter fr = new FileWriter(file, true);
                     BufferedWriter br = new BufferedWriter(fr);
                     PrintWriter pr = new PrintWriter(br);
@@ -120,7 +122,7 @@ public class Shift{
                         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
                         LocalDateTime now = LocalDateTime.now();
 
-                        File file2 = new File("./Archive/Action.txt");
+                        File file2 = new File("./src/Archive/Action.txt");
                         FileWriter fr2 = new FileWriter(file, true);
                         BufferedWriter br2 = new BufferedWriter(fr);
                         PrintWriter pr2 = new PrintWriter(br);
@@ -129,11 +131,9 @@ public class Shift{
                         br2.close();
                         fr2.close();
                     } catch (IOException e) {
-                        System.out.println("An error occurred while writing Action.txt.");
                         e.printStackTrace();
                     }
                 } catch (IOException e) {
-                    System.out.println("An error occurred while writing NurseShift.txt.");
                     e.printStackTrace();
                 }
             } else {

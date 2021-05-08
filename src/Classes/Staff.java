@@ -1,3 +1,5 @@
+package Classes;
+
 public class Staff {
     private String Name;
     private String ID;
