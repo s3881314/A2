@@ -29,6 +29,12 @@ public class NewAdministeringMedicine {
     private Button newadministeringmedicineconfirm;
 
     @FXML
+    private Button doses;
+
+    @FXML
+    private Button times;
+
+    @FXML
     void NewAdministeringMedicineConfirm(javafx.event.ActionEvent actionEvent) throws IOException {
         try {// Read username and position
             File myObj = new File("./src/Archive/LogInData.txt");
@@ -41,7 +47,7 @@ public class NewAdministeringMedicine {
                 sp = s[2];
             }
             AbleCareHome a = new AbleCareHome();
-            a.AdministeringMedicine(sid,sp,newadministeringmedicineward.getText(),newadministeringmedicineroom.getText(),newadministeringmedicinebed.getText(),newadministeringmedicinemedicine.getText());
+            a.AdministeringMedicine(sid,sp,newadministeringmedicineward.getText(),newadministeringmedicineroom.getText(),newadministeringmedicinebed.getText(),newadministeringmedicinemedicine.getText(), doses.getText(), times.getText());
             MenuForAbleCareHome m = new MenuForAbleCareHome();
             m.ChangeScene("AfterLogIn.fxml");
         } catch (FileNotFoundException e) {

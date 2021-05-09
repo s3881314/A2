@@ -10,7 +10,7 @@ public class Medicine {
     private int doseAmt;
     private String doseUnit;
 
-    Medicine(String sid, String p2, String rid, String m) {
+    Medicine(String sid, String p2, String rid, String m, String  d, String t) {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
         LocalDateTime now = LocalDateTime.now();
         // Create file
@@ -82,7 +82,7 @@ public class Medicine {
                         FileWriter fr = new FileWriter(file, true);
                         BufferedWriter br = new BufferedWriter(fr);
                         PrintWriter pr = new PrintWriter(br);
-                        pr.println(rid + "," + m + ",");
+                        pr.println(rid + "," + m + " " + d + " " + t + ",");
                         pr.close();
                         br.close();
                         fr.close();

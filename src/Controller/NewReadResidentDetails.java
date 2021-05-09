@@ -30,7 +30,7 @@ public class NewReadResidentDetails {
     void ReadResidentDetailsConfirm(javafx.event.ActionEvent actionEvent) {
         String b="";
         try {// Read username and position
-            File myObj = new File("./src/Archive/LogInData.txt");
+            File myObj = new File("./src/Archive/LogIn.txt");
             Scanner myReader = new Scanner(myObj);
             String sid = "", sp = "";
             while (myReader.hasNextLine()) {

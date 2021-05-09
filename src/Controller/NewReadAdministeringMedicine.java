@@ -27,7 +27,7 @@ public class NewReadAdministeringMedicine {
     void ReadAdministeringMedicineConfirm(javafx.event.ActionEvent actionEvent) {
         String b="";
         try {// Read username and position
-            File myObj = new File("./src/Archive/LogInData.txt");
+            File myObj = new File("./src/Archive/LogIn.txt");
             Scanner myReader = new Scanner(myObj);
             String sid = "", sp = "";
             while (myReader.hasNextLine()) {
@@ -40,7 +40,7 @@ public class NewReadAdministeringMedicine {
             AbleCareHome a = new AbleCareHome();
             b = a.ReadAdministeringMedicine(sid, sp, readadministeringmedicineward.getText(), readadministeringmedicineroom.getText(), readadministeringmedicinebed.getText());
             try {
-                FileWriter fileWriter =new FileWriter("./Archive/DisplayAdministeringMedicine.txt");
+                FileWriter fileWriter =new FileWriter("./src/Archive/DisplayAdministeringMedicine.txt");
                 fileWriter.write(b);
                 fileWriter.close();
             } catch (FileNotFoundException e) {

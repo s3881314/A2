@@ -1,11 +1,74 @@
-07/05/2021 10:01:19,Manager,M1, Add new manager.
-07/05/2021 10:01:19,Manager,M1, Add new resident.
-07/05/2021 10:01:19,Manager,M1, Add nurse.
-07/05/2021 10:01:19,Manager,M1, Add doctor.
-07/05/2021 10:01:19,Manager,M1, Add new resident to bed.
-07/05/2021 10:01:19,Manager,M1, Add new resident to bed.
-07/05/2021 10:01:19,Manager,M1, Add new resident to bed.
-07/05/2021 10:01:19,Manager,M1, Add new resident to bed.
-07/05/2021 10:01:19,Manager,M1, Add new resident to bed.
-08/05/2021 23:41:25,Manager,M1, Administering medicine.
-08/05/2021 23:51:12,Doctor,123, Log in system.
+09/05/2021 09:29:09,root,0, Add new manager.
+09/05/2021 09:29:09,root,0, Add new manager.
+09/05/2021 09:29:09,root,0, Add new manager.
+09/05/2021 09:29:09,root,0, Add new manager.
+09/05/2021 09:29:09,root,0, Add new manager.
+09/05/2021 09:29:09,Manager,1, Add new resident.
+09/05/2021 09:29:09,Manager,2, Add new resident.
+09/05/2021 09:29:09,Manager,3, Add new resident.
+09/05/2021 09:29:09,Manager,4, Add new resident.
+09/05/2021 09:29:09,Manager,5, Add new resident.
+09/05/2021 09:29:09,Manager,1, Add nurse.
+09/05/2021 09:29:09,Manager,2, Add nurse.
+09/05/2021 09:29:09,Manager,3, Add nurse.
+09/05/2021 09:29:09,Manager,4, Add nurse.
+09/05/2021 09:29:09,Manager,5, Add nurse.
+09/05/2021 09:29:09,Manager,1, Add doctor.
+09/05/2021 09:29:09,Manager,2, Add doctor.
+09/05/2021 09:29:09,Manager,3, Add doctor.
+09/05/2021 09:29:09,Manager,4, Add doctor.
+09/05/2021 09:29:09,Manager,5, Add doctor.
+09/05/2021 09:29:09,Manager,1, Add new resident to bed.
+09/05/2021 09:29:09,Manager,2, Add new resident to bed.
+09/05/2021 09:29:09,Manager,3, Add new resident to bed.
+09/05/2021 09:29:09,Manager,4, Add new resident to bed.
+09/05/2021 09:29:09,Manager,5, Add new resident to bed.
+09/05/2021 09:29:41,Nurse,1, Administering medicine.
+09/05/2021 09:29:41,Nurse,1, Administering medicine.
+09/05/2021 09:31:38,Doctor,1, Check prescription details.
+09/05/2021 09:31:38,Manager,1, Update doctor shift
+09/05/2021 09:31:38,Nurse,1, Move resident to other bed.
+09/05/2021 09:31:38,Doctor,1, Update resident's prescription
+09/05/2021 09:31:38,Manager,1, Update doctor password
+09/05/2021 09:31:38,Manager,1, Update nurse password
+09/05/2021 09:32:05,Manager,1, Discharge resident.
+09/05/2021 09:32:05,Doctor,1, Check prescription details.
+09/05/2021 09:32:05,Nurse,1, Move resident to other bed.
+09/05/2021 09:32:05,Doctor,1, Update resident's prescription
+09/05/2021 09:32:05,Manager,1, Update doctor password
+09/05/2021 09:32:05,Manager,1, Update nurse password
+09/05/2021 09:34:24,Doctor,3, Log in system.
+09/05/2021 09:34:39,Manager,1, Log in system.
+09/05/2021 09:34:54,Manager,1, Add new manager.
+09/05/2021 09:37:20,Manager,3, Log in system.
+09/05/2021 09:37:45,Manager,3, Log in system.
+09/05/2021 09:38:35,Manager,3, Log in system.
+09/05/2021 09:39:22,Manager,3, Log in system.
+09/05/2021 09:39:36,Manager,3, Log in system.
+09/05/2021 09:42:30,Manager,3, Log in system.
+09/05/2021 09:42:36,Manager,3, Add nurse.
+09/05/2021 09:42:40,Manager,3, Add doctor.
+09/05/2021 09:44:24,Manager,root, Log in system.
+09/05/2021 09:44:30,Manager,root, Add new resident.
+09/05/2021 09:45:25,Manager,root, Log in system.
+09/05/2021 09:45:44,Manager,root, Update doctor password
+09/05/2021 09:46:37,Manager,root, Log in system.
+09/05/2021 09:48:29,Manager,root, Log in system.
+09/05/2021 09:49:12,Manager,root, Log in system.
+09/05/2021 09:49:20,Manager,root, Update doctor shift
+09/05/2021 10:00:57,Manager,root, Log in system.
+09/05/2021 10:01:01,Manager,root, Discharge resident.
+09/05/2021 10:02:04,Doctor,3, Log in system.
+09/05/2021 10:02:46,Doctor,3, Log in system.
+09/05/2021 10:02:54,Doctor,3, Check resident details.
+09/05/2021 10:03:16,Doctor,3, Log in system.
+09/05/2021 10:03:43,Doctor,3, Log in system.
+09/05/2021 10:04:58,Doctor,3, Log in system.
+09/05/2021 10:05:11,Doctor,3, Update resident's prescription
+09/05/2021 10:05:43,Doctor,3, Log in system.
+09/05/2021 10:05:52,Doctor,3, Check prescription details.
+09/05/2021 10:06:32,Doctor,3, Log in system.
+09/05/2021 10:09:31,Doctor,3, Log in system.
+09/05/2021 10:15:58,Doctor,3, Log in system.
+09/05/2021 10:16:46,Doctor,3, Log in system.
+09/05/2021 10:17:08,Doctor,3, Log in system.

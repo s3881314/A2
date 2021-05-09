@@ -1,2 +1,3 @@
-R2,Medicine1,Medicine2,Medicine3
-R3,Medicine2
+2,Medicine1,Medicine2,Medicine3
+3,Medicine2
+1,cvb

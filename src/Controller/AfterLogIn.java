@@ -1,5 +1,6 @@
 package Controller;
 
+import Classes.ShiftException;
 import GUI.MenuForAbleCareHome;
 import javafx.fxml.FXML;
 import javafx.geometry.Pos;
@@ -80,6 +81,9 @@ public class AfterLogIn {
     private Button readadministeringmedicine;
 
     @FXML
+    private Button showwards;
+
+    @FXML
     void ShowUser(javafx.event.ActionEvent actionEvent) throws IOException {
         ReadUsernamePassword();
         loginp.setText(Position);
@@ -87,113 +91,129 @@ public class AfterLogIn {
     }
 
     @FXML
-    void AddDoctorBT(javafx.event.ActionEvent actionEvent) throws IOException {
+    void AddDoctorBT(javafx.event.ActionEvent actionEvent) throws IOException, AuthorizationException {
         ReadUsernamePassword();
+        CheckAuthorization("AddDoctorBT");
         MenuForAbleCareHome m = new MenuForAbleCareHome();
         m.ChangeScene("NewDoctor.fxml");
     }
 
     @FXML
-    void AddManagerBT(javafx.event.ActionEvent actionEvent) throws IOException {
+    void AddManagerBT(javafx.event.ActionEvent actionEvent) throws IOException, AuthorizationException {
         ReadUsernamePassword();
+        CheckAuthorization("AddManagerBT");
         MenuForAbleCareHome m = new MenuForAbleCareHome();
         m.ChangeScene("NewManager.fxml");
     }
 
     @FXML
-    void AddNewResidentToBedBT(javafx.event.ActionEvent actionEvent) throws IOException {
+    void AddNewResidentToBedBT(javafx.event.ActionEvent actionEvent) throws IOException, AuthorizationException {
         ReadUsernamePassword();
+        CheckAuthorization("AddNewResidentToBedBT");
         MenuForAbleCareHome m = new MenuForAbleCareHome();
         m.ChangeScene("NewResidentToBed.fxml");
     }
 
     @FXML
-    void AddNurseBT(javafx.event.ActionEvent actionEvent) throws IOException {
+    void AddNurseBT(javafx.event.ActionEvent actionEvent) throws IOException, AuthorizationException {
         ReadUsernamePassword();
+        CheckAuthorization("AddNurseBT");
         MenuForAbleCareHome m = new MenuForAbleCareHome();
         m.ChangeScene("NewNurse.fxml");
     }
 
     @FXML
-    void AddResidentBT(javafx.event.ActionEvent actionEvent) throws IOException {
+    void AddResidentBT(javafx.event.ActionEvent actionEvent) throws IOException, AuthorizationException {
         ReadUsernamePassword();
+        CheckAuthorization("AddResidentBT");
         MenuForAbleCareHome m = new MenuForAbleCareHome();
         m.ChangeScene("NewResident.fxml");
     }
 
     @FXML
-    void AdministeringMedicineBT(javafx.event.ActionEvent actionEvent) throws IOException {
+    void AdministeringMedicineBT(javafx.event.ActionEvent actionEvent) throws IOException, AuthorizationException {
         ReadUsernamePassword();
+        CheckAuthorization("AdministeringMedicineBT");
         MenuForAbleCareHome m = new MenuForAbleCareHome();
         m.ChangeScene("NewAdministeringMedicine.fxml");
     }
 
     @FXML
-    void AssignShiftBT(javafx.event.ActionEvent actionEvent) throws IOException {
+    void AssignShiftBT(javafx.event.ActionEvent actionEvent) throws IOException, AuthorizationException {
         ReadUsernamePassword();
+        CheckAuthorization("AssignShiftBT");
         MenuForAbleCareHome m = new MenuForAbleCareHome();
         m.ChangeScene("NewAssignShift.fxml");
     }
 
     @FXML
-    void AttachNewPrescriptionBT(javafx.event.ActionEvent actionEvent) throws IOException {
+    void AttachNewPrescriptionBT(javafx.event.ActionEvent actionEvent) throws IOException, AuthorizationException {
         ReadUsernamePassword();
+        CheckAuthorization("AttachNewPrescriptionBT");
         MenuForAbleCareHome m = new MenuForAbleCareHome();
         m.ChangeScene("NewAttachNewPrescription.fxml");
     }
 
     @FXML
-    void DischargeResidentBT(javafx.event.ActionEvent actionEvent) throws IOException {
+    void DischargeResidentBT(javafx.event.ActionEvent actionEvent) throws IOException, AuthorizationException {
         ReadUsernamePassword();
+        CheckAuthorization("DischargeResidentBT");
         MenuForAbleCareHome m = new MenuForAbleCareHome();
         m.ChangeScene("NewDischargeResident.fxml");
     }
 
     @FXML
-    void MoveResidentBT(javafx.event.ActionEvent actionEvent) throws IOException {
+    void MoveResidentBT(javafx.event.ActionEvent actionEvent) throws IOException, AuthorizationException {
         ReadUsernamePassword();
+        CheckAuthorization("MoveResidentBT");
         MenuForAbleCareHome m = new MenuForAbleCareHome();
         m.ChangeScene("NewMoveResident.fxml");
     }
 
     @FXML
-    void ReadAdministeringMedicineBT(javafx.event.ActionEvent actionEvent) throws IOException {
+    void ReadAdministeringMedicineBT(javafx.event.ActionEvent actionEvent) throws IOException, AuthorizationException {
         ReadUsernamePassword();
+        CheckAuthorization("ReadAdministeringMedicineBT");
         MenuForAbleCareHome m = new MenuForAbleCareHome();
         m.ChangeScene("NewReadAdministeringMedicine.fxml");
     }
 
     @FXML
-    void ReadPrescriptionBT(javafx.event.ActionEvent actionEvent) throws IOException {
+    void ReadPrescriptionBT(javafx.event.ActionEvent actionEvent) throws IOException, AuthorizationException {
         ReadUsernamePassword();
+        CheckAuthorization("ReadPrescriptionBT");
         MenuForAbleCareHome m = new MenuForAbleCareHome();
         m.ChangeScene("NewReadPrescription.fxml");
     }
 
     @FXML
-    void ReadResidentDetailsBT(javafx.event.ActionEvent actionEvent) throws IOException {
+    void ReadResidentDetailsBT(javafx.event.ActionEvent actionEvent) throws IOException, AuthorizationException {
         ReadUsernamePassword();
+        CheckAuthorization("ReadResidentDetailsBT");
         MenuForAbleCareHome m = new MenuForAbleCareHome();
         m.ChangeScene("NewReadResidentDetails.fxml");
     }
 
     @FXML
-    void UpdatePasswordBT(javafx.event.ActionEvent actionEvent) throws IOException {
+    void UpdatePasswordBT(javafx.event.ActionEvent actionEvent) throws IOException, AuthorizationException {
         ReadUsernamePassword();
+        CheckAuthorization("UpdatePasswordBT");
         MenuForAbleCareHome m = new MenuForAbleCareHome();
         m.ChangeScene("NewUpdatePassword.fxml");
     }
 
     @FXML
-    void UpdatePrescriptionBT(javafx.event.ActionEvent actionEvent) throws IOException {
+    void UpdatePrescriptionBT(javafx.event.ActionEvent actionEvent) throws IOException, AuthorizationException {
         ReadUsernamePassword();
+        CheckAuthorization("UpdatePrescriptionBT");
         MenuForAbleCareHome m = new MenuForAbleCareHome();
         m.ChangeScene("NewUpdatePrescription.fxml");
     }
 
     @FXML
-    void UpdateShiftBT(javafx.event.ActionEvent actionEvent) throws IOException {
+    void UpdateShiftBT(javafx.event.ActionEvent actionEvent) throws IOException, AuthorizationException {
         ReadUsernamePassword();
+        CheckAuthorization("UpdateShiftBT");
         MenuForAbleCareHome m = new MenuForAbleCareHome();
         m.ChangeScene("NewUpdateShift.fxml");
     }
@@ -204,6 +224,15 @@ public class AfterLogIn {
         m.ChangeScene("GUI.fxml");
     }
 
+    @FXML
+    void ShowWards(javafx.event.ActionEvent actionEvent) throws IOException, AuthorizationException {
+        // need to be done
+        ReadUsernamePassword();
+        MenuForAbleCareHome m = new MenuForAbleCareHome();
+        m.ChangeScene("");
+    }
+
+
     public void ReadUsernamePassword() throws FileNotFoundException {
         File myObj = new File("./src/Archive/LogIn.txt");
         Scanner myReader = new Scanner(myObj);
@@ -213,6 +242,32 @@ public class AfterLogIn {
             this.UName=a[0];
             this.PWord=a[1];
             this.Position=a[2];
+        }
+    }
+
+    public void CheckAuthorization(String action) throws AuthorizationException, FileNotFoundException {
+        try {
+            File myObj = new File("./src/Archive/AuthorizationList.txt");
+            myObj.createNewFile();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        try{
+            File myObj = new File("./src/Archive/AuthorizationList.txt");
+            Scanner myReader = new Scanner(myObj);
+            boolean flag = false;
+            while (myReader.hasNextLine()) {
+                String data = myReader.nextLine();
+                String a[] = data.split(",");
+                if(a[0].equals(this.Position)){
+                    for(String s: a){
+                        if(s.equals(action)){ flag = true; }
+                    }
+                }
+            }
+            if(flag == false){ throw new AuthorizationException(); }
+        } catch (IOException e){
+            e.printStackTrace();
         }
     }
 }

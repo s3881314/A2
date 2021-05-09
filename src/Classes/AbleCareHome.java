@@ -779,11 +779,11 @@ public class AbleCareHome {
     }
 
     // Nurse only
-    public void AdministeringMedicine(String sid, String p2, String ward, String room, String bed, String m){
+    public void AdministeringMedicine(String sid, String p2, String ward, String room, String bed, String m, String d, String t){
         String rid="";
         // get resident id via bed
         try {
-            File myObj = new File("F:\\Textbook\\MasterOfIT\\COSC1295 Advanced Programming\\Assignment\\Assignment2\\A2_1\\src\\Archive\\Bed.txt");
+            File myObj = new File("./src/Archive/Bed.txt");
             Scanner myReader = new Scanner(myObj);
             while (myReader.hasNextLine()) {
                 String data = myReader.nextLine();
@@ -798,7 +798,7 @@ public class AbleCareHome {
         }
 
         if(checkMedicineWithPrescription(rid, m)) {
-            Medicine nm = new Medicine(sid, p2, rid, m);
+            Medicine nm = new Medicine(sid, p2, rid, m, d, t);
         }
         else{
             System.out.println("It has some medicines which is not listed in prescription.");
@@ -869,7 +869,7 @@ public class AbleCareHome {
         LocalDateTime now = LocalDateTime.now();
 
         try {
-            File myObj = new File("./src/Archive/AdministeringMedicine.txt");
+            File myObj = new File("./src/Archive/DisplayAdministeringMedicine.txt");
             try {
                 myObj.createNewFile();
             } catch (IOException e) {
@@ -889,7 +889,7 @@ public class AbleCareHome {
 
                 // Record action
                 try {
-                    File file = new File("./src/Archive/AdministeringMedicine.txt");
+                    File file = new File("./src/Archive/Action.txt");
                     FileWriter fr = new FileWriter(file, true);
                     BufferedWriter br = new BufferedWriter(fr);
                     PrintWriter pr = new PrintWriter(br);

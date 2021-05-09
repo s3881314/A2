@@ -21,7 +21,7 @@ public class NewDischargeResident {
     @FXML
     void DischargeResidentConfirm(javafx.event.ActionEvent actionEvent) {
         try {// Read username and position
-            File myObj = new File("./src/Archive/LogInData.txt");
+            File myObj = new File("./src/Archive/LogIn.txt");
             Scanner myReader = new Scanner(myObj);
             String sid = "", sp = "";
             while (myReader.hasNextLine()) {

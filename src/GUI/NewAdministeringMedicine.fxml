@@ -7,7 +7,6 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.NewAdministeringMedicine">
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #171717;" BorderPane.alignment="CENTER">
@@ -17,11 +16,13 @@
                   <Font size="33.0" />
                </font>
             </Label>
-            <TextField fx:id="newadministeringmedicineward" layoutX="187.0" layoutY="71.0" prefHeight="58.0" prefWidth="226.0" promptText="WARD" />
-            <TextField fx:id="newadministeringmedicinemedicine" layoutX="187.0" layoutY="275.0" prefHeight="58.0" prefWidth="226.0" promptText="MEDICINE" />
-            <TextField fx:id="newadministeringmedicinebed" layoutX="187.0" layoutY="207.0" prefHeight="58.0" prefWidth="226.0" promptText="BED" />
-            <TextField fx:id="newadministeringmedicineroom" layoutX="187.0" layoutY="139.0" prefHeight="58.0" prefWidth="226.0" promptText="ROOM" />
-            <Button fx:id="newadministeringmedicineconfirm" layoutX="274.0" layoutY="341.0" mnemonicParsing="false" onAction="#NewAdministeringMedicineConfirm" text="Confirm" />
+            <TextField fx:id="newadministeringmedicineward" layoutX="64.0" layoutY="90.0" prefHeight="50.0" prefWidth="150.0" promptText="WARD" />
+            <TextField fx:id="newadministeringmedicinemedicine" layoutX="186.0" layoutY="154.0" prefHeight="50.0" prefWidth="200.0" promptText="MEDICINE" />
+            <TextField fx:id="newadministeringmedicinebed" layoutX="381.0" layoutY="90.0" prefHeight="50.0" prefWidth="150.0" promptText="BED" />
+            <TextField fx:id="newadministeringmedicineroom" layoutX="224.0" layoutY="90.0" prefHeight="50.0" prefWidth="150.0" promptText="ROOM" />
+            <Button fx:id="newadministeringmedicineconfirm" layoutX="256.0" layoutY="338.0" mnemonicParsing="false" onAction="#NewAdministeringMedicineConfirm" text="Confirm" />
+            <TextField fx:id="times" layoutX="186.0" layoutY="272.0" prefHeight="50.0" prefWidth="200.0" promptText="How many times?" />
+            <TextField fx:id="doses" layoutX="186.0" layoutY="214.0" prefHeight="50.0" prefWidth="200.0" promptText="How many doses?" />
          </children>
       </AnchorPane>
    </center>
