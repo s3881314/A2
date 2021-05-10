@@ -27,6 +27,21 @@ public class AbleCareHome {
 
     public void AddNewResidentToBed(String sid, String p2, String ward, String room, String bed, String rid){  // Resident ID, Ward name, Room number
         try {
+            String g = "";
+            File myObj2 = new File("./src/Archive/ResidentList.txt");
+            try {
+                Scanner myReader = new Scanner(myObj2);
+                while (myReader.hasNextLine()) {
+                    String data = myReader.nextLine();
+                    String a[] = data.split(",");
+                    if (a[0].equals(rid)) {
+                        g = a[2];
+                    }
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
             // check if the id exist in Bed.txt
             boolean flag = false;
             File myObj = new File("./src/Archive/Bed.txt");
@@ -45,9 +60,8 @@ public class AbleCareHome {
                     }
                 }
             }
-
             if (flag == false) {
-                Bed nbed = new Bed(sid, p2, ward, room, bed, rid);
+                Bed nbed = new Bed(sid, p2, ward, room, bed, rid, g);
             } else {
                 System.out.println("Resident exist. Please use MoveResident function.");
             }
@@ -55,7 +69,6 @@ public class AbleCareHome {
             System.out.println("An error occurred while reading Bed.txt in ReadResidentDetails.");
             e.printStackTrace();
         }
-
     }
     // Manager only
     public void UpdatePassword(String sid, String p2, String p, String id, String np){  // Staff ID, new Password

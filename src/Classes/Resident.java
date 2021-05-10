@@ -16,7 +16,7 @@ public class Resident {
 
     Resident(String sid, String p2, String n, String g, String id, String dob){
         try {
-            File myObj = new File("F:\\Textbook\\MasterOfIT\\COSC1295 Advanced Programming\\Assignment\\Assignment2\\A2_1\\src\\Archive\\Bed.txt");
+            File myObj = new File("./src/Archive/Bed.txt");
             myObj.createNewFile();
         } catch (IOException e) {
             System.out.println("An error occurred.");
@@ -32,7 +32,7 @@ public class Resident {
         this.Admitted = ld;
 
         try {
-            File myObj = new File("F:\\Textbook\\MasterOfIT\\COSC1295 Advanced Programming\\Assignment\\Assignment2\\A2_1\\src\\Archive\\ResidentList.txt");
+            File myObj = new File("./src/Archive/ResidentList.txt");
             myObj.createNewFile();
         } catch (IOException e) {
             System.out.println("An error occurred while creating ResidentList.txt.");
@@ -41,7 +41,7 @@ public class Resident {
         int flag1 = 0;
         // check if the id exist
         try {
-            File myObj = new File("F:\\Textbook\\MasterOfIT\\COSC1295 Advanced Programming\\Assignment\\Assignment2\\A2_1\\src\\Archive\\ResidentList.txt");
+            File myObj = new File("./src/Archive/ResidentList.txt");
             Scanner myReader = new Scanner(myObj);
             while (myReader.hasNextLine()) {
                 String data = myReader.nextLine();
@@ -64,7 +64,7 @@ public class Resident {
             // ID not exist
             // write file
             try {
-                File file = new File("F:\\Textbook\\MasterOfIT\\COSC1295 Advanced Programming\\Assignment\\Assignment2\\A2_1\\src\\Archive\\ResidentList.txt");
+                File file = new File("./src/Archive/ResidentList.txt");
                 FileWriter fr = new FileWriter(file, true);
                 BufferedWriter br = new BufferedWriter(fr);
                 PrintWriter pr = new PrintWriter(br);
@@ -82,7 +82,7 @@ public class Resident {
                 DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
                 LocalDateTime now = LocalDateTime.now();
 
-                File file = new File("F:\\Textbook\\MasterOfIT\\COSC1295 Advanced Programming\\Assignment\\Assignment2\\A2_1\\src\\Archive\\Action.txt");
+                File file = new File("./src/Archive/Action.txt");
                 FileWriter fr = new FileWriter(file, true);
                 BufferedWriter br = new BufferedWriter(fr);
                 PrintWriter pr = new PrintWriter(br);

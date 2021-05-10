@@ -47,11 +47,11 @@ class AbleCareHomeTest {
     @Test
     void addNewResidentToBed() {
         AbleCareHome a = new AbleCareHome();
-        a.AddNewResidentToBed("1","Manager", "Ward 1", "1","1", "1");
-        a.AddNewResidentToBed("2","Manager", "Ward 2", "1","4", "2");
-        a.AddNewResidentToBed("3","Manager", "Ward 1", "2","2", "3");
-        a.AddNewResidentToBed("4","Manager", "Ward 2", "1","1", "4");
-        a.AddNewResidentToBed("5","Manager", "Ward 2", "3","3", "5");
+        a.AddNewResidentToBed("1","Manager", "1", "1","1", "1");
+        a.AddNewResidentToBed("2","Manager", "2", "1","4", "2");
+        a.AddNewResidentToBed("3","Manager", "1", "2","2", "3");
+        a.AddNewResidentToBed("4","Manager", "2", "1","1", "4");
+        a.AddNewResidentToBed("5","Manager", "2", "3","3", "5");
     }
 
     @Test
@@ -75,8 +75,8 @@ class AbleCareHomeTest {
     @Test
     void administeringMedicine() {
         AbleCareHome a = new AbleCareHome();
-        a.AdministeringMedicine("1","Nurse","Ward 2", "1", "4", "Medicine1", "1","1");
-        a.AdministeringMedicine("1","Nurse","Ward 1", "2", "2", "Medicine2", "2","2");
+        a.AdministeringMedicine("1","Nurse","2", "1", "4", "Medicine1", "1","1");
+        a.AdministeringMedicine("1","Nurse","1", "2", "2", "Medicine2", "2","2");
 
     }
     */
@@ -104,7 +104,7 @@ class AbleCareHomeTest {
     @Test
     void moveResident() {
         AbleCareHome a = new AbleCareHome();
-        a.MoveResident("1","Nurse","Ward 1","1","3","1");
+        a.MoveResident("1","Nurse","1","1","3","1");
     }
 
     @Test
@@ -116,24 +116,24 @@ class AbleCareHomeTest {
     @Test
     void readResidentDetails() {
         AbleCareHome a = new AbleCareHome();
-        a.ReadAdministeringMedicine("1","Manager","Ward 1", "1", "2");
+        a.ReadAdministeringMedicine("1","Manager","1", "1", "2");
     }
 
     @Test
     void updatePrescription() {
         AbleCareHome a = new AbleCareHome();
-        a.UpdatePrescription("1","Doctor","Ward 2", "1", "4", "Medicine1, Medicine2");
+        a.UpdatePrescription("1","Doctor","2", "1", "4", "Medicine1, Medicine2");
     }
 
     @Test
     void readPrescription() {
         AbleCareHome a = new AbleCareHome();
-        a.ReadPrescription("1","Doctor", "Ward 1", "1", "2");
+        a.ReadPrescription("1","Doctor", "1", "1", "2");
     }
 
     @Test
     void readAdministeringMedicine() {
         AbleCareHome a = new AbleCareHome();
-        a.ReadAdministeringMedicine("1","Doctor", "Ward 1", "1", "2");
+        a.ReadAdministeringMedicine("1","Doctor", "1", "1", "2");
     }
 }

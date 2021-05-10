@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class Bed {
     private int bNum;
-    Bed(String sid, String p2, String WName, String rn, String b, String rid){  // Resident ID, Ward name, Room number
+    Bed(String sid, String p2, String WName, String rn, String b, String rid, String gender){  // Resident ID, Ward name, Room number, Resident ID, gender
         // (Ward Name, Room Number, Number Of Bed, Resident ID)---Bed.txt
         try {
             File myObj = new File("./src/Archive/Bed.txt");
@@ -43,7 +43,7 @@ public class Bed {
                 FileWriter fr = new FileWriter(file, true);
                 BufferedWriter br = new BufferedWriter(fr);
                 PrintWriter pr = new PrintWriter(br);
-                pr.print(WName + "," + rn + "," + b + "," + rid + "\n");
+                pr.print(WName + "," + rn + "," + b + "," + rid + "," + gender + "\n");
                 pr.close();
                 br.close();
                 fr.close();
