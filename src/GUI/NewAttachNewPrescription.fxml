@@ -7,20 +7,20 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #171717;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.NewAttachNewPrescription">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="800.0" style="-fx-background-color: #171717;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.NewAttachNewPrescription">
    <center>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="700.0" prefWidth="800.0" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="124.0" layoutY="14.0" text="Attach New Prescription" textFill="WHITE">
+            <Label layoutX="224.0" layoutY="46.0" text="Attach New Prescription" textFill="WHITE">
                <font>
                   <Font size="33.0" />
                </font>
             </Label>
-            <TextField fx:id="attachnewprescriptionward" layoutX="185.0" layoutY="73.0" prefHeight="38.0" prefWidth="230.0" promptText="WARD" />
-            <TextField fx:id="attachnewprescriptionroom" layoutX="185.0" layoutY="125.0" prefHeight="38.0" prefWidth="230.0" promptText="ROOM" />
-            <TextField fx:id="attachnewprescriptionbed" layoutX="185.0" layoutY="181.0" prefHeight="38.0" prefWidth="230.0" promptText="BED" />
-            <TextField fx:id="attachnewprescriptionprescription" layoutX="185.0" layoutY="229.0" prefHeight="38.0" prefWidth="230.0" promptText="PRESCRIPTION" />
-            <Button fx:id="attachnewprescriptionconfirm" layoutX="274.0" layoutY="288.0" mnemonicParsing="false" onAction="#AttachNewPrescriptionConfirm" text="Confirm" />
+            <TextField fx:id="attachnewprescriptionward" layoutX="300.0" layoutY="185.0" prefHeight="40.0" prefWidth="200.0" promptText="WARD" />
+            <TextField fx:id="attachnewprescriptionroom" layoutX="300.0" layoutY="268.0" prefHeight="40.0" prefWidth="200.0" promptText="ROOM" />
+            <TextField fx:id="attachnewprescriptionbed" layoutX="300.0" layoutY="350.0" prefHeight="40.0" prefWidth="200.0" promptText="BED" />
+            <TextField fx:id="attachnewprescriptionprescription" layoutX="200.0" layoutY="416.0" prefHeight="40.0" prefWidth="400.0" promptText="PRESCRIPTION" />
+            <Button fx:id="attachnewprescriptionconfirm" layoutX="350.0" layoutY="525.0" mnemonicParsing="false" onAction="#AttachNewPrescriptionConfirm" prefHeight="70.0" prefWidth="100.0" text="Confirm" />
          </children>
       </AnchorPane>
    </center>

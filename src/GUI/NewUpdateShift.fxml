@@ -7,22 +7,21 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.NewUpdateShift">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.NewUpdateShift">
    <center>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #171717;" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="700.0" prefWidth="800.0" style="-fx-background-color: #171717;" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="206.0" layoutY="31.0" text="Update Shift" textFill="WHITE">
+            <Label layoutX="266.0" layoutY="33.0" text="Update Shift" textFill="WHITE">
                <font>
-                  <Font size="34.0" />
+                  <Font size="46.0" />
                </font>
             </Label>
-            <TextField fx:id="p" layoutX="191.0" layoutY="104.0" prefHeight="42.0" prefWidth="214.0" promptText="POSITION" />
-            <TextField fx:id="id" layoutX="192.0" layoutY="157.0" prefHeight="42.0" prefWidth="214.0" promptText="ID" />
-            <TextField fx:id="dow" layoutX="192.0" layoutY="210.0" prefHeight="42.0" prefWidth="214.0" promptText="DAY OF WEEK" />
-            <TextField fx:id="st" layoutX="192.0" layoutY="262.0" prefHeight="42.0" prefWidth="214.0" promptText="START TIME" />
-            <TextField fx:id="et" layoutX="192.0" layoutY="311.0" prefHeight="42.0" prefWidth="214.0" promptText="END TIME" />
-            <Button fx:id="BT" layoutX="269.0" layoutY="360.0" mnemonicParsing="false" onAction="#ConfirmBT" text="Confirm" />
+            <TextField fx:id="p" layoutX="300.0" layoutY="127.0" prefHeight="40.0" prefWidth="200.0" promptText="POSITION" />
+            <TextField fx:id="id" layoutX="300.0" layoutY="195.0" prefHeight="40.0" prefWidth="200.0" promptText="ID" />
+            <TextField fx:id="dow" layoutX="300.0" layoutY="267.0" prefHeight="40.0" prefWidth="200.0" promptText="DAY OF WEEK" />
+            <TextField fx:id="st" layoutX="300.0" layoutY="330.0" prefHeight="40.0" prefWidth="200.0" promptText="START TIME" />
+            <TextField fx:id="et" layoutX="300.0" layoutY="401.0" prefHeight="40.0" prefWidth="200.0" promptText="END TIME" />
+            <Button fx:id="BT" layoutX="356.0" layoutY="466.0" mnemonicParsing="false" onAction="#ConfirmBT" prefHeight="70.0" prefWidth="100.0" text="Confirm" />
          </children>
       </AnchorPane>
    </center>

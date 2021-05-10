@@ -6,22 +6,37 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #171717;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.DisplayAdministeringMedicine">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="800.0" style="-fx-background-color: #171717;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.DisplayAdministeringMedicine">
    <center>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="700.0" prefWidth="800.0" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="90.0" layoutY="35.0" text="Display Administering Medicine" textFill="WHITE">
+            <Label layoutX="186.0" layoutY="43.0" text="Display Administering Medicine" textFill="WHITE">
                <font>
                   <Font size="30.0" />
                </font>
             </Label>
-            <Label fx:id="showlabel" layoutX="202.0" layoutY="178.0" prefHeight="44.0" prefWidth="194.0" textFill="#f4f4f4">
+            <Label fx:id="AdministeringMedicine" layoutX="400.0" layoutY="401.0" prefHeight="75.0" prefWidth="278.0" style="-fx-background-color: white;">
                <font>
-                  <Font size="15.0" />
+                  <Font size="21.0" />
                </font>
             </Label>
-            <Button fx:id="back" layoutX="315.0" layoutY="304.0" mnemonicParsing="false" onAction="#Getback" text="Back" />
-            <Button fx:id="show" layoutX="202.0" layoutY="304.0" mnemonicParsing="false" onAction="#Show" text="Show" />
+            <Button fx:id="back" layoutX="503.0" layoutY="528.0" mnemonicParsing="false" onAction="#Getback" prefHeight="70.0" prefWidth="100.0" text="Back" />
+            <Button fx:id="show" layoutX="196.0" layoutY="530.0" mnemonicParsing="false" onAction="#Show" prefHeight="70.0" prefWidth="100.0" text="Show" />
+            <Label fx:id="rid" layoutX="400.0" layoutY="262.0" prefHeight="75.0" prefWidth="278.0" style="-fx-background-color: white;">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <Label layoutX="71.0" layoutY="432.0" text="Administering Medicine" textFill="WHITE">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <Label layoutX="139.0" layoutY="282.0" text="Resident ID" textFill="WHITE">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
    </center>

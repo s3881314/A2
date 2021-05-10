@@ -28,7 +28,7 @@ public class MenuForAbleCareHome extends Application {
         primaryStage.setResizable(false);
         Parent root = FXMLLoader.load(getClass().getResource("./GUI.fxml"));
         primaryStage.setTitle("Able Care Home");
-        primaryStage.setScene(new Scene(root, 600, 400));
+        primaryStage.setScene(new Scene(root, 800, 700));
         primaryStage.show();
     }
 

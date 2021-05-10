@@ -15,89 +15,156 @@ import java.util.Scanner;
 public class ShowWards {
     @FXML
     private Button back;
+
     @FXML
-    private Rectangle w2r1;
-    @FXML
-    private Rectangle w2r2;
-    @FXML
-    private Rectangle w2r3;
-    @FXML
-    private Rectangle w4r4;
-    @FXML
-    private Rectangle w1r1;
-    @FXML
-    private Rectangle w1r2;
-    @FXML
-    private Rectangle w1r3;
-    @FXML
-    private Rectangle w1r4;
+    private Button ds;
+
     @FXML
     private Rectangle w1r1b1;
+
     @FXML
     private Rectangle w1r1b4;
-    @FXML
-    private Rectangle w1r1b2;
+
     @FXML
     private Rectangle w1r1b3;
+
+    @FXML
+    private Rectangle w1r1b6;
+
+    @FXML
+    private Rectangle w1r1b2;
+
+    @FXML
+    private Rectangle w1r1b5;
+
     @FXML
     private Rectangle w1r2b1;
+
     @FXML
     private Rectangle w1r2b4;
-    @FXML
-    private Rectangle w1r2b2;
+
     @FXML
     private Rectangle w1r2b3;
+
+    @FXML
+    private Rectangle w1r2b6;
+
+    @FXML
+    private Rectangle w1r2b2;
+
+    @FXML
+    private Rectangle w1r2b5;
+
     @FXML
     private Rectangle w1r3b1;
+
     @FXML
     private Rectangle w1r3b4;
-    @FXML
-    private Rectangle w1r3b2;
+
     @FXML
     private Rectangle w1r3b3;
+
+    @FXML
+    private Rectangle w1r3b6;
+
+    @FXML
+    private Rectangle w1r3b2;
+
+    @FXML
+    private Rectangle w1r3b5;
+
     @FXML
     private Rectangle w1r4b1;
+
     @FXML
     private Rectangle w1r4b4;
-    @FXML
-    private Rectangle w1r4b2;
+
     @FXML
     private Rectangle w1r4b3;
+
+    @FXML
+    private Rectangle w1r4b6;
+
+    @FXML
+    private Rectangle w1r4b2;
+
+    @FXML
+    private Rectangle w1r4b5;
+
     @FXML
     private Rectangle w2r1b1;
+
     @FXML
     private Rectangle w2r1b4;
-    @FXML
-    private Rectangle w2r1b2;
+
     @FXML
     private Rectangle w2r1b3;
+
+    @FXML
+    private Rectangle w2r1b6;
+
+    @FXML
+    private Rectangle w2r1b2;
+
+    @FXML
+    private Rectangle w2r1b5;
+
     @FXML
     private Rectangle w2r2b1;
+
     @FXML
     private Rectangle w2r2b4;
-    @FXML
-    private Rectangle w2r2b2;
+
     @FXML
     private Rectangle w2r2b3;
+
+    @FXML
+    private Rectangle w2r2b2;
+
+    @FXML
+    private Rectangle w2r2b5;
+
+    @FXML
+    private Rectangle w2r2b6;
+
     @FXML
     private Rectangle w2r3b1;
+
     @FXML
     private Rectangle w2r3b4;
-    @FXML
-    private Rectangle w2r3b2;
+
     @FXML
     private Rectangle w2r3b3;
+
+    @FXML
+    private Rectangle w2r3b6;
+
+    @FXML
+    private Rectangle w2r3b2;
+
+    @FXML
+    private Rectangle w2r3b5;
+
     @FXML
     private Rectangle w2r4b1;
+
     @FXML
     private Rectangle w2r4b4;
-    @FXML
-    private Rectangle w2r4b2;
+
     @FXML
     private Rectangle w2r4b3;
 
     @FXML
-    void Display(ActionEvent event) {
+    private Rectangle w2r4b6;
+
+    @FXML
+    private Rectangle w2r4b2;
+
+    @FXML
+    private Rectangle w2r4b5;
+
+    @FXML
+    void Display(javafx.event.ActionEvent actionEvent) {
         try {
             // Read username and position
             File myObj = new File("./src/Archive/Bed.txt");
@@ -106,105 +173,304 @@ public class ShowWards {
             while (myReader.hasNextLine()) {
                 String data = myReader.nextLine();
                 String s[] = data.split(",");
-               if(s[4].equals("M") ){
+                boolean male = false;
+                for(int i = 0; i < s.length; i++){
+                    if(s[i].equals("M") ) {
+                        male = true;
+                    }
+                }
+
+                if(male == true){
                     if(s[0].equals("1") && s[1].equals("1") && s[2].equals("1")){
-                        w1r1b1.setStroke(Color.BLUE);
+                        w1r1b1.setFill(Color.BLUE);
                     }
                     else if(s[0].equals("1") && s[1].equals("1") && s[2].equals("2")){
-                        w1r1b2.setStroke(Color.BLUE);
+                        w1r1b2.setFill(Color.BLUE);
                     }
                     else if(s[0].equals("1") && s[1].equals("1") && s[2].equals("3")){
-                        w1r1b3.setStroke(Color.BLUE);
+                        w1r1b3.setFill(Color.BLUE);
                     }
                     else if(s[0].equals("1") && s[1].equals("1") && s[2].equals("4")){
-                        w1r1b4.setStroke(Color.BLUE);
+                        w1r1b4.setFill(Color.BLUE);
+                    }
+                    else if(s[0].equals("1") && s[1].equals("1") && s[2].equals("5")){
+                        w1r1b5.setFill(Color.BLUE);
+                    }
+                    else if(s[0].equals("1") && s[1].equals("1") && s[2].equals("6")){
+                        w1r1b6.setFill(Color.BLUE);
                     }
                     else if(s[0].equals("1") && s[1].equals("2") && s[2].equals("1")){
-                        w1r2b1.setStroke(Color.BLUE);
+                        w1r2b1.setFill(Color.BLUE);
                     }
                     else if(s[0].equals("1") && s[1].equals("2") && s[2].equals("2")){
-                        w1r2b2.setStroke(Color.BLUE);
+                        w1r2b2.setFill(Color.BLUE);
                     }
                     else if(s[0].equals("1") && s[1].equals("2") && s[2].equals("3")){
-                        w1r2b3.setStroke(Color.BLUE);
+                        w1r2b3.setFill(Color.BLUE);
                     }
                     else if(s[0].equals("1") && s[1].equals("2") && s[2].equals("4")){
-                        w1r2b4.setStroke(Color.BLUE);
+                        w1r2b4.setFill(Color.BLUE);
+                    }
+                    else if(s[0].equals("1") && s[1].equals("2") && s[2].equals("5")){
+                        w1r2b6.setFill(Color.BLUE);
+                    }
+                    else if(s[0].equals("1") && s[1].equals("2") && s[2].equals("6")){
+                        w1r2b5.setFill(Color.BLUE);
                     }
                     else if(s[0].equals("1") && s[1].equals("3") && s[2].equals("1")){
-                        w1r3b1.setStroke(Color.BLUE);
+                        w1r3b1.setFill(Color.BLUE);
                     }
                     else if(s[0].equals("1") && s[1].equals("3") && s[2].equals("2")){
-                        w1r3b2.setStroke(Color.BLUE);
+                        w1r3b2.setFill(Color.BLUE);
                     }
                     else if(s[0].equals("1") && s[1].equals("3") && s[2].equals("3")){
-                        w1r3b3.setStroke(Color.BLUE);
+                        w1r3b3.setFill(Color.BLUE);
                     }
                     else if(s[0].equals("1") && s[1].equals("3") && s[2].equals("4")){
-                        w1r3b4.setStroke(Color.BLUE);
+                        w1r3b4.setFill(Color.BLUE);
+                    }
+                    else if(s[0].equals("1") && s[1].equals("3") && s[2].equals("5")){
+                        w1r3b5.setFill(Color.BLUE);
+                    }
+                    else if(s[0].equals("1") && s[1].equals("3") && s[2].equals("6")){
+                        w1r3b6.setFill(Color.BLUE);
                     }
                     else if(s[0].equals("1") && s[1].equals("4") && s[2].equals("1")){
-                        w1r4b1.setStroke(Color.BLUE);
+                        w1r4b1.setFill(Color.BLUE);
                     }
                     else if(s[0].equals("1") && s[1].equals("4") && s[2].equals("2")){
-                        w1r4b2.setStroke(Color.BLUE);
+                        w1r4b2.setFill(Color.BLUE);
                     }
                     else if(s[0].equals("1") && s[1].equals("4") && s[2].equals("3")){
-                        w1r4b3.setStroke(Color.BLUE);
+                        w1r4b3.setFill(Color.BLUE);
                     }
                     else if(s[0].equals("1") && s[1].equals("4") && s[2].equals("4")){
-                        w1r4b4.setStroke(Color.BLUE);
+                        w1r4b4.setFill(Color.BLUE);
+                    }
+                    else if(s[0].equals("1") && s[1].equals("4") && s[2].equals("5")){
+                        w1r4b5.setFill(Color.BLUE);
+                    }
+                    else if(s[0].equals("1") && s[1].equals("4") && s[2].equals("6")){
+                        w1r4b6.setFill(Color.BLUE);
+                    }
+                    else if(s[0].equals("2") && s[1].equals("1") && s[2].equals("1")){
+                        w2r1b1.setFill(Color.BLUE);
+                    }
+                    else if(s[0].equals("2") && s[1].equals("1") && s[2].equals("2")){
+                        w2r1b2.setFill(Color.BLUE);
+                    }
+                    else if(s[0].equals("2") && s[1].equals("1") && s[2].equals("3")){
+                        w2r1b3.setFill(Color.BLUE);
+                    }
+                    else if(s[0].equals("2") && s[1].equals("1") && s[2].equals("4")){
+                        w2r1b4.setFill(Color.BLUE);
+                    }
+                    else if(s[0].equals("2") && s[1].equals("1") && s[2].equals("5")){
+                        w2r1b5.setFill(Color.BLUE);
+                    }
+                    else if(s[0].equals("2") && s[1].equals("1") && s[2].equals("6")){
+                        w2r1b6.setFill(Color.BLUE);
+                    }
+                    else if(s[0].equals("2") && s[1].equals("2") && s[2].equals("1")){
+                        w2r2b1.setFill(Color.BLUE);
+                    }
+                    else if(s[0].equals("2") && s[1].equals("2") && s[2].equals("2")){
+                        w2r2b2.setFill(Color.BLUE);
+                    }
+                    else if(s[0].equals("2") && s[1].equals("2") && s[2].equals("3")){
+                        w2r2b3.setFill(Color.BLUE);
+                    }
+                    else if(s[0].equals("2") && s[1].equals("2") && s[2].equals("4")){
+                        w2r2b4.setFill(Color.BLUE);
+                    }
+                    else if(s[0].equals("2") && s[1].equals("2") && s[2].equals("5")){
+                        w2r2b5.setFill(Color.BLUE);
+                    }
+                    else if(s[0].equals("2") && s[1].equals("2") && s[2].equals("6")){
+                        w2r2b6.setFill(Color.BLUE);
+                    }
+                    else if(s[0].equals("2") && s[1].equals("3") && s[2].equals("1")){
+                        w2r3b1.setFill(Color.BLUE);
+                    }
+                    else if(s[0].equals("2") && s[1].equals("3") && s[2].equals("2")){
+                        w2r3b2.setFill(Color.BLUE);
+                    }
+                    else if(s[0].equals("2") && s[1].equals("3") && s[2].equals("3")){
+                        w2r3b3.setFill(Color.BLUE);
+                    }
+                    else if(s[0].equals("2") && s[1].equals("3") && s[2].equals("4")){
+                        w2r3b4.setFill(Color.BLUE);
+                    }
+                    else if(s[0].equals("2") && s[1].equals("3") && s[2].equals("5")){
+                        w2r3b5.setFill(Color.BLUE);
+                    }
+                    else if(s[0].equals("2") && s[1].equals("3") && s[2].equals("6")){
+                        w2r3b6.setFill(Color.BLUE);
+                    }
+                    else if(s[0].equals("2") && s[1].equals("4") && s[2].equals("1")){
+                        w2r4b1.setFill(Color.BLUE);
+                    }
+                    else if(s[0].equals("2") && s[1].equals("4") && s[2].equals("2")){
+                        w2r4b2.setFill(Color.BLUE);
+                    }
+                    else if(s[0].equals("2") && s[1].equals("4") && s[2].equals("3")){
+                        w2r4b3.setFill(Color.BLUE);
+                    }
+                    else if(s[0].equals("2") && s[1].equals("4") && s[2].equals("4")){
+                        w2r4b4.setFill(Color.BLUE);
+                    }
+                    else if(s[0].equals("2") && s[1].equals("4") && s[2].equals("5")){
+                        w2r4b5.setFill(Color.BLUE);
+                    }
+                    else if(s[0].equals("2") && s[1].equals("4") && s[2].equals("6")){
+                        w2r4b6.setFill(Color.BLUE);
                     }
                }
-               else if(s[4].equals("F")){
-                   if(s[0].equals("2") && s[1].equals("1") && s[2].equals("1")){
-                       w2r1b1.setStroke(Color.RED);
-                   }
-                   else if(s[0].equals("2") && s[1].equals("1") && s[2].equals("2")){
-                       w2r1b2.setStroke(Color.RED);
-                   }
-                   else if(s[0].equals("2") && s[1].equals("1") && s[2].equals("3")){
-                       w2r1b3.setStroke(Color.RED);
-                   }
-                   else if(s[0].equals("2") && s[1].equals("1") && s[2].equals("4")){
-                       w2r1b4.setStroke(Color.RED);
-                   }
-                   else if(s[0].equals("2") && s[1].equals("2") && s[2].equals("1")){
-                       w2r2b1.setStroke(Color.RED);
-                   }
-                   else if(s[0].equals("2") && s[1].equals("2") && s[2].equals("2")){
-                       w2r2b2.setStroke(Color.RED);
-                   }
-                   else if(s[0].equals("2") && s[1].equals("2") && s[2].equals("3")){
-                       w2r2b3.setStroke(Color.RED);
-                   }
-                   else if(s[0].equals("2") && s[1].equals("2") && s[2].equals("4")){
-                       w2r2b4.setStroke(Color.RED);
-                   }
-                   else if(s[0].equals("2") && s[1].equals("3") && s[2].equals("1")){
-                       w2r3b1.setStroke(Color.RED);
-                   }
-                   else if(s[0].equals("2") && s[1].equals("3") && s[2].equals("2")){
-                       w2r3b2.setStroke(Color.RED);
-                   }
-                   else if(s[0].equals("2") && s[1].equals("3") && s[2].equals("3")){
-                       w2r3b3.setStroke(Color.RED);
-                   }
-                   else if(s[0].equals("2") && s[1].equals("3") && s[2].equals("4")){
-                       w2r3b4.setStroke(Color.RED);
-                   }
-                   else if(s[0].equals("2") && s[1].equals("4") && s[2].equals("1")){
-                       w2r4b1.setStroke(Color.RED);
-                   }
-                   else if(s[0].equals("2") && s[1].equals("4") && s[2].equals("2")){
-                       w2r4b2.setStroke(Color.RED);
-                   }
-                   else if(s[0].equals("2") && s[1].equals("4") && s[2].equals("3")){
-                       w2r4b3.setStroke(Color.RED);
-                   }
-                   else if(s[0].equals("2") && s[1].equals("4") && s[2].equals("4")){
-                       w2r4b4.setStroke(Color.RED);
-                   }
+               else{
+                    if(s[0].equals("1") && s[1].equals("1") && s[2].equals("1")){
+                        w1r1b1.setFill(Color.RED);
+                    }
+                    else if(s[0].equals("1") && s[1].equals("1") && s[2].equals("2")){
+                        w1r1b2.setFill(Color.RED);
+                    }
+                    else if(s[0].equals("1") && s[1].equals("1") && s[2].equals("3")){
+                        w1r1b3.setFill(Color.RED);
+                    }
+                    else if(s[0].equals("1") && s[1].equals("1") && s[2].equals("4")){
+                        w1r1b4.setFill(Color.RED);
+                    }
+                    else if(s[0].equals("1") && s[1].equals("1") && s[2].equals("5")){
+                        w1r1b5.setFill(Color.RED);
+                    }
+                    else if(s[0].equals("1") && s[1].equals("1") && s[2].equals("6")){
+                        w1r1b6.setFill(Color.RED);
+                    }
+                    else if(s[0].equals("1") && s[1].equals("2") && s[2].equals("1")){
+                        w1r2b1.setFill(Color.RED);
+                    }
+                    else if(s[0].equals("1") && s[1].equals("2") && s[2].equals("2")){
+                        w1r2b2.setFill(Color.RED);
+                    }
+                    else if(s[0].equals("1") && s[1].equals("2") && s[2].equals("3")){
+                        w1r2b3.setFill(Color.RED);
+                    }
+                    else if(s[0].equals("1") && s[1].equals("2") && s[2].equals("4")){
+                        w1r2b4.setFill(Color.RED);
+                    }
+                    else if(s[0].equals("1") && s[1].equals("2") && s[2].equals("5")){
+                        w1r2b5.setFill(Color.RED);
+                    }
+                    else if(s[0].equals("1") && s[1].equals("2") && s[2].equals("6")){
+                        w1r2b6.setFill(Color.RED);
+                    }
+                    else if(s[0].equals("1") && s[1].equals("3") && s[2].equals("1")){
+                        w1r3b1.setFill(Color.RED);
+                    }
+                    else if(s[0].equals("1") && s[1].equals("3") && s[2].equals("2")){
+                        w1r3b2.setFill(Color.RED);
+                    }
+                    else if(s[0].equals("1") && s[1].equals("3") && s[2].equals("3")){
+                        w1r3b3.setFill(Color.RED);
+                    }
+                    else if(s[0].equals("1") && s[1].equals("3") && s[2].equals("4")){
+                        w1r3b4.setFill(Color.RED);
+                    }
+                    else if(s[0].equals("1") && s[1].equals("3") && s[2].equals("5")){
+                        w1r3b5.setFill(Color.RED);
+                    }
+                    else if(s[0].equals("1") && s[1].equals("3") && s[2].equals("6")){
+                        w1r3b6.setFill(Color.RED);
+                    }
+                    else if(s[0].equals("1") && s[1].equals("4") && s[2].equals("1")){
+                        w1r4b1.setFill(Color.RED);
+                    }
+                    else if(s[0].equals("1") && s[1].equals("4") && s[2].equals("2")){
+                        w1r4b2.setFill(Color.RED);
+                    }
+                    else if(s[0].equals("1") && s[1].equals("4") && s[2].equals("3")){
+                        w1r4b3.setFill(Color.RED);
+                    }
+                    else if(s[0].equals("1") && s[1].equals("4") && s[2].equals("4")){
+                        w1r4b4.setFill(Color.RED);
+                    }
+                    else if(s[0].equals("1") && s[1].equals("4") && s[2].equals("5")){
+                        w1r4b5.setFill(Color.RED);
+                    }
+                    else if(s[0].equals("1") && s[1].equals("4") && s[2].equals("6")){
+                        w1r4b6.setFill(Color.RED);
+                    }
+                    else if(s[0].equals("2") && s[1].equals("1") && s[2].equals("1")){
+                        w2r1b1.setFill(Color.RED);
+                    }
+                    else if(s[0].equals("2") && s[1].equals("1") && s[2].equals("2")){
+                        w2r1b2.setFill(Color.RED);
+                    }
+                    else if(s[0].equals("2") && s[1].equals("1") && s[2].equals("3")){
+                        w2r1b3.setFill(Color.RED);
+                    }
+                    else if(s[0].equals("2") && s[1].equals("1") && s[2].equals("4")){
+                        w2r1b4.setFill(Color.RED);
+                    }
+                    else if(s[0].equals("2") && s[1].equals("1") && s[2].equals("5")){
+                        w2r1b5.setFill(Color.RED);
+                    }
+                    else if(s[0].equals("2") && s[1].equals("1") && s[2].equals("6")){
+                        w2r1b6.setFill(Color.RED);
+                    }
+                    else if(s[0].equals("2") && s[1].equals("2") && s[2].equals("1")){
+                        w2r2b1.setFill(Color.RED);
+                    }
+                    else if(s[0].equals("2") && s[1].equals("2") && s[2].equals("2")){
+                        w2r2b2.setFill(Color.RED);
+                    }
+                    else if(s[0].equals("2") && s[1].equals("2") && s[2].equals("3")){
+                        w2r2b3.setFill(Color.RED);
+                    }
+                    else if(s[0].equals("2") && s[1].equals("2") && s[2].equals("4")){
+                        w2r2b4.setFill(Color.RED);
+                    }
+                    else if(s[0].equals("2") && s[1].equals("2") && s[2].equals("5")){
+                        w2r2b5.setFill(Color.RED);
+                    }
+                    else if(s[0].equals("2") && s[1].equals("2") && s[2].equals("6")){
+                        w2r2b6.setFill(Color.RED);
+                    }
+                    else if(s[0].equals("2") && s[1].equals("3") && s[2].equals("1")){
+                        w2r3b1.setFill(Color.RED);
+                    }
+                    else if(s[0].equals("2") && s[1].equals("3") && s[2].equals("2")){
+                        w2r3b2.setFill(Color.RED);
+                    }
+                    else if(s[0].equals("2") && s[1].equals("3") && s[2].equals("3")){
+                        w2r3b3.setFill(Color.RED);
+                    }
+                    else if(s[0].equals("2") && s[1].equals("3") && s[2].equals("4")){
+                        w2r3b4.setFill(Color.RED);
+                    }
+                    else if(s[0].equals("2") && s[1].equals("3") && s[2].equals("5")){
+                        w2r3b5.setFill(Color.RED);
+                    }
+                    else if(s[0].equals("2") && s[1].equals("3") && s[2].equals("6")){
+                        w2r3b6.setFill(Color.RED);
+                    }
+                    else if(s[0].equals("2") && s[1].equals("4") && s[2].equals("1")){
+                        w2r4b1.setFill(Color.RED);
+                    }
+                    else if(s[0].equals("2") && s[1].equals("4") && s[2].equals("2")){
+                        w2r4b2.setFill(Color.RED);
+                    }
+                    else if(s[0].equals("2") && s[1].equals("4") && s[2].equals("3")){
+                        w2r4b3.setFill(Color.RED);
+                    }
+                    else if(s[0].equals("2") && s[1].equals("4") && s[2].equals("4")){
+                        w2r4b4.setFill(Color.RED);
+                    }
+                    else if(s[0].equals("2") && s[1].equals("4") && s[2].equals("5")){
+                        w2r4b5.setFill(Color.RED);
+                    }
+                    else if(s[0].equals("2") && s[1].equals("4") && s[2].equals("6")){
+                        w2r4b6.setFill(Color.RED);
+                    }
                 }
             }
         } catch (IOException e) {

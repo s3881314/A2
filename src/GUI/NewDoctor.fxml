@@ -7,20 +7,20 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.NewDoctor">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.NewDoctor">
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #171717;" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="194.0" layoutY="20.0" text="New Doctor" textFill="WHITE">
+            <Label layoutX="294.0" layoutY="45.0" text="New Doctor" textFill="WHITE">
                <font>
                   <Font size="40.0" />
                </font>
             </Label>
-            <TextField fx:id="newdoctorname" layoutX="183.0" layoutY="88.0" prefHeight="49.0" prefWidth="234.0" promptText="NAME" />
-            <TextField fx:id="newdoctorpassword" layoutX="183.0" layoutY="276.0" prefHeight="49.0" prefWidth="234.0" promptText="PASSWORD" />
-            <TextField fx:id="newdoctorphone" layoutX="182.0" layoutY="212.0" prefHeight="49.0" prefWidth="234.0" promptText="PHONE" />
-            <TextField fx:id="newdoctorid" layoutX="183.0" layoutY="148.0" prefHeight="49.0" prefWidth="234.0" promptText="ID" />
-            <Button fx:id="newdoctorconfirm" layoutX="270.0" layoutY="339.0" mnemonicParsing="false" onAction="#NewDoctorConfirm" text="Confirm" />
+            <TextField fx:id="newdoctorname" layoutX="306.0" layoutY="139.0" prefHeight="40.0" prefWidth="200.0" promptText="NAME" />
+            <TextField fx:id="newdoctorpassword" layoutX="306.0" layoutY="364.0" prefHeight="40.0" prefWidth="200.0" promptText="PASSWORD" />
+            <TextField fx:id="newdoctorphone" layoutX="306.0" layoutY="287.0" prefHeight="40.0" prefWidth="200.0" promptText="PHONE" />
+            <TextField fx:id="newdoctorid" layoutX="306.0" layoutY="213.0" prefHeight="40.0" prefWidth="200.0" promptText="ID" />
+            <Button fx:id="newdoctorconfirm" layoutX="350.0" layoutY="480.0" mnemonicParsing="false" onAction="#NewDoctorConfirm" prefHeight="70.0" prefWidth="100.0" text="Confirm" />
          </children>
       </AnchorPane>
    </center>

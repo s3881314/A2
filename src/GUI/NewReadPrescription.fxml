@@ -7,19 +7,19 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.NewReadPrescription">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.NewReadPrescription">
    <center>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #171717;" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="700.0" prefWidth="800.0" style="-fx-background-color: #171717;" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="188.0" layoutY="26.0" text="Read Prescription" textFill="WHITE">
+            <Label layoutX="211.0" layoutY="48.0" text="Read Prescription" textFill="WHITE">
                <font>
-                  <Font size="29.0" />
+                  <Font size="49.0" />
                </font>
             </Label>
-            <TextField fx:id="readprescriptionward" layoutX="202.0" layoutY="90.0" prefHeight="55.0" prefWidth="196.0" promptText="WARD" />
-            <TextField fx:id="readprescriptionroom" layoutX="202.0" layoutY="172.0" prefHeight="55.0" prefWidth="196.0" promptText="ROOM" />
-            <TextField fx:id="readprescriptionbed" layoutX="202.0" layoutY="248.0" prefHeight="55.0" prefWidth="196.0" promptText="BED" />
-            <Button fx:id="readprescriptionconfirm" layoutX="274.0" layoutY="327.0" mnemonicParsing="false" onAction="#ReadPrescriptionConfirm" text="Confirm" />
+            <TextField fx:id="readprescriptionward" layoutX="312.0" layoutY="174.0" prefHeight="40.0" prefWidth="200.0" promptText="WARD" />
+            <TextField fx:id="readprescriptionroom" layoutX="312.0" layoutY="253.0" prefHeight="40.0" prefWidth="200.0" promptText="ROOM" />
+            <TextField fx:id="readprescriptionbed" layoutX="312.0" layoutY="340.0" prefHeight="40.0" prefWidth="200.0" promptText="BED" />
+            <Button fx:id="readprescriptionconfirm" layoutX="348.0" layoutY="447.0" mnemonicParsing="false" onAction="#ReadPrescriptionConfirm" prefHeight="70.0" prefWidth="100.0" text="Confirm" />
          </children>
       </AnchorPane>
    </center>

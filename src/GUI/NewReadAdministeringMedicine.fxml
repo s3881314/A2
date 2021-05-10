@@ -7,19 +7,19 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.NewReadAdministeringMedicine">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.NewReadAdministeringMedicine">
    <center>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #171717;" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="700.0" prefWidth="800.0" style="-fx-background-color: #171717;" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="35.0" prefHeight="52.0" prefWidth="527.0" text="Read Administering Medicine" textFill="WHITE">
+            <Label layoutX="136.0" layoutY="62.0" prefHeight="52.0" prefWidth="527.0" text="Read Administering Medicine" textFill="WHITE">
                <font>
                   <Font size="40.0" />
                </font>
             </Label>
-            <TextField fx:id="readadministeringmedicineward" layoutX="174.0" layoutY="71.0" prefHeight="53.0" prefWidth="250.0" promptText="WARD" />
-            <TextField fx:id="readadministeringmedicineroom" layoutX="174.0" layoutY="146.0" prefHeight="53.0" prefWidth="250.0" promptText="ROOM" />
-            <TextField fx:id="readadministeringmedicinebed" layoutX="174.0" layoutY="226.0" prefHeight="53.0" prefWidth="250.0" promptText="BED" />
-            <Button fx:id="readadministeringmedicineconfirm" layoutX="269.0" layoutY="298.0" mnemonicParsing="false" onAction="#ReadAdministeringMedicineConfirm" text="Confirm" />
+            <TextField fx:id="readadministeringmedicineward" layoutX="300.0" layoutY="166.0" prefHeight="40.0" prefWidth="200.0" promptText="WARD" />
+            <TextField fx:id="readadministeringmedicineroom" layoutX="300.0" layoutY="249.0" prefHeight="40.0" prefWidth="200.0" promptText="ROOM" />
+            <TextField fx:id="readadministeringmedicinebed" layoutX="300.0" layoutY="337.0" prefHeight="40.0" prefWidth="200.0" promptText="BED" />
+            <Button fx:id="readadministeringmedicineconfirm" layoutX="350.0" layoutY="441.0" mnemonicParsing="false" onAction="#ReadAdministeringMedicineConfirm" prefHeight="70.0" prefWidth="100.0" text="Confirm" />
          </children>
       </AnchorPane>
    </center>

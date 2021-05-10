@@ -226,10 +226,25 @@ public class AfterLogIn {
 
     @FXML
     void ShowWards(javafx.event.ActionEvent actionEvent) throws IOException, AuthorizationException {
-        // need to be done
         ReadUsernamePassword();
+        // Record in Action.txt
+        try {
+            DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+            LocalDateTime now = LocalDateTime.now();
+
+            File file = new File("./src/Archive/Action.txt");
+            FileWriter fr = new FileWriter(file, true);
+            BufferedWriter br = new BufferedWriter(fr);
+            PrintWriter pr = new PrintWriter(br);
+            pr.println(dtf.format(now) + "," + this.Position + "," + this.UName + ", Show beds status.");
+            pr.close();
+            br.close();
+            fr.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         MenuForAbleCareHome m = new MenuForAbleCareHome();
-        m.ChangeScene("");
+        m.ChangeScene("ShowWards.fxml");
     }
 
 

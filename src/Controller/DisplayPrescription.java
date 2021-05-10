@@ -13,13 +13,21 @@ import java.util.Scanner;
 public class DisplayPrescription {
 
     @FXML
-    private Label displayprescriptionlabel;
+    private Label Presciption;
 
     @FXML
     private Button show;
 
     @FXML
     private Button back;
+
+    @FXML
+    private Label ResidentID;
+
+    @FXML
+    void Back(ActionEvent event) {
+
+    }
 
     @FXML
     void Back(javafx.event.ActionEvent actionEvent) throws IOException{
@@ -39,7 +47,9 @@ public class DisplayPrescription {
                 String data = myReader.nextLine();
                 s = s+data;
             }
-            displayprescriptionlabel.setText(s);
+            String[] s2 = s.split(",");
+            ResidentID.setText(s2[0]);
+            Presciption.setText(s2[1]);
         } catch (IOException e) {
             e.printStackTrace();
         }

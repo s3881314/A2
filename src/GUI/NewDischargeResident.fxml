@@ -7,17 +7,17 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.NewDischargeResident">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.NewDischargeResident">
    <center>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #171717;" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="700.0" prefWidth="800.0" style="-fx-background-color: #171717;" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="122.0" layoutY="20.0" text="Discharge Resident" textFill="WHITE">
+            <Label layoutX="205.0" layoutY="63.0" text="Discharge Resident" textFill="WHITE">
                <font>
                   <Font size="42.0" />
                </font>
             </Label>
-            <TextField fx:id="dischargeresidentrid" layoutX="182.0" layoutY="158.0" prefHeight="41.0" prefWidth="234.0" promptText="RESIDENT ID" />
-            <Button fx:id="dischargeresidentconfirm" layoutX="269.0" layoutY="230.0" mnemonicParsing="false" onAction="#DischargeResidentConfirm" text="Confirm" />
+            <TextField fx:id="dischargeresidentrid" layoutX="283.0" layoutY="258.0" prefHeight="40.0" prefWidth="200.0" promptText="RESIDENT ID" />
+            <Button fx:id="dischargeresidentconfirm" layoutX="333.0" layoutY="407.0" mnemonicParsing="false" onAction="#DischargeResidentConfirm" prefHeight="70.0" prefWidth="100.0" text="Confirm" />
          </children>
       </AnchorPane>
    </center>

@@ -72,3 +72,87 @@
 09/05/2021 10:15:58,Doctor,3, Log in system.
 09/05/2021 10:16:46,Doctor,3, Log in system.
 09/05/2021 10:17:08,Doctor,3, Log in system.
+09/05/2021 20:26:58,Manager,root, Log in system.
+09/05/2021 20:27:46,Manager,root, Log in system.
+09/05/2021 21:48:25,Manager,root, Log in system.
+09/05/2021 21:50:48,Manager,root, Log in system.
+09/05/2021 21:57:23,Manager,root, Log in system.
+09/05/2021 22:35:05,Manager,root, Log in system.
+09/05/2021 22:36:23,Manager,root, Log in system.
+09/05/2021 22:38:24,Manager,root, Log in system.
+09/05/2021 22:40:09,Manager,root, Log in system.
+09/05/2021 22:40:51,Manager,root, Log in system.
+09/05/2021 22:57:32,Manager,root, Log in system.
+09/05/2021 23:06:12,Manager,root, Log in system.
+09/05/2021 23:07:52,Manager,root, Log in system.
+09/05/2021 23:08:39,Manager,root, Log in system.
+09/05/2021 23:18:23,Manager,root, Log in system.
+11/05/2021 04:35:29,Manager,root, Log in system.
+11/05/2021 04:35:30,Manager,root, Show beds status.
+11/05/2021 04:36:22,Manager,root, Add new manager.
+11/05/2021 04:40:08,Manager,860812, Log in system.
+11/05/2021 04:40:56,Manager,860812, Add doctor.
+11/05/2021 04:41:18,Manager,860812, Add nurse.
+11/05/2021 04:41:47,Manager,860812, Add new resident.
+11/05/2021 04:43:02,Manager,860812, Log in system.
+11/05/2021 04:43:11,Manager,860812, Add new resident to bed.
+11/05/2021 04:43:14,Manager,860812, Show beds status.
+11/05/2021 04:43:56,Manager,860812, Add new resident to bed.
+11/05/2021 04:43:58,Manager,860812, Show beds status.
+11/05/2021 04:44:34,Manager,860812, Add new resident to bed.
+11/05/2021 04:44:35,Manager,860812, Show beds status.
+11/05/2021 04:45:13,Manager,860812, Update doctor password
+11/05/2021 04:46:43,Manager,860812, Update doctor shift
+11/05/2021 04:47:13,Nurse,860812, Log in system.
+11/05/2021 04:48:03,Nurse,860812, Log in system.
+11/05/2021 04:49:49,Manager,860812, Log in system.
+11/05/2021 04:49:56,Manager,860812, Discharge resident.
+11/05/2021 04:50:22,Doctor,860812, Log in system.
+11/05/2021 04:50:27,Doctor,860812, Check resident details.
+11/05/2021 05:01:29,Doctor,860812, Log in system.
+11/05/2021 05:01:37,Doctor,860812, Check resident details.
+11/05/2021 05:02:10,Doctor,860812, Check resident details.
+11/05/2021 05:02:28,Nurse,860812, Log in system.
+11/05/2021 05:02:40,Manager,860812, Log in system.
+11/05/2021 05:02:49,Manager,860812, Add new resident to bed.
+11/05/2021 05:02:57,Manager,860812, Add new resident to bed.
+11/05/2021 05:03:13,Manager,860812, Add new resident to bed.
+11/05/2021 05:03:28,Manager,860812, Add new resident to bed.
+11/05/2021 05:03:44,Manager,860812, Show beds status.
+11/05/2021 05:04:03,Nurse,860812, Log in system.
+11/05/2021 05:04:12,Nurse,860812, Check resident details.
+11/05/2021 05:04:26,Nurse,860812, Check resident details.
+11/05/2021 05:05:10,Nurse,860812, Log in system.
+11/05/2021 05:05:13,Nurse,860812, Check resident details.
+11/05/2021 05:05:22,Nurse,860812, Check resident details.
+11/05/2021 05:18:35,Nurse,860812, Log in system.
+11/05/2021 05:18:42,Nurse,860812, Check resident details.
+11/05/2021 05:19:11,Nurse,860812, Check resident details.
+11/05/2021 05:19:42,Doctor,860812, Log in system.
+11/05/2021 05:20:53,Doctor,860812, Update resident's prescription
+11/05/2021 05:21:01,Doctor,860812, Check prescription details.
+11/05/2021 05:26:41,Doctor,860812, Log in system.
+11/05/2021 05:26:51,Doctor,860812, Check prescription details.
+11/05/2021 05:29:04,Doctor,860812, Log in system.
+11/05/2021 05:29:22,Nurse,860812, Log in system.
+11/05/2021 05:33:56,Nurse,860812, Log in system.
+11/05/2021 05:36:31,Nurse,860812, Log in system.
+11/05/2021 05:37:47,Nurse,860812, Log in system.
+11/05/2021 05:38:41,Nurse,860812, Log in system.
+11/05/2021 05:38:51,Nurse,860812, Administering medicine.
+11/05/2021 05:41:13,Nurse,860812, Log in system.
+11/05/2021 05:41:56,Nurse,860812, Administering medicine.
+11/05/2021 05:42:17,Nurse,860812, Administering medicine.
+11/05/2021 05:42:31,Nurse,860812, Administering medicine.
+11/05/2021 05:43:11,Nurse,860812, Administering medicine.
+11/05/2021 05:51:19,Nurse,860812, Log in system.
+11/05/2021 05:59:54,Nurse,860812, Log in system.
+11/05/2021 06:01:28,Nurse,860812, Log in system.
+11/05/2021 06:01:29,Nurse,860812, Show beds status.
+11/05/2021 06:02:37,Nurse,860812, Log in system.
+11/05/2021 06:02:40,Nurse,860812, Check medicine details.
+11/05/2021 06:04:34,Nurse,860812, Log in system.
+11/05/2021 06:04:38,Nurse,860812, Check medicine details.
+11/05/2021 06:05:37,Nurse,860812, Log in system.
+11/05/2021 06:05:39,Nurse,860812, Check medicine details.
+11/05/2021 06:05:45,Nurse,860812, Check medicine details.

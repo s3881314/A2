@@ -15,13 +15,17 @@ import java.util.Scanner;
 public class DisplayAdministeringMedicine {
 
     @FXML
-    private Label showlabel;
+    private Label AdministeringMedicine;
 
     @FXML
     private Button back;
 
     @FXML
     private Button show;
+
+    @FXML
+    private Label rid;
+
 
     @FXML
     void Show(javafx.event.ActionEvent actionEvent){
@@ -34,7 +38,9 @@ public class DisplayAdministeringMedicine {
                 String data = myReader.nextLine();
                 s = s+data;
             }
-            showlabel.setText(s);
+            String[] s2 = s.split(",");
+            rid.setText(s2[0]);
+            AdministeringMedicine.setText(s2[1]);
         } catch (IOException e) {
             e.printStackTrace();
         }

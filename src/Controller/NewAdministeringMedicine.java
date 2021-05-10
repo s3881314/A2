@@ -14,30 +14,30 @@ import java.util.Scanner;
 public class NewAdministeringMedicine {
 
     @FXML
-    private TextField newadministeringmedicineward;
+    private TextField ward;
 
     @FXML
-    private TextField newadministeringmedicinemedicine;
+    private TextField medicine;
 
     @FXML
-    private TextField newadministeringmedicinebed;
+    private TextField bed;
 
     @FXML
-    private TextField newadministeringmedicineroom;
+    private TextField room;
 
     @FXML
-    private Button newadministeringmedicineconfirm;
+    private Button ConfirmBT;
 
     @FXML
-    private Button doses;
+    private TextField times;
 
     @FXML
-    private Button times;
+    private TextField doses;
 
     @FXML
-    void NewAdministeringMedicineConfirm(javafx.event.ActionEvent actionEvent) throws IOException {
+    void ConfirmBT(javafx.event.ActionEvent actionEvent) throws IOException{
         try {// Read username and position
-            File myObj = new File("./src/Archive/LogInData.txt");
+            File myObj = new File("./src/Archive/LogIn.txt");
             Scanner myReader = new Scanner(myObj);
             String sid="",sp="";
             while (myReader.hasNextLine()) {
@@ -47,12 +47,11 @@ public class NewAdministeringMedicine {
                 sp = s[2];
             }
             AbleCareHome a = new AbleCareHome();
-            a.AdministeringMedicine(sid,sp,newadministeringmedicineward.getText(),newadministeringmedicineroom.getText(),newadministeringmedicinebed.getText(),newadministeringmedicinemedicine.getText(), doses.getText(), times.getText());
+            a.AdministeringMedicine(sid,sp,ward.getText(),room.getText(),bed.getText(),medicine.getText(), doses.getText(), times.getText());
             MenuForAbleCareHome m = new MenuForAbleCareHome();
             m.ChangeScene("AfterLogIn.fxml");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
     }
-
 }

@@ -581,9 +581,8 @@ public class AbleCareHome {
         String rid ="";
         // get resident id via bed
         try {
-            // check if the id exist in Prescription.txt
             boolean flag = false;
-            File myObj = new File("F:\\Textbook\\MasterOfIT\\COSC1295 Advanced Programming\\Assignment\\Assignment2\\A2_1\\src\\Archive\\Bed.txt");
+            File myObj = new File("./src/Archive/Bed.txt");
             Scanner myReader = new Scanner(myObj);
             while (myReader.hasNextLine()) {
                 String data = myReader.nextLine();
@@ -593,7 +592,6 @@ public class AbleCareHome {
                 }
             }
         } catch (IOException e) {
-            System.out.println("An error occurred while reading Bed.txt in ReadResidentDetails.");
             e.printStackTrace();
         }
 
@@ -602,12 +600,12 @@ public class AbleCareHome {
         LocalDateTime now = LocalDateTime.now();
 
         try {
-            File myObj = new File("F:\\Textbook\\MasterOfIT\\COSC1295 Advanced Programming\\Assignment\\Assignment2\\A2_1\\src\\Archive\\ResidentList.txt");
+            File myObj = new File("./src/Archive/ResidentList.txt");
             Scanner myReader = new Scanner(myObj);
             while (myReader.hasNextLine()) {
                 String data = myReader.nextLine();
                 String a[] = data.split(",");
-                if (!a[3].equals(rid)) {  // Use Resident ID to skip the original bed data
+                if (a[0].equals(rid)) {
                     buff = buff + data + "\n";
                 }
             }
@@ -615,7 +613,7 @@ public class AbleCareHome {
 
             // Record action
             try {
-                File file = new File("F:\\Textbook\\MasterOfIT\\COSC1295 Advanced Programming\\Assignment\\Assignment2\\A2_1\\src\\Archive\\Action.txt");
+                File file = new File("./src/Archive/Action.txt");
                 FileWriter fr = new FileWriter(file, true);
                 BufferedWriter br = new BufferedWriter(fr);
                 PrintWriter pr = new PrintWriter(br);
@@ -624,11 +622,9 @@ public class AbleCareHome {
                 br.close();
                 fr.close();
             } catch (IOException e) {
-                System.out.println("An error occurred while writing Action.txt in DischargeResident.");
                 e.printStackTrace();
             }
         } catch (FileNotFoundException e) {
-            System.out.println("An error occurred while reading ResidentList.txt.");
             e.printStackTrace();
         }
         return buff;
@@ -850,27 +846,16 @@ public class AbleCareHome {
     // Medical staff only
     public String ReadAdministeringMedicine(String sid, String p2, String ward, String room, String bed){
         String rid="";
+        boolean flag = false;
         // get resident id via bed
         try {
-            // check if the id exist in Prescription.txt
             File myObj = new File("./src/Archive/Bed.txt");
-            try {
-                myObj.createNewFile();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            boolean flag = false;
-            if(myObj.length() == 0){
-                flag = false;
-            }
-            else {
-                Scanner myReader = new Scanner(myObj);
-                while (myReader.hasNextLine()) {
-                    String data = myReader.nextLine();
-                    String a[] = data.split(",");
-                    if (a[0].equals(ward) && a[1].equals(room) && a[2].equals(bed)) {
-                        rid = a[3];
-                    }
+            Scanner myReader = new Scanner(myObj);
+            while (myReader.hasNextLine()) {
+                String data = myReader.nextLine();
+                String a[] = data.split(",");
+                if (a[0].equals(ward) && a[1].equals(room) && a[2].equals(bed)) {
+                    rid = a[3];
                 }
             }
         } catch (IOException e) {
@@ -882,40 +867,32 @@ public class AbleCareHome {
         LocalDateTime now = LocalDateTime.now();
 
         try {
-            File myObj = new File("./src/Archive/DisplayAdministeringMedicine.txt");
+            File myObj = new File("./src/Archive/AdministeringMedicine.txt");
+            Scanner myReader = new Scanner(myObj);
+            while (myReader.hasNextLine()) {
+                String data = myReader.nextLine();
+                String a[] = data.split(",");
+                if (a[0].equals(rid)) {
+                    buff = buff + data + "\n";
+                }
+            }
+            myReader.close();
+
+            // Record action
             try {
-                myObj.createNewFile();
+                File file = new File("./src/Archive/Action.txt");
+                FileWriter fr = new FileWriter(file, true);
+                BufferedWriter br = new BufferedWriter(fr);
+                PrintWriter pr = new PrintWriter(br);
+                pr.println(dtf.format(now) + "," + p2 + "," + sid + ", Check medicine details.");
+                pr.close();
+                br.close();
+                fr.close();
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            if(!(myObj.length() == 0)) {
-                Scanner myReader = new Scanner(myObj);
-                while (myReader.hasNextLine()) {
-                    String data = myReader.nextLine();
-                    String a[] = data.split(",");
-                    if (a[0].equals(rid)) {
-                        buff = buff + data + "\n";
-                    }
-                }
-                myReader.close();
-                System.out.println(buff);
-
-                // Record action
-                try {
-                    File file = new File("./src/Archive/Action.txt");
-                    FileWriter fr = new FileWriter(file, true);
-                    BufferedWriter br = new BufferedWriter(fr);
-                    PrintWriter pr = new PrintWriter(br);
-                    pr.println(dtf.format(now) + "," + p2 + "," + sid + ", Check medicine details.");
-                    pr.close();
-                    br.close();
-                    fr.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
         } catch (FileNotFoundException e) {
-           e.printStackTrace();
+            e.printStackTrace();
         }
         return buff;
     }

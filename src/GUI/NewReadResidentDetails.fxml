@@ -7,19 +7,19 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.NewReadResidentDetails">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.NewReadResidentDetails">
    <center>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #171717;" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="700.0" prefWidth="800.0" style="-fx-background-color: #171717;" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="75.0" layoutY="30.0" prefHeight="66.0" prefWidth="449.0" text="Read Resident Details" textFill="WHITE">
+            <Label layoutX="175.0" layoutY="65.0" prefHeight="66.0" prefWidth="449.0" text="Read Resident Details" textFill="WHITE">
                <font>
                   <Font size="43.0" />
                </font>
             </Label>
-            <TextField fx:id="readresidentdetailsward" layoutX="195.0" layoutY="103.0" prefHeight="66.0" prefWidth="209.0" promptText="WARD" />
-            <TextField fx:id="readresidentdetailsbed" layoutX="195.0" layoutY="263.0" prefHeight="66.0" prefWidth="209.0" promptText="BED" />
-            <TextField fx:id="readresidentdetailsroom" layoutX="195.0" layoutY="179.0" prefHeight="66.0" prefWidth="209.0" promptText="ROOM" />
-            <Button fx:id="readresidentdetailsconfirm" layoutX="270.0" layoutY="341.0" mnemonicParsing="false" onAction="#ReadResidentDetailsConfirm" text="Confirm" />
+            <TextField fx:id="readresidentdetailsward" layoutX="300.0" layoutY="213.0" prefHeight="40.0" prefWidth="200.0" promptText="WARD" />
+            <TextField fx:id="readresidentdetailsbed" layoutX="305.0" layoutY="419.0" prefHeight="40.0" prefWidth="200.0" promptText="BED" />
+            <TextField fx:id="readresidentdetailsroom" layoutX="300.0" layoutY="317.0" prefHeight="40.0" prefWidth="200.0" promptText="ROOM" />
+            <Button fx:id="readresidentdetailsconfirm" layoutX="355.0" layoutY="495.0" mnemonicParsing="false" onAction="#ReadResidentDetailsConfirm" prefHeight="70.0" prefWidth="100.0" text="Confirm" />
          </children>
       </AnchorPane>
    </center>
