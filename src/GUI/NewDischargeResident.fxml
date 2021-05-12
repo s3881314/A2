@@ -16,8 +16,13 @@
                   <Font size="42.0" />
                </font>
             </Label>
-            <TextField fx:id="dischargeresidentrid" layoutX="283.0" layoutY="258.0" prefHeight="40.0" prefWidth="200.0" promptText="RESIDENT ID" />
+            <TextField fx:id="dischargeresidentrid" layoutX="333.0" layoutY="262.0" prefHeight="40.0" prefWidth="200.0" promptText="RESIDENT ID" />
             <Button fx:id="dischargeresidentconfirm" layoutX="333.0" layoutY="407.0" mnemonicParsing="false" onAction="#DischargeResidentConfirm" prefHeight="70.0" prefWidth="100.0" text="Confirm" />
+            <Label layoutX="199.0" layoutY="267.0" text="Resident ID" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
    </center>

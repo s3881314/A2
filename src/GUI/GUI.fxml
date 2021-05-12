@@ -14,7 +14,7 @@
     <left>
         <AnchorPane prefHeight="700.0" prefWidth="800.0" BorderPane.alignment="CENTER">
             <children>
-                <ImageView fitHeight="715.0" fitWidth="520.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fitHeight="536.0" fitWidth="533.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true" y="25.0">
                     <image>
                         <Image url="@../image/istockphoto-988112594-170667a.jpg" />
                     </image>
@@ -23,10 +23,10 @@
         </AnchorPane>
     </left>
     <right>
-        <AnchorPane prefHeight="700.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+        <AnchorPane prefHeight="700.0" prefWidth="253.0" BorderPane.alignment="CENTER">
             <children>
-                <TextField fx:id="Username" layoutX="51.0" layoutY="285.0" prefHeight="40.0" prefWidth="150.0" promptText="ID" />
-                <PasswordField fx:id="Password" layoutX="51.0" layoutY="350.0" prefHeight="40.0" prefWidth="150.0" promptText="Password" />
+                <TextField fx:id="Username" layoutX="70.0" layoutY="287.0" prefHeight="40.0" prefWidth="150.0" promptText="ID" />
+                <PasswordField fx:id="Password" layoutX="70.0" layoutY="350.0" prefHeight="40.0" prefWidth="150.0" promptText="Password" />
                 <Button fx:id="LogInBT" layoutX="70.0" layoutY="423.0" mnemonicParsing="false" onAction="#LogInBT" prefHeight="70.0" prefWidth="100.0" text="Log In" />
                 <Label layoutX="46.0" layoutY="77.0" text="Welcome to" textFill="WHITE">
                     <font>
@@ -39,7 +39,22 @@
                     </font>
                 </Label>
                 <Label fx:id="WrongLogIn" layoutX="28.0" layoutY="169.0" prefHeight="43.0" prefWidth="212.0" textFill="RED" />
-            <TextField fx:id="Position" layoutX="51.0" layoutY="212.0" prefHeight="40.0" prefWidth="150.0" promptText="Position" />
+            <TextField fx:id="Position" layoutX="70.0" layoutY="212.0" prefHeight="40.0" prefWidth="150.0" promptText="Position" />
+            <Label layoutX="-2.0" layoutY="219.0" text="Position" textFill="WHITE">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="17.0" layoutY="294.0" prefHeight="26.0" prefWidth="22.0" text="ID" textFill="WHITE">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="-10.0" layoutY="357.0" prefHeight="26.0" prefWidth="75.0" text="Password" textFill="WHITE">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
             </children>
         </AnchorPane>
     </right>

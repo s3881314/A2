@@ -16,11 +16,31 @@
                   <Font size="43.0" />
                </font>
             </Label>
-            <TextField fx:id="Ward" layoutX="300.0" layoutY="109.0" prefHeight="40.0" prefWidth="200.0" promptText="WARD" />
-            <TextField fx:id="room" layoutX="300.0" layoutY="193.0" prefHeight="40.0" prefWidth="200.0" promptText="ROOM" />
-            <TextField fx:id="bed" layoutX="300.0" layoutY="276.0" prefHeight="40.0" prefWidth="200.0" promptText="BED" />
-            <TextField fx:id="prescription" layoutX="300.0" layoutY="368.0" prefHeight="40.0" prefWidth="200.0" promptText="PRESCRIPTION" />
+            <TextField fx:id="Ward" layoutX="350.0" layoutY="110.0" prefHeight="40.0" prefWidth="200.0" promptText="WARD" />
+            <TextField fx:id="room" layoutX="350.0" layoutY="193.0" prefHeight="40.0" prefWidth="200.0" promptText="ROOM" />
+            <TextField fx:id="bed" layoutX="350.0" layoutY="276.0" prefHeight="40.0" prefWidth="200.0" promptText="BED" />
+            <TextField fx:id="prescription" layoutX="350.0" layoutY="367.0" prefHeight="40.0" prefWidth="200.0" promptText="PRESCRIPTION" />
             <Button fx:id="bt" layoutX="350.0" layoutY="456.0" mnemonicParsing="false" onAction="#ConfirmBT" prefHeight="70.0" prefWidth="100.0" text="Confirm" />
+            <Label layoutX="212.0" layoutY="115.0" text="Ward Number" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="212.0" layoutY="193.0" text="Room Number" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="222.0" layoutY="281.0" text="Bed Number" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="223.0" layoutY="372.0" text="Prescription" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
    </center>

@@ -89,7 +89,6 @@ public class Medicine {
                     }
                     // Record action
                     try {
-
                         File file2 = new File("./src/Archive/Action.txt");
                         FileWriter fr2 = new FileWriter(file2, true);
                         BufferedWriter br2 = new BufferedWriter(fr2);
@@ -99,11 +98,9 @@ public class Medicine {
                         br2.close();
                         fr2.close();
                     } catch (IOException e) {
-                        System.out.println("An error occurred while writing Action.txt in AdministeringMedicine.");
                         e.printStackTrace();
                     }
                 } catch (IOException e) {
-                    System.out.println("An error occurred while reading AdministeringMedicine.txt.");
                     e.printStackTrace();
                 }
             } else {

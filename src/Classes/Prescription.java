@@ -14,7 +14,7 @@ public class Prescription {
         // check if the id exist
         boolean exist = false;
         try {
-            File myObj = new File("F:\\Textbook\\MasterOfIT\\COSC1295 Advanced Programming\\Assignment\\Assignment2\\A2_1\\src\\Archive\\Prescription.txt");
+            File myObj = new File("./src/Archive/Prescription.txt");
             Scanner myReader = new Scanner(myObj);
             while (myReader.hasNextLine()) {
                 String data = myReader.nextLine();
@@ -27,7 +27,7 @@ public class Prescription {
             if(exist == false) {
                 // Attach new prescription
                 try {
-                    File file = new File("F:\\Textbook\\MasterOfIT\\COSC1295 Advanced Programming\\Assignment\\Assignment2\\A2_1\\src\\Archive\\Prescription.txt");
+                    File file = new File("./src/Archive/Prescription.txt");
                     FileWriter fr = new FileWriter(file, true);
                     BufferedWriter br = new BufferedWriter(fr);
                     PrintWriter pr = new PrintWriter(br);
@@ -41,7 +41,7 @@ public class Prescription {
                         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
                         LocalDateTime now = LocalDateTime.now();
 
-                        File file2 = new File("F:\\Textbook\\MasterOfIT\\COSC1295 Advanced Programming\\Assignment\\Assignment2\\A2_1\\src\\Archive\\Action.txt");
+                        File file2 = new File("./src/Archive/Action.txt");
                         FileWriter fr2 = new FileWriter(file, true);
                         BufferedWriter br2 = new BufferedWriter(fr);
                         PrintWriter pr2 = new PrintWriter(br);
@@ -50,11 +50,9 @@ public class Prescription {
                         br2.close();
                         fr2.close();
                     } catch (IOException e) {
-                        System.out.println("An error occurred while writing Action.txt.");
                         e.printStackTrace();
                     }
                 } catch (IOException e) {
-                    System.out.println("An error occurred while writing Prescription.txt.");
                     e.printStackTrace();
                 }
             }
@@ -63,7 +61,6 @@ public class Prescription {
             }
             myReader.close();
         } catch (FileNotFoundException e) {
-            System.out.println("An error occurred while reading ResidentList.txt.");
             e.printStackTrace();
         }
     }

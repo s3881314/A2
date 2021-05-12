@@ -16,11 +16,31 @@
                   <Font size="33.0" />
                </font>
             </Label>
-            <TextField fx:id="attachnewprescriptionward" layoutX="300.0" layoutY="185.0" prefHeight="40.0" prefWidth="200.0" promptText="WARD" />
-            <TextField fx:id="attachnewprescriptionroom" layoutX="300.0" layoutY="268.0" prefHeight="40.0" prefWidth="200.0" promptText="ROOM" />
-            <TextField fx:id="attachnewprescriptionbed" layoutX="300.0" layoutY="350.0" prefHeight="40.0" prefWidth="200.0" promptText="BED" />
-            <TextField fx:id="attachnewprescriptionprescription" layoutX="200.0" layoutY="416.0" prefHeight="40.0" prefWidth="400.0" promptText="PRESCRIPTION" />
+            <TextField fx:id="attachnewprescriptionward" layoutX="350.0" layoutY="185.0" prefHeight="40.0" prefWidth="200.0" promptText="WARD" />
+            <TextField fx:id="attachnewprescriptionroom" layoutX="350.0" layoutY="267.0" prefHeight="40.0" prefWidth="200.0" promptText="ROOM" />
+            <TextField fx:id="attachnewprescriptionbed" layoutX="350.0" layoutY="335.0" prefHeight="40.0" prefWidth="200.0" promptText="BED" />
+            <TextField fx:id="attachnewprescriptionprescription" layoutX="350.0" layoutY="408.0" prefHeight="40.0" prefWidth="200.0" promptText="PRESCRIPTION" />
             <Button fx:id="attachnewprescriptionconfirm" layoutX="350.0" layoutY="525.0" mnemonicParsing="false" onAction="#AttachNewPrescriptionConfirm" prefHeight="70.0" prefWidth="100.0" text="Confirm" />
+            <Label layoutX="210.0" layoutY="190.0" text="Ward Number" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="207.0" layoutY="272.0" text="Room Number" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="217.0" layoutY="340.0" text="Bed Number" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="221.0" layoutY="413.0" text="Prescription" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
    </center>

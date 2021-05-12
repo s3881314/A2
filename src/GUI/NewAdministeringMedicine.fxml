@@ -16,13 +16,43 @@
                   <Font size="33.0" />
                </font>
             </Label>
-            <TextField fx:id="ward" layoutX="307.0" layoutY="97.0" prefHeight="50.0" prefWidth="200.0" promptText="WARD" />
-            <TextField fx:id="medicine" layoutX="307.0" layoutY="299.0" prefHeight="50.0" prefWidth="200.0" promptText="MEDICINE" />
-            <TextField fx:id="bed" layoutX="307.0" layoutY="230.0" prefHeight="50.0" prefWidth="200.0" promptText="BED" />
-            <TextField fx:id="room" layoutX="307.0" layoutY="162.0" prefHeight="50.0" prefWidth="200.0" promptText="ROOM" />
+            <TextField fx:id="ward" layoutX="350.0" layoutY="97.0" prefHeight="50.0" prefWidth="200.0" promptText="WARD" />
+            <TextField fx:id="medicine" layoutX="350.0" layoutY="299.0" prefHeight="50.0" prefWidth="200.0" promptText="MEDICINE" />
+            <TextField fx:id="bed" layoutX="350.0" layoutY="228.0" prefHeight="50.0" prefWidth="200.0" promptText="BED" />
+            <TextField fx:id="room" layoutX="350.0" layoutY="162.0" prefHeight="50.0" prefWidth="200.0" promptText="ROOM" />
             <Button fx:id="ConfirmBT" layoutX="350.0" layoutY="538.0" mnemonicParsing="false" onAction="#ConfirmBT" prefHeight="70.0" prefWidth="100.0" text="Confirm" />
-            <TextField fx:id="times" layoutX="307.0" layoutY="450.0" prefHeight="50.0" prefWidth="200.0" promptText="How many times?" />
-            <TextField fx:id="doses" layoutX="307.0" layoutY="374.0" prefHeight="50.0" prefWidth="200.0" promptText="How many doses?" />
+            <TextField fx:id="times" layoutX="350.0" layoutY="450.0" prefHeight="50.0" prefWidth="200.0" promptText="How many times?" />
+            <TextField fx:id="doses" layoutX="350.0" layoutY="374.0" prefHeight="50.0" prefWidth="200.0" promptText="How many doses?" />
+            <Label layoutX="186.0" layoutY="107.0" text="Ward Number" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="183.0" layoutY="172.0" text="Room Number" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="193.0" layoutY="238.0" text="Bed Number" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="208.0" layoutY="309.0" text="Medicine" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="173.0" layoutY="384.0" text="Number of doses" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="223.0" layoutY="460.0" text="Times" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
    </center>
