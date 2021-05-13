@@ -10,11 +10,11 @@ public class Resident {
     private String Name;
     private String Gender;
     private String ID;
-    private String DateOfBirthday;
+    private LocalDate DateOfBirthday;
     private LocalDate Admitted;
     private LocalDate Discharged = null;
 
-    Resident(String sid, String p2, String n, String g, String id, String dob){
+    Resident(String sid, String p2, String n, String g, String id, LocalDate dob){
         try {
             File myObj = new File("./src/Archive/Bed.txt");
             myObj.createNewFile();

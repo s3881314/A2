@@ -27,6 +27,15 @@ public class NewReadResidentDetails {
     private Button readresidentdetailsconfirm;
 
     @FXML
+    private Button Cancel;
+
+    @FXML
+    void CancelBT(javafx.event.ActionEvent actionEvent) throws IOException {
+        MenuForAbleCareHome m = new MenuForAbleCareHome();
+        m.ChangeScene("AfterLogIn.fxml");
+    }
+
+    @FXML
     void ReadResidentDetailsConfirm(javafx.event.ActionEvent actionEvent) {
         String b="";
         try {// Read username and position

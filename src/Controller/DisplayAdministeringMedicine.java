@@ -10,9 +10,13 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 import java.util.Scanner;
 
-public class DisplayAdministeringMedicine {
+import javafx.fxml.Initializable;
+
+public class DisplayAdministeringMedicine implements Initializable{
 
     @FXML
     private Label AdministeringMedicine;
@@ -21,14 +25,10 @@ public class DisplayAdministeringMedicine {
     private Button back;
 
     @FXML
-    private Button show;
-
-    @FXML
     private Label rid;
 
-
-    @FXML
-    void Show(javafx.event.ActionEvent actionEvent){
+    @Override
+    public void initialize(URL url, ResourceBundle rb){
         try {// Read username and position
             String s="";
             File myObj = new File("./src/Archive/DisplayAdministeringMedicine.txt");

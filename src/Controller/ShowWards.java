@@ -10,14 +10,15 @@ import javafx.scene.shape.Rectangle;
 import java.awt.event.ActionEvent;
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 import java.util.Scanner;
 
-public class ShowWards {
+import javafx.fxml.Initializable;
+
+public class ShowWards implements Initializable{
     @FXML
     private Button back;
-
-    @FXML
-    private Button ds;
 
     @FXML
     private Rectangle w1r1b1;
@@ -163,8 +164,8 @@ public class ShowWards {
     @FXML
     private Rectangle w2r4b5;
 
-    @FXML
-    void Display(javafx.event.ActionEvent actionEvent) {
+    @Override
+    public void initialize(URL url, ResourceBundle rb){
         try {
             // Read username and position
             File myObj = new File("./src/Archive/Bed.txt");
@@ -175,7 +176,7 @@ public class ShowWards {
                 String s[] = data.split(",");
                 boolean male = false;
                 for(int i = 0; i < s.length; i++){
-                    if(s[i].equals("M") ) {
+                    if(s[i].equals("Male") ) {
                         male = true;
                     }
                 }
@@ -325,8 +326,8 @@ public class ShowWards {
                     else if(s[0].equals("2") && s[1].equals("4") && s[2].equals("6")){
                         w2r4b6.setFill(Color.BLUE);
                     }
-               }
-               else{
+                }
+                else{
                     if(s[0].equals("1") && s[1].equals("1") && s[2].equals("1")){
                         w1r1b1.setFill(Color.RED);
                     }
@@ -477,6 +478,7 @@ public class ShowWards {
             e.printStackTrace();
         }
     }
+
     @FXML
     void BackBT(javafx.event.ActionEvent actionEvent) throws IOException {
         MenuForAbleCareHome m = new MenuForAbleCareHome();

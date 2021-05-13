@@ -21,7 +21,7 @@
             <TextField fx:id="dow" layoutX="356.0" layoutY="270.0" prefHeight="40.0" prefWidth="200.0" promptText="DAY OF WEEK" />
             <TextField fx:id="st" layoutX="356.0" layoutY="330.0" prefHeight="40.0" prefWidth="200.0" promptText="START TIME" />
             <TextField fx:id="et" layoutX="356.0" layoutY="399.0" prefHeight="40.0" prefWidth="200.0" promptText="END TIME" />
-            <Button fx:id="BT" layoutX="356.0" layoutY="466.0" mnemonicParsing="false" onAction="#ConfirmBT" prefHeight="70.0" prefWidth="100.0" text="Confirm" />
+            <Button fx:id="BT" layoutX="306.0" layoutY="483.0" mnemonicParsing="false" onAction="#ConfirmBT" prefHeight="70.0" prefWidth="100.0" text="Confirm" />
             <Label layoutX="266.0" layoutY="136.0" text="Postion" textFill="WHITE">
                <font>
                   <Font size="20.0" />
@@ -47,6 +47,7 @@
                   <Font size="20.0" />
                </font>
             </Label>
+            <Button fx:id="Cancel" layoutX="506.0" layoutY="483.0" mnemonicParsing="false" onAction="#CancelBT" prefHeight="70.0" prefWidth="100.0" text="Cancel" />
          </children>
       </AnchorPane>
    </center>

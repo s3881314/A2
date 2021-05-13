@@ -25,6 +25,15 @@ public class NewUpdatePassword {
     private Button bt;
 
     @FXML
+    private Button Cancel;
+
+    @FXML
+    void CancelBT(javafx.event.ActionEvent actionEvent) throws IOException {
+        MenuForAbleCareHome m = new MenuForAbleCareHome();
+        m.ChangeScene("AfterLogIn.fxml");
+    }
+
+    @FXML
     void ConfirmBT(javafx.event.ActionEvent actionEvent) {
         try {// Read username and position
             File myObj = new File("./src/Archive/LogIn.txt");

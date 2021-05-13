@@ -20,7 +20,7 @@
             <TextField fx:id="moveresidentrid" layoutX="341.0" layoutY="346.0" prefHeight="40.0" prefWidth="200.0" promptText="RESIDENT ID" />
             <TextField fx:id="moveresidentbed" layoutX="341.0" layoutY="274.0" prefHeight="40.0" prefWidth="200.0" promptText="BED" />
             <TextField fx:id="moveresidentroom" layoutX="341.0" layoutY="206.0" prefHeight="40.0" prefWidth="200.0" promptText="ROOM" />
-            <Button fx:id="moveresidentconfirm" layoutX="341.0" layoutY="459.0" mnemonicParsing="false" onAction="#MoveResidentConfirm" prefHeight="70.0" prefWidth="100.0" text="Confirm" />
+            <Button fx:id="moveresidentconfirm" layoutX="300.0" layoutY="458.0" mnemonicParsing="false" onAction="#MoveResidentConfirm" prefHeight="70.0" prefWidth="100.0" text="Confirm" />
             <Label layoutX="199.0" layoutY="139.0" text="Ward Number" textFill="WHITE">
                <font>
                   <Font size="20.0" />
@@ -41,6 +41,7 @@
                   <Font size="20.0" />
                </font>
             </Label>
+            <Button fx:id="Cancel" layoutX="479.0" layoutY="459.0" mnemonicParsing="false" onAction="#CancelBT" prefHeight="70.0" prefWidth="100.0" text="Cancel" />
          </children>
       </AnchorPane>
    </center>

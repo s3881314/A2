@@ -2,21 +2,23 @@ package Controller;
 
 import GUI.MenuForAbleCareHome;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
 import java.awt.event.ActionEvent;
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 import java.util.Scanner;
 
-public class DisplayPrescription {
+import javafx.fxml.Initializable;
+
+public class DisplayPrescription implements Initializable {
 
     @FXML
     private Label Presciption;
-
-    @FXML
-    private Button show;
 
     @FXML
     private Button back;
@@ -24,19 +26,8 @@ public class DisplayPrescription {
     @FXML
     private Label ResidentID;
 
-    @FXML
-    void Back(ActionEvent event) {
-
-    }
-
-    @FXML
-    void Back(javafx.event.ActionEvent actionEvent) throws IOException{
-        MenuForAbleCareHome m = new MenuForAbleCareHome();
-        m.ChangeScene("AfterLogIn.fxml");
-    }
-
-    @FXML
-    void Show(javafx.event.ActionEvent actionEvent) {
+    @Override
+    public void initialize(URL url, ResourceBundle rb){
         try {
             // Read username and position
             String s="";
@@ -55,4 +46,9 @@ public class DisplayPrescription {
         }
     }
 
+    @FXML
+    void Back(javafx.event.ActionEvent actionEvent) throws IOException{
+        MenuForAbleCareHome m = new MenuForAbleCareHome();
+        m.ChangeScene("AfterLogIn.fxml");
+    }
 }

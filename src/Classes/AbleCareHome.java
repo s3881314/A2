@@ -3,6 +3,7 @@
 // 2 wards and 6 rooms, each room has 1 to 4 beds
 package Classes;
 import java.io.*;
+import java.time.LocalDate;
 import java.util.*;
 import java.time.format.DateTimeFormatter;
 import java.time.LocalDateTime;
@@ -21,7 +22,7 @@ public class AbleCareHome {
         Nurse ne = new Nurse(sid, p2, n, id, p, pw);
     }
 
-    public void AddResident(String sid, String p2, String n, String g, String id, String dob){
+    public void AddResident(String sid, String p2, String n, String g, String id, LocalDate dob){
         Resident ne = new Resident(sid, p2, n, g, id, dob);
     }
 

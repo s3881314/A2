@@ -35,6 +35,9 @@ public class NewAdministeringMedicine {
     private TextField doses;
 
     @FXML
+    private Button Cancel;
+
+    @FXML
     void ConfirmBT(javafx.event.ActionEvent actionEvent) throws IOException{
         try {// Read username and position
             File myObj = new File("./src/Archive/LogIn.txt");
@@ -54,4 +57,11 @@ public class NewAdministeringMedicine {
             e.printStackTrace();
         }
     }
+
+    @FXML
+    void CancelBT(javafx.event.ActionEvent actionEvent) throws IOException {
+        MenuForAbleCareHome m = new MenuForAbleCareHome();
+        m.ChangeScene("AfterLogIn.fxml");
+    }
+
 }

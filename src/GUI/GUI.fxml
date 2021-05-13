@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
@@ -39,8 +40,7 @@
                     </font>
                 </Label>
                 <Label fx:id="WrongLogIn" layoutX="28.0" layoutY="169.0" prefHeight="43.0" prefWidth="212.0" textFill="RED" />
-            <TextField fx:id="Position" layoutX="70.0" layoutY="212.0" prefHeight="40.0" prefWidth="150.0" promptText="Position" />
-            <Label layoutX="-2.0" layoutY="219.0" text="Position" textFill="WHITE">
+            <Label layoutX="-3.0" layoutY="231.0" text="Position" textFill="WHITE">
                <font>
                   <Font size="17.0" />
                </font>
@@ -55,6 +55,7 @@
                   <Font size="17.0" />
                </font>
             </Label>
+            <ChoiceBox fx:id="ChoiceBox" layoutX="70.0" layoutY="232.0" prefWidth="150.0" />
             </children>
         </AnchorPane>
     </right>

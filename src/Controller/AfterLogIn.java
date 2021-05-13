@@ -9,12 +9,16 @@ import javafx.scene.control.Label;
 
 import java.awt.event.ActionEvent;
 import java.io.*;
+import java.net.URL;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ResourceBundle;
 import java.util.Scanner;
 
+import javafx.fxml.Initializable;
 
-public class AfterLogIn {
+
+public class AfterLogIn implements Initializable {
     private String Position="";
     private String UName="";
     private String PWord="";
@@ -25,9 +29,6 @@ public class AfterLogIn {
 
     @FXML
     private Label loginn;  // Log in name
-
-    @FXML
-    private Button showuser;
 
     @FXML
     private Button Logout;
@@ -83,9 +84,13 @@ public class AfterLogIn {
     @FXML
     private Button showwards;
 
-    @FXML
-    void ShowUser(javafx.event.ActionEvent actionEvent) throws IOException {
-        ReadUsernamePassword();
+    @Override
+    public void initialize(URL url, ResourceBundle rb){
+        try {
+            ReadUsernamePassword();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
         loginp.setText(Position);
         loginn.setText(UName);
     }

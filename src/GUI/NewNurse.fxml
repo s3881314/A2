@@ -20,7 +20,7 @@
             <TextField fx:id="newnurseid" layoutX="350.0" layoutY="235.0" prefHeight="40.0" prefWidth="200.0" promptText="ID" />
             <TextField fx:id="newnursephone" layoutX="350.0" layoutY="330.0" prefHeight="40.0" prefWidth="200.0" promptText="PHONE" />
             <TextField fx:id="newnursepassword" layoutX="350.0" layoutY="415.0" prefHeight="40.0" prefWidth="200.0" promptText="PASSWORD" />
-            <Button fx:id="newnurseconfirm" layoutX="350.0" layoutY="497.0" mnemonicParsing="false" onAction="#NewNurseConfirm" prefHeight="70.0" prefWidth="100.0" text="Confirm" />
+            <Button fx:id="newnurseconfirm" layoutX="300.0" layoutY="502.0" mnemonicParsing="false" onAction="#NewNurseConfirm" prefHeight="70.0" prefWidth="100.0" text="Confirm" />
             <Label layoutX="257.0" layoutY="157.0" text="Name" textFill="WHITE">
                <font>
                   <Font size="20.0" />
@@ -41,6 +41,7 @@
                   <Font size="20.0" />
                </font>
             </Label>
+            <Button fx:id="Cancel" layoutX="454.0" layoutY="502.0" mnemonicParsing="false" onAction="#CancelBT" prefHeight="70.0" prefWidth="100.0" text="Cancel" />
          </children>
       </AnchorPane>
    </center>

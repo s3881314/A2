@@ -20,8 +20,7 @@
                   <Font size="21.0" />
                </font>
             </Label>
-            <Button fx:id="back" layoutX="503.0" layoutY="528.0" mnemonicParsing="false" onAction="#Getback" prefHeight="70.0" prefWidth="100.0" text="Back" />
-            <Button fx:id="show" layoutX="196.0" layoutY="530.0" mnemonicParsing="false" onAction="#Show" prefHeight="70.0" prefWidth="100.0" text="Show" />
+            <Button fx:id="back" layoutX="350.0" layoutY="533.0" mnemonicParsing="false" onAction="#Getback" prefHeight="70.0" prefWidth="100.0" text="Back" />
             <Label fx:id="rid" layoutX="400.0" layoutY="262.0" prefHeight="75.0" prefWidth="278.0" style="-fx-background-color: white;">
                <font>
                   <Font size="21.0" />

@@ -28,6 +28,10 @@ public class NewAttachNewPrescription {
     private Button attachnewprescriptionconfirm;
 
     @FXML
+    private Button Cancel;
+
+
+    @FXML
     void AttachNewPrescriptionConfirm(javafx.event.ActionEvent actionEvent) throws IOException {
         try {// Read username and position
             File myObj = new File("./src/Archive/LogIn.txt");
@@ -46,6 +50,12 @@ public class NewAttachNewPrescription {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    @FXML
+    void CancelBT(javafx.event.ActionEvent actionEvent) throws IOException {
+        MenuForAbleCareHome m = new MenuForAbleCareHome();
+        m.ChangeScene("AfterLogIn.fxml");
     }
 
 }

@@ -20,7 +20,7 @@
             <TextField fx:id="medicine" layoutX="350.0" layoutY="299.0" prefHeight="50.0" prefWidth="200.0" promptText="MEDICINE" />
             <TextField fx:id="bed" layoutX="350.0" layoutY="228.0" prefHeight="50.0" prefWidth="200.0" promptText="BED" />
             <TextField fx:id="room" layoutX="350.0" layoutY="162.0" prefHeight="50.0" prefWidth="200.0" promptText="ROOM" />
-            <Button fx:id="ConfirmBT" layoutX="350.0" layoutY="538.0" mnemonicParsing="false" onAction="#ConfirmBT" prefHeight="70.0" prefWidth="100.0" text="Confirm" />
+            <Button fx:id="ConfirmBT" layoutX="300.0" layoutY="538.0" mnemonicParsing="false" onAction="#ConfirmBT" prefHeight="70.0" prefWidth="100.0" text="Confirm" />
             <TextField fx:id="times" layoutX="350.0" layoutY="450.0" prefHeight="50.0" prefWidth="200.0" promptText="How many times?" />
             <TextField fx:id="doses" layoutX="350.0" layoutY="374.0" prefHeight="50.0" prefWidth="200.0" promptText="How many doses?" />
             <Label layoutX="186.0" layoutY="107.0" text="Ward Number" textFill="WHITE">
@@ -53,6 +53,7 @@
                   <Font size="20.0" />
                </font>
             </Label>
+            <Button fx:id="Cancel" layoutX="467.0" layoutY="538.0" mnemonicParsing="false" onAction="#CancelBT" prefHeight="70.0" prefWidth="100.0" text="Cancel" />
          </children>
       </AnchorPane>
    </center>

@@ -19,6 +19,15 @@ public class NewDischargeResident {
     private Button dischargeresidentconfirm;
 
     @FXML
+    private Button Cancel;
+
+    @FXML
+    void CancelBT(javafx.event.ActionEvent actionEvent) throws IOException {
+        MenuForAbleCareHome m = new MenuForAbleCareHome();
+        m.ChangeScene("AfterLogIn.fxml");
+    }
+
+    @FXML
     void DischargeResidentConfirm(javafx.event.ActionEvent actionEvent) {
         try {// Read username and position
             File myObj = new File("./src/Archive/LogIn.txt");

@@ -1,25 +1,30 @@
 package Controller;
 
 import GUI.MenuForAbleCareHome;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.io.*;
+import java.net.URL;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Observable;
+import java.util.ResourceBundle;
 import java.util.Scanner;
 import javafx.event.ActionEvent.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 
-public class LogIn {
+import javafx.fxml.Initializable;
 
-    @FXML
-    private TextField Position;
 
+public class LogIn implements Initializable{
+    private String Position="";
     @FXML
     private TextField Username;
 
@@ -33,17 +38,27 @@ public class LogIn {
     private Label WrongLogIn;
 
     @FXML
+    private javafx.scene.control.ChoiceBox<String> ChoiceBox;
+    ObservableList list = FXCollections.observableArrayList();
+
+    @Override
+    public void initialize(URL url, ResourceBundle rb){
+        LoadData();
+    }
+
+    @FXML
     public void LogInBT(javafx.event.ActionEvent actionEvent) {
+        Position = ChoiceBox.getValue();
         CheckLogIn();
     }
 
     private void CheckLogIn() {
         MenuForAbleCareHome m = new MenuForAbleCareHome();
-        if (Position.getText().isEmpty() &&Username.getText().isEmpty() && Password.getText().isEmpty()) {
+        if (Username.getText().isEmpty() && Password.getText().isEmpty()) {
             WrongLogIn.setText("Please enter your data.");
         }
         else {
-            if (Position.getText().equals("Doctor")) {
+            if (Position.equals("Doctor")) {
                 try {
                     boolean login = false;
                     File myObj = new File("./src/Archive/DoctorList.txt");
@@ -67,7 +82,7 @@ public class LogIn {
                     e.printStackTrace();
                 }
             }
-            else if (Position.getText().equals("Manager")) {
+            else if (Position.equals("Manager")) {
                 try {
                     boolean login = false;
                     File myObj = new File("./src/Archive/ManagerList.txt");
@@ -90,7 +105,7 @@ public class LogIn {
                     e.printStackTrace();
                 }
             }
-            else if (Position.getText().equals("Nurse")) {
+            else if (Position.equals("Nurse")) {
                 try {
                     boolean login = false;
                     File myObj = new File("./src/Archive/NurseList.txt");
@@ -132,7 +147,7 @@ public class LogIn {
             LocalDateTime now = LocalDateTime.now();
 
             // Write log in data in LogIn.txt
-            String LogInData = u + "," + p + "," + Position.getText();
+            String LogInData = u + "," + p + "," + Position;
             FileWriter fw = new FileWriter("./src/Archive/LogIn.txt");
             fw.write(LogInData); // 將字串寫到檔案裡
             fw.close();
@@ -143,7 +158,7 @@ public class LogIn {
                 FileWriter fr = new FileWriter(file, true);
                 BufferedWriter br = new BufferedWriter(fr);
                 PrintWriter pr = new PrintWriter(br);
-                pr.println(dtf.format(now) + "," + Position.getText() + "," + u + ", Log in system.");
+                pr.println(dtf.format(now) + "," + Position + "," + u + ", Log in system.");
                 pr.close();
                 br.close();
                 fr.close();
@@ -155,4 +170,12 @@ public class LogIn {
         }
     }
 
+    private void LoadData(){
+        list.removeAll(list);
+        String a = "Manager";
+        String b = "Doctor";
+        String c = "Nurse";
+        list.addAll(a,b,c);
+        ChoiceBox.getItems().addAll(list);
+    }
 }

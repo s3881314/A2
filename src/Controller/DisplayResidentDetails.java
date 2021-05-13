@@ -8,12 +8,13 @@ import javafx.scene.control.Label;
 import java.awt.event.ActionEvent;
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 import java.util.Scanner;
 
-public class DisplayResidentDetails {
+import javafx.fxml.Initializable;
 
-    @FXML
-    private Button show;
+public class DisplayResidentDetails implements Initializable{
 
     @FXML
     private Button back;
@@ -33,15 +34,8 @@ public class DisplayResidentDetails {
     @FXML
     private Label DischargeDate;
 
-
-    @FXML
-    void back(javafx.event.ActionEvent actionEvent) throws IOException {
-        MenuForAbleCareHome m = new MenuForAbleCareHome();
-        m.ChangeScene("AfterLogIn.fxml");
-    }
-
-    @FXML
-    void show(javafx.event.ActionEvent actionEvent) {
+    @Override
+    public void initialize(URL url, ResourceBundle rb){
         try {
             // Read username and position
             String s="";
@@ -66,4 +60,9 @@ public class DisplayResidentDetails {
         }
     }
 
+    @FXML
+    void back(javafx.event.ActionEvent actionEvent) throws IOException {
+        MenuForAbleCareHome m = new MenuForAbleCareHome();
+        m.ChangeScene("AfterLogIn.fxml");
+    }
 }
