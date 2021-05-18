@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="800.0" style="-fx-background-color: #171717;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.NewMoveResident">
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="253.0" layoutY="33.0" text="Move Resident" textFill="WHITE">
+               <font>
+                  <Font size="42.0" />
+               </font>
+            </Label>
+            <TextField fx:id="moveresidentward" layoutX="341.0" layoutY="134.0" prefHeight="40.0" prefWidth="200.0" promptText="WARD" />
+            <TextField fx:id="moveresidentrid" layoutX="341.0" layoutY="346.0" prefHeight="40.0" prefWidth="200.0" promptText="RESIDENT ID" />
+            <TextField fx:id="moveresidentbed" layoutX="341.0" layoutY="274.0" prefHeight="40.0" prefWidth="200.0" promptText="BED" />
+            <TextField fx:id="moveresidentroom" layoutX="341.0" layoutY="206.0" prefHeight="40.0" prefWidth="200.0" promptText="ROOM" />
+            <Button fx:id="moveresidentconfirm" layoutX="300.0" layoutY="458.0" mnemonicParsing="false" onAction="#MoveResidentConfirm" prefHeight="70.0" prefWidth="100.0" text="Confirm" />
+            <Label layoutX="199.0" layoutY="139.0" text="Ward Number" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="197.0" layoutY="211.0" text="Room Number" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="216.0" layoutY="279.0" text="Bed Number" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="226.0" layoutY="351.0" text="Resident ID" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Button fx:id="Cancel" layoutX="479.0" layoutY="459.0" mnemonicParsing="false" onAction="#CancelBT" prefHeight="70.0" prefWidth="100.0" text="Cancel" />
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

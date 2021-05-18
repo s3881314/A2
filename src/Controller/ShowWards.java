@@ -75,24 +75,6 @@ public class ShowWards implements Initializable{
     private Rectangle w1r3b5;
 
     @FXML
-    private Rectangle w1r4b1;
-
-    @FXML
-    private Rectangle w1r4b4;
-
-    @FXML
-    private Rectangle w1r4b3;
-
-    @FXML
-    private Rectangle w1r4b6;
-
-    @FXML
-    private Rectangle w1r4b2;
-
-    @FXML
-    private Rectangle w1r4b5;
-
-    @FXML
     private Rectangle w2r1b1;
 
     @FXML
@@ -120,13 +102,13 @@ public class ShowWards implements Initializable{
     private Rectangle w2r2b3;
 
     @FXML
+    private Rectangle w2r2b6;
+
+    @FXML
     private Rectangle w2r2b2;
 
     @FXML
     private Rectangle w2r2b5;
-
-    @FXML
-    private Rectangle w2r2b6;
 
     @FXML
     private Rectangle w2r3b1;
@@ -145,24 +127,6 @@ public class ShowWards implements Initializable{
 
     @FXML
     private Rectangle w2r3b5;
-
-    @FXML
-    private Rectangle w2r4b1;
-
-    @FXML
-    private Rectangle w2r4b4;
-
-    @FXML
-    private Rectangle w2r4b3;
-
-    @FXML
-    private Rectangle w2r4b6;
-
-    @FXML
-    private Rectangle w2r4b2;
-
-    @FXML
-    private Rectangle w2r4b5;
 
     @Override
     public void initialize(URL url, ResourceBundle rb){
@@ -236,24 +200,6 @@ public class ShowWards implements Initializable{
                     else if(s[0].equals("1") && s[1].equals("3") && s[2].equals("6")){
                         w1r3b6.setFill(Color.BLUE);
                     }
-                    else if(s[0].equals("1") && s[1].equals("4") && s[2].equals("1")){
-                        w1r4b1.setFill(Color.BLUE);
-                    }
-                    else if(s[0].equals("1") && s[1].equals("4") && s[2].equals("2")){
-                        w1r4b2.setFill(Color.BLUE);
-                    }
-                    else if(s[0].equals("1") && s[1].equals("4") && s[2].equals("3")){
-                        w1r4b3.setFill(Color.BLUE);
-                    }
-                    else if(s[0].equals("1") && s[1].equals("4") && s[2].equals("4")){
-                        w1r4b4.setFill(Color.BLUE);
-                    }
-                    else if(s[0].equals("1") && s[1].equals("4") && s[2].equals("5")){
-                        w1r4b5.setFill(Color.BLUE);
-                    }
-                    else if(s[0].equals("1") && s[1].equals("4") && s[2].equals("6")){
-                        w1r4b6.setFill(Color.BLUE);
-                    }
                     else if(s[0].equals("2") && s[1].equals("1") && s[2].equals("1")){
                         w2r1b1.setFill(Color.BLUE);
                     }
@@ -307,24 +253,6 @@ public class ShowWards implements Initializable{
                     }
                     else if(s[0].equals("2") && s[1].equals("3") && s[2].equals("6")){
                         w2r3b6.setFill(Color.BLUE);
-                    }
-                    else if(s[0].equals("2") && s[1].equals("4") && s[2].equals("1")){
-                        w2r4b1.setFill(Color.BLUE);
-                    }
-                    else if(s[0].equals("2") && s[1].equals("4") && s[2].equals("2")){
-                        w2r4b2.setFill(Color.BLUE);
-                    }
-                    else if(s[0].equals("2") && s[1].equals("4") && s[2].equals("3")){
-                        w2r4b3.setFill(Color.BLUE);
-                    }
-                    else if(s[0].equals("2") && s[1].equals("4") && s[2].equals("4")){
-                        w2r4b4.setFill(Color.BLUE);
-                    }
-                    else if(s[0].equals("2") && s[1].equals("4") && s[2].equals("5")){
-                        w2r4b5.setFill(Color.BLUE);
-                    }
-                    else if(s[0].equals("2") && s[1].equals("4") && s[2].equals("6")){
-                        w2r4b6.setFill(Color.BLUE);
                     }
                 }
                 else{
@@ -382,24 +310,6 @@ public class ShowWards implements Initializable{
                     else if(s[0].equals("1") && s[1].equals("3") && s[2].equals("6")){
                         w1r3b6.setFill(Color.RED);
                     }
-                    else if(s[0].equals("1") && s[1].equals("4") && s[2].equals("1")){
-                        w1r4b1.setFill(Color.RED);
-                    }
-                    else if(s[0].equals("1") && s[1].equals("4") && s[2].equals("2")){
-                        w1r4b2.setFill(Color.RED);
-                    }
-                    else if(s[0].equals("1") && s[1].equals("4") && s[2].equals("3")){
-                        w1r4b3.setFill(Color.RED);
-                    }
-                    else if(s[0].equals("1") && s[1].equals("4") && s[2].equals("4")){
-                        w1r4b4.setFill(Color.RED);
-                    }
-                    else if(s[0].equals("1") && s[1].equals("4") && s[2].equals("5")){
-                        w1r4b5.setFill(Color.RED);
-                    }
-                    else if(s[0].equals("1") && s[1].equals("4") && s[2].equals("6")){
-                        w1r4b6.setFill(Color.RED);
-                    }
                     else if(s[0].equals("2") && s[1].equals("1") && s[2].equals("1")){
                         w2r1b1.setFill(Color.RED);
                     }
@@ -453,24 +363,6 @@ public class ShowWards implements Initializable{
                     }
                     else if(s[0].equals("2") && s[1].equals("3") && s[2].equals("6")){
                         w2r3b6.setFill(Color.RED);
-                    }
-                    else if(s[0].equals("2") && s[1].equals("4") && s[2].equals("1")){
-                        w2r4b1.setFill(Color.RED);
-                    }
-                    else if(s[0].equals("2") && s[1].equals("4") && s[2].equals("2")){
-                        w2r4b2.setFill(Color.RED);
-                    }
-                    else if(s[0].equals("2") && s[1].equals("4") && s[2].equals("3")){
-                        w2r4b3.setFill(Color.RED);
-                    }
-                    else if(s[0].equals("2") && s[1].equals("4") && s[2].equals("4")){
-                        w2r4b4.setFill(Color.RED);
-                    }
-                    else if(s[0].equals("2") && s[1].equals("4") && s[2].equals("5")){
-                        w2r4b5.setFill(Color.RED);
-                    }
-                    else if(s[0].equals("2") && s[1].equals("4") && s[2].equals("6")){
-                        w2r4b6.setFill(Color.RED);
                     }
                 }
             }
