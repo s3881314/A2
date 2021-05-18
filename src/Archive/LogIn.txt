@@ -1,1 +1,1 @@
-root,root,Manager
+1,000,Doctor
