@@ -49,9 +49,12 @@ public class NewReadAdministeringMedicine {
 
             AbleCareHome a = new AbleCareHome();
             b = a.ReadAdministeringMedicine(sid, sp, readadministeringmedicineward.getText(), readadministeringmedicineroom.getText(), readadministeringmedicinebed.getText());
+            String s[] = b.split(",");
+            String s2[] = s[1].split("-");
+            String ns = s[0] + ", Medicine:" + s2[0] + " Doses:" + s2[1] + " Times:" + s2[2];
             try {
                 FileWriter fileWriter =new FileWriter("./src/Archive/DisplayAdministeringMedicine.txt");
-                fileWriter.write(b);
+                fileWriter.write(ns);
                 fileWriter.close();
             } catch (FileNotFoundException e) {
                 e.printStackTrace();

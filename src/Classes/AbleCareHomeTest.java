@@ -90,15 +90,15 @@ class AbleCareHomeTest {
 
     @Test
     void updateShift()  throws ShiftException{
-        AbleCareHome a = new AbleCareHome();
+        /*AbleCareHome a = new AbleCareHome();
         try {
-            //a.UpdateShift("M1","Manager", "Doctor", "D1","1","8","9");
-            a.UpdateShift("1","Manager", "Doctor", "1","4","8","9");
-            //a.UpdateShift("M1","Manager", "Nurse", "N1","2","14","22");
-            //a.UpdateShift("M1","Manager", "Nurse", "N1","5","14","22");
+            a.UpdateShift("M1","Manager", "Doctor", "D1","1","8","9");
+            a.UpdateShift("1","Manager", "Doctor", "1","2021-05-30","8","9");
+            a.UpdateShift("M1","Manager", "Nurse", "N1","2","14","22");
+            a.UpdateShift("M1","Manager", "Nurse", "N1","5","14","22");
         } catch(ShiftException e){
             e.printStackTrace();
-        }
+        }*/
     }
 
     @Test

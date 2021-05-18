@@ -1,19 +1,20 @@
 package Classes;
 
 import java.io.*;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class Shift{
-    private int DayOfWeek;
+    private LocalDate DayOfWeek;
     private int StartTime;
     private int EndTime;
 
-    Shift(String sid, String p2, String p, String id, String dow, String st, String et) throws ShiftException{  // position(doctor/nurse), id
+    Shift(String sid, String p2, String p, String id, LocalDate dow, String st, String et) throws ShiftException{  // position(doctor/nurse), id
         // (ID, Day Of Week, Start Time, End Time)---DoctorShift.txt
         // (ID, Day Of Week, Start Time, End Time)---NurseShift.txt
-        this.DayOfWeek = Integer.parseInt(dow);
+        this.DayOfWeek = dow;
         this.StartTime = Integer.parseInt(st);
         this.EndTime = Integer.parseInt(et);
 

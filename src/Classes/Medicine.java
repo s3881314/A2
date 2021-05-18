@@ -82,7 +82,7 @@ public class Medicine {
                         FileWriter fr = new FileWriter(file, true);
                         BufferedWriter br = new BufferedWriter(fr);
                         PrintWriter pr = new PrintWriter(br);
-                        pr.println(rid + "," + m + " " + d + " " + t + ",");
+                        pr.println(rid + "," + m + "-" + d + "-" + t + ",");
                         pr.close();
                         br.close();
                         fr.close();

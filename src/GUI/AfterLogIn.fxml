@@ -26,7 +26,7 @@
             <Button fx:id="updateprescription" layoutX="300.0" layoutY="350.0" mnemonicParsing="false" onAction="#UpdatePrescriptionBT" prefHeight="30.0" prefWidth="200.0" text="Update Prescription" />
             <Button fx:id="readprescription" layoutX="300.0" layoutY="412.0" mnemonicParsing="false" onAction="#ReadPrescriptionBT" prefHeight="30.0" prefWidth="200.0" text="Read Prescription" />
             <Button fx:id="administeringmedicine" layoutX="300.0" layoutY="478.0" mnemonicParsing="false" onAction="#AdministeringMedicineBT" prefHeight="30.0" prefWidth="200.0" text="Administering Medicine" />
-            <Button fx:id="readadministeringmedicine" layoutX="300.0" layoutY="537.0" mnemonicParsing="false" onAction="#ReadAdministeringMedicineBT" prefHeight="30.0" prefWidth="200.0" text="Read Administering Medicine" />
+            <Button fx:id="readadministeringmedicine" layoutX="275.0" layoutY="537.0" mnemonicParsing="false" onAction="#ReadAdministeringMedicineBT" prefHeight="30.0" prefWidth="250.0" text="Read Administering Medicine" />
             <Label fx:id="loginp" layoutX="555.0" layoutY="159.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: white;" />
             <Label fx:id="loginn" layoutX="555.0" layoutY="214.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: white;" />
             <Label layoutX="197.0" layoutY="22.0" prefHeight="75.0" prefWidth="154.0" text="MENU" textAlignment="CENTER" textFill="WHITE">

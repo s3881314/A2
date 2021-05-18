@@ -2,18 +2,20 @@ package Controller;
 
 import Classes.AbleCareHome;
 import GUI.MenuForAbleCareHome;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 import java.util.Scanner;
 
-public class NewUpdatePassword {
-
-    @FXML
-    private TextField position;
+public class NewUpdatePassword implements Initializable {
 
     @FXML
     private TextField id;
@@ -26,6 +28,19 @@ public class NewUpdatePassword {
 
     @FXML
     private Button Cancel;
+
+    @FXML
+    private javafx.scene.control.ChoiceBox<String> position;
+    ObservableList list = FXCollections.observableArrayList();
+
+    @Override
+    public void initialize(URL url, ResourceBundle rb){
+        list.removeAll(list);
+        String b = "Doctor";
+        String c = "Nurse";
+        list.addAll(b,c);
+        position.getItems().addAll(list);
+    }
 
     @FXML
     void CancelBT(javafx.event.ActionEvent actionEvent) throws IOException {
@@ -46,7 +61,7 @@ public class NewUpdatePassword {
                 sp = s[2];
             }
             AbleCareHome a = new AbleCareHome();
-            a.UpdatePassword(sid, sp, position.getText(), id.getText(), newpd.getText());
+            a.UpdatePassword(sid, sp, position.getValue(), id.getText(), newpd.getText());
             MenuForAbleCareHome m = new MenuForAbleCareHome();
             m.ChangeScene("AfterLogIn.fxml");
         } catch (IOException e) {

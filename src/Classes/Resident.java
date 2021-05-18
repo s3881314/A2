@@ -72,7 +72,6 @@ public class Resident {
                 pr.close();
                 br.close();
                 fr.close();
-                //System.out.println("Successfully wrote to the file.");
             } catch (IOException e) {
                 System.out.println("An error occurred while writing ResidentList.txt.");
                 e.printStackTrace();

@@ -1,48 +1,182 @@
-12/05/2021 16:18:52,Doctor,1, Log in system.
-12/05/2021 16:19:01,Manager,root, Log in system.
-12/05/2021 16:19:23,Manager,root, Add new manager.
-12/05/2021 16:19:39,Manager,root, Add nurse.
-12/05/2021 16:20:43,Manager,root, Add doctor.
-12/05/2021 16:20:52,Manager,root, Add nurse.
-12/05/2021 16:21:08,Manager,root, Add new manager.
-12/05/2021 16:21:46,Manager,root, Add new resident.
-12/05/2021 16:23:18,Manager,root, Add new resident to bed.
-12/05/2021 16:23:23,Manager,root, Show beds status.
-12/05/2021 16:23:46,Manager,root, Update doctor password
-12/05/2021 16:25:35,Nurse,2, Log in system.
-12/05/2021 16:26:17,Nurse,2, Move resident to other bed.
-12/05/2021 16:26:32,Nurse,2, Show beds status.
-12/05/2021 16:26:58,Manager,root, Log in system.
-12/05/2021 16:27:05,Manager,root, Discharge resident.
-12/05/2021 20:05:15,Manager,root, Log in system.
-12/05/2021 20:10:06,Manager,root, Add new resident.
-12/05/2021 20:10:38,Manager,root, Add new resident to bed.
-12/05/2021 20:10:40,Manager,root, Show beds status.
-12/05/2021 20:10:58,Manager,root, Show beds status.
-13/05/2021 07:15:47,Manager,root, Log in system.
-13/05/2021 07:22:04,Manager,root, Log in system.
-13/05/2021 07:22:16,Manager,root, Add new manager.
-13/05/2021 07:24:58,Doctor,2, Log in system.
-13/05/2021 07:25:12,Nurse,2, Log in system.
-13/05/2021 07:27:08,Nurse,2, Log in system.
-13/05/2021 07:27:41,Nurse,2, Check medicine details.
-13/05/2021 07:28:25,Nurse,2, Check medicine details.
-13/05/2021 07:28:26,Nurse,2, Check medicine details.
-13/05/2021 07:28:37,Nurse,2, Log in system.
-13/05/2021 07:28:42,Nurse,2, Check medicine details.
-13/05/2021 07:28:56,Nurse,2, Log in system.
-13/05/2021 07:37:31,Manager,root, Log in system.
-13/05/2021 07:37:33,Manager,root, Show beds status.
-14/05/2021 08:06:19,Manager,root, Log in system.
-14/05/2021 08:06:21,Manager,root, Show beds status.
-14/05/2021 08:12:20,Manager,root, Log in system.
-14/05/2021 08:13:09,Manager,root, Add new resident.
-14/05/2021 08:13:38,Manager,root, Add new resident.
-14/05/2021 08:14:00,Manager,root, Add new resident.
-14/05/2021 08:14:22,Manager,root, Add new resident.
-14/05/2021 08:14:36,Manager,root, Add new resident.
-14/05/2021 08:20:33,Manager,root, Log in system.
-14/05/2021 08:20:43,Manager,root, Add new resident.
-14/05/2021 08:20:56,Manager,root, Add new resident to bed.
-14/05/2021 08:20:57,Manager,root, Show beds status.
-14/05/2021 08:39:15,Manager,root, Log in system.
+15/05/2021 03:50:27,Manager,root, Log in system.
+15/05/2021 03:50:55,Manager,root, Add new manager.
+15/05/2021 03:51:07,Manager,root, Add doctor.
+15/05/2021 03:51:17,Manager,root, Add nurse.
+15/05/2021 03:51:30,Manager,root, Add new resident.
+15/05/2021 03:52:14,Manager,root, Add new resident to bed.
+15/05/2021 03:52:27,Manager,root, Add new resident to bed.
+15/05/2021 03:53:04,Manager,root, Add new resident.
+15/05/2021 03:53:12,Manager,root, Add new resident.
+15/05/2021 03:53:21,Manager,root, Add new resident.
+15/05/2021 03:53:33,Manager,root, Add new resident.
+15/05/2021 03:54:52,Manager,root, Add new resident to bed.
+15/05/2021 03:55:01,Manager,root, Add new resident to bed.
+15/05/2021 03:55:16,Manager,root, Add new resident to bed.
+15/05/2021 03:55:23,Manager,root, Add new resident to bed.
+15/05/2021 03:55:34,Manager,root, Add new resident to bed.
+15/05/2021 03:55:39,Manager,root, Show beds status.
+15/05/2021 04:00:08,Manager,root, Log in system.
+15/05/2021 04:03:09,Manager,root, Log in system.
+15/05/2021 04:04:48,Manager,root, Log in system.
+15/05/2021 04:04:54,Manager,root, Update doctor password
+17/05/2021 08:38:14,Manager,root, Log in system.
+17/05/2021 08:50:13,Manager,root, Log in system.
+17/05/2021 08:52:38,Manager,root, Log in system.
+17/05/2021 08:53:19,Manager,root, Log in system.
+17/05/2021 08:57:09,Manager,root, Log in system.
+17/05/2021 09:02:07,Manager,root, Log in system.
+17/05/2021 09:02:38,Manager,root, Log in system.
+17/05/2021 09:03:23,Manager,root, Log in system.
+17/05/2021 09:03:31,Manager,root, Update doctor shift
+17/05/2021 09:03:47,Manager,root, Update doctor shift
+17/05/2021 09:04:00,Nurse,1, Log in system.
+17/05/2021 09:04:17,Nurse,1, Show beds status.
+17/05/2021 09:04:29,Nurse,1, Move resident to other bed.
+17/05/2021 09:04:32,Nurse,1, Show beds status.
+17/05/2021 09:09:09,Manager,root, Log in system.
+17/05/2021 09:09:22,Manager,root, Add new resident to bed.
+17/05/2021 09:09:25,Manager,root, Add new resident to bed.
+17/05/2021 09:09:28,Manager,root, Add new resident to bed.
+17/05/2021 09:09:32,Manager,root, Add new resident to bed.
+17/05/2021 09:09:34,Manager,root, Show beds status.
+17/05/2021 09:09:49,Nurse,1, Log in system.
+17/05/2021 09:09:59,Nurse,1, Move resident to other bed.
+17/05/2021 09:10:00,Nurse,1, Show beds status.
+17/05/2021 09:11:25,Manager,root, Log in system.
+17/05/2021 09:11:30,Manager,root, Add new resident to bed.
+17/05/2021 09:11:35,Manager,root, Add new resident to bed.
+17/05/2021 09:11:38,Manager,root, Add new resident to bed.
+17/05/2021 09:11:41,Manager,root, Add new resident to bed.
+17/05/2021 09:11:44,Manager,root, Add new resident to bed.
+17/05/2021 09:11:53,Nurse,1, Log in system.
+17/05/2021 09:12:01,Nurse,1, Move resident to other bed.
+17/05/2021 09:13:01,Manager,root, Log in system.
+17/05/2021 09:13:06,Manager,root, Add new resident to bed.
+17/05/2021 09:13:08,Manager,root, Show beds status.
+17/05/2021 09:13:17,Nurse,1, Log in system.
+17/05/2021 09:13:24,Nurse,1, Move resident to other bed.
+17/05/2021 09:13:47,Manager,root, Log in system.
+17/05/2021 09:13:50,Manager,root, Add new resident to bed.
+17/05/2021 09:13:54,Nurse,1, Log in system.
+17/05/2021 09:14:01,Nurse,1, Move resident to other bed.
+17/05/2021 09:14:46,Manager,root, Log in system.
+17/05/2021 09:14:51,Manager,root, Add new resident to bed.
+17/05/2021 09:14:54,Nurse,1, Log in system.
+17/05/2021 09:14:59,Nurse,1, Move resident to other bed.
+17/05/2021 09:15:58,Manager,root, Log in system.
+17/05/2021 09:16:03,Manager,root, Add new resident to bed.
+17/05/2021 09:16:09,Nurse,1, Log in system.
+17/05/2021 09:16:14,Nurse,1, Move resident to other bed.
+17/05/2021 09:23:08,Manager,root, Log in system.
+17/05/2021 09:23:08,Manager,root, Show beds status.
+17/05/2021 09:23:13,Manager,root, Add new resident to bed.
+17/05/2021 09:23:19,Nurse,1, Log in system.
+17/05/2021 09:23:25,Nurse,1, Moving resident.
+17/05/2021 09:23:28,Nurse,1, Show beds status.
+17/05/2021 09:23:36,Manager,root, Log in system.
+17/05/2021 09:23:41,Manager,root, Add new resident to bed.
+17/05/2021 09:23:43,Manager,root, Add new resident to bed.
+17/05/2021 09:23:50,Manager,root, Show beds status.
+17/05/2021 09:24:06,Manager,root, Add new resident to bed.
+17/05/2021 09:24:09,Manager,root, Add new resident to bed.
+17/05/2021 09:24:09,Manager,root, Show beds status.
+17/05/2021 09:24:19,Manager,root, Add new resident to bed.
+17/05/2021 09:24:20,Manager,root, Show beds status.
+17/05/2021 09:24:38,Nurse,1, Log in system.
+17/05/2021 09:25:00,Manager,root, Log in system.
+17/05/2021 09:25:05,Manager,root, Add new resident to bed.
+17/05/2021 09:25:23,Manager,root, Add new resident to bed.
+17/05/2021 09:25:26,Manager,root, Add new resident to bed.
+17/05/2021 09:25:29,Manager,root, Add new resident to bed.
+17/05/2021 09:25:31,Manager,root, Add new resident to bed.
+17/05/2021 09:25:33,Manager,root, Show beds status.
+17/05/2021 09:25:41,Nurse,1, Log in system.
+17/05/2021 09:25:50,Nurse,1, Moving resident.
+17/05/2021 09:25:52,Nurse,1, Show beds status.
+17/05/2021 09:27:01,Manager,root, Log in system.
+17/05/2021 09:27:04,Manager,root, Add new resident to bed.
+17/05/2021 09:27:14,Manager,root, Add new resident to bed.
+17/05/2021 09:27:17,Manager,root, Add new resident to bed.
+17/05/2021 09:27:20,Manager,root, Add new resident to bed.
+17/05/2021 09:27:23,Manager,root, Add new resident to bed.
+17/05/2021 09:27:24,Manager,root, Show beds status.
+17/05/2021 09:27:34,Nurse,1, Log in system.
+17/05/2021 09:27:40,Nurse,1, Moving resident.
+17/05/2021 09:27:44,Nurse,1, Show beds status.
+17/05/2021 09:28:42,Manager,root, Log in system.
+17/05/2021 09:28:49,Manager,root, Add new resident to bed.
+17/05/2021 09:28:51,Manager,root, Add new resident to bed.
+17/05/2021 09:28:54,Manager,root, Add new resident to bed.
+17/05/2021 09:28:57,Manager,root, Add new resident to bed.
+17/05/2021 09:28:59,Manager,root, Add new resident to bed.
+17/05/2021 09:29:00,Manager,root, Show beds status.
+17/05/2021 09:29:13,Nurse,1, Log in system.
+17/05/2021 09:29:18,Nurse,1, Moving resident.
+17/05/2021 09:29:20,Nurse,1, Show beds status.
+17/05/2021 09:29:29,Nurse,1, Moving resident.
+17/05/2021 09:29:29,Nurse,1, Show beds status.
+17/05/2021 09:29:40,Manager,root, Log in system.
+17/05/2021 09:29:44,Manager,root, Discharge resident.
+17/05/2021 09:29:44,Manager,root, Show beds status.
+17/05/2021 09:32:11,Manager,root, Log in system.
+17/05/2021 09:32:17,Manager,root, Add new resident to bed.
+17/05/2021 09:32:20,Manager,root, Add new resident to bed.
+17/05/2021 09:32:23,Manager,root, Add new resident to bed.
+17/05/2021 09:32:26,Manager,root, Add new resident to bed.
+17/05/2021 09:32:29,Manager,root, Add new resident to bed.
+17/05/2021 09:32:29,Manager,root, Show beds status.
+17/05/2021 09:32:33,Manager,root, Discharge resident.
+17/05/2021 09:32:33,Manager,root, Show beds status.
+17/05/2021 09:33:02,Doctor,1, Log in system.
+17/05/2021 09:33:07,Doctor,1, Check resident details.
+17/05/2021 09:33:15,Doctor,1, Check resident details.
+17/05/2021 09:33:32,Doctor,1, Check resident details.
+17/05/2021 09:33:51,Doctor,1, Check resident details.
+17/05/2021 09:34:00,Doctor,1, Check resident details.
+17/05/2021 09:35:07,Manager,root, Log in system.
+17/05/2021 09:35:16,Doctor,1, Log in system.
+17/05/2021 09:35:26,Doctor,1, Check resident details.
+17/05/2021 09:41:57,Doctor,1, Log in system.
+17/05/2021 09:41:58,Doctor,1, Show beds status.
+17/05/2021 09:42:03,Doctor,1, Check resident details.
+17/05/2021 09:42:07,Doctor,1, Check resident details.
+17/05/2021 09:42:19,Manager,root, Log in system.
+17/05/2021 09:42:29,Doctor,1, Log in system.
+17/05/2021 09:42:38,Doctor,1, Check resident details.
+17/05/2021 09:42:58,Manager,root, Log in system.
+17/05/2021 09:44:45,Manager,root, Log in system.
+17/05/2021 09:44:50,Manager,root, Discharge resident.
+17/05/2021 09:44:57,Manager,root, Show beds status.
+17/05/2021 09:45:08,Manager,root, Discharge resident.
+17/05/2021 09:45:09,Manager,root, Show beds status.
+17/05/2021 09:45:14,Manager,root, Discharge resident.
+17/05/2021 09:45:14,Manager,root, Show beds status.
+17/05/2021 09:45:23,Doctor,1, Log in system.
+17/05/2021 09:45:30,Doctor,1, Check resident details.
+17/05/2021 09:45:57,Doctor,1, Check prescription details.
+17/05/2021 09:46:07,Doctor,1, Update resident's prescription
+17/05/2021 09:46:12,Doctor,1, Check prescription details.
+17/05/2021 09:46:57,Nurse,1, Log in system.
+17/05/2021 09:47:03,Nurse,1, Check prescription details.
+17/05/2021 09:47:15,Nurse,1, Administering medicine.
+17/05/2021 09:47:20,Nurse,1, Check medicine details.
+17/05/2021 09:53:03,Nurse,1, Log in system.
+17/05/2021 09:53:07,Nurse,1, Check medicine details.
+17/05/2021 09:53:55,Doctor,1, Log in system.
+17/05/2021 09:54:06,Doctor,1, Update resident's prescription
+17/05/2021 09:54:13,Nurse,1, Log in system.
+17/05/2021 09:54:26,Nurse,1, Check medicine details.
+17/05/2021 09:54:56,Doctor,1, Log in system.
+17/05/2021 09:55:03,Doctor,1, Update resident's prescription
+17/05/2021 09:55:15,Nurse,1, Log in system.
+17/05/2021 09:55:27,Nurse,1, Administering medicine.
+17/05/2021 09:55:46,Nurse,1, Administering medicine.
+17/05/2021 09:55:52,Nurse,1, Check medicine details.
+17/05/2021 09:56:38,Nurse,1, Log in system.
+17/05/2021 09:56:42,Nurse,1, Check medicine details.
+17/05/2021 09:56:42,Nurse,1, Check medicine details.
+17/05/2021 09:59:24,Nurse,1, Log in system.
+17/05/2021 09:59:36,Nurse,1, Administering medicine.
+17/05/2021 09:59:39,Nurse,1, Check medicine details.
+17/05/2021 10:00:34,Nurse,1, Log in system.
+17/05/2021 10:00:38,Nurse,1, Check medicine details.
