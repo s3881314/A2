@@ -32,7 +32,8 @@ public class DisplayResidentDetails implements Initializable{
     private Label DayOfBirth;
 
     @FXML
-    private Label DischargeDate;
+    private Label AdmittedDate;
+
 
     @Override
     public void initialize(URL url, ResourceBundle rb){
@@ -51,9 +52,7 @@ public class DisplayResidentDetails implements Initializable{
             ResidentName.setText(s2[1]);
             Gender.setText(s2[2]);
             DayOfBirth.setText(s2[3]);
-            if(s2.length > 4) {
-                DischargeDate.setText(s2[4]);
-            }
+            AdmittedDate.setText(s2[4]);
 
         } catch (IOException e) {
             e.printStackTrace();

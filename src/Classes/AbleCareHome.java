@@ -500,7 +500,7 @@ public class AbleCareHome {
                 String data = myReader.nextLine();
                 String a[] = data.split(",");
                 buff = buff + data;
-                if(a[0].equals(rid) && a.length < 5){  // if the resident hasn't benn discharged
+                if(a[0].equals(rid) && a.length < 6){  // if the resident hasn't benn discharged
                     flag = 1;
                     buff = buff + "," + dtf.format(now)+  "\n";
                 }
@@ -750,7 +750,7 @@ public class AbleCareHome {
         try {
             // check if the id exist in Prescription.txt
             boolean flag = false;
-            File myObj = new File("F:\\Textbook\\MasterOfIT\\COSC1295 Advanced Programming\\Assignment\\Assignment2\\A2_1\\src\\Archive\\Bed.txt");
+            File myObj = new File("./src/Archive/Bed.txt");
             Scanner myReader = new Scanner(myObj);
             while (myReader.hasNextLine()) {
                 String data = myReader.nextLine();

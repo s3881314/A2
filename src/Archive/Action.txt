@@ -1,3 +1,0 @@
-18/05/2021 10:59:50,Manager,root, Log in system.
-18/05/2021 11:00:03,Doctor,1, Log in system.
-18/05/2021 11:00:06,Doctor,1, Check medicine details.

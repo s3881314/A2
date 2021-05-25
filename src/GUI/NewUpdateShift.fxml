@@ -32,7 +32,7 @@
                   <Font size="20.0" />
                </font>
             </Label>
-            <Label layoutX="191.0" layoutY="275.0" text="Day of Week(1~7)" textFill="WHITE">
+            <Label layoutX="233.0" layoutY="276.0" text="Day of Week" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font>
