@@ -12,6 +12,7 @@ import java.io.*;
 import java.net.URL;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.Observable;
 import java.util.ResourceBundle;
 import java.util.Scanner;
@@ -25,14 +26,13 @@ import javafx.fxml.Initializable;
 
 public class LogIn implements Initializable{
     private String Position="";
-    @FXML
-    private TextField Username;
+    private String id="";
 
     @FXML
     private PasswordField Password;
 
     @FXML
-    private Button LogInBT;
+    private javafx.scene.control.ChoiceBox<String> ID;
 
     @FXML
     private Label WrongLogIn;
@@ -43,18 +43,28 @@ public class LogIn implements Initializable{
 
     @Override
     public void initialize(URL url, ResourceBundle rb){
-        LoadData();
+        list.removeAll(list);
+        String a = "Manager";
+        String b = "Doctor";
+        String c = "Nurse";
+        list.addAll(a,b,c);
+        ChoiceBox.getItems().addAll(list);
+
+        // Listen to choicebox
+        ChoiceBox.getSelectionModel().selectedItemProperty().addListener((v, oldValue, newValue) -> ReadList(newValue));
+
     }
 
     @FXML
     public void LogInBT(javafx.event.ActionEvent actionEvent) {
         Position = ChoiceBox.getValue();
+        id = ID.getValue();
         CheckLogIn();
     }
 
     private void CheckLogIn() {
         MenuForAbleCareHome m = new MenuForAbleCareHome();
-        if (Username.getText().isEmpty() && Password.getText().isEmpty()) {
+        if (id.equals("") && Password.getText().isEmpty()) {
             WrongLogIn.setText("Please enter your data.");
         }
         else {
@@ -66,14 +76,14 @@ public class LogIn implements Initializable{
                     while (myReader.hasNextLine()) {
                         String data = myReader.nextLine();
                         String a[] = data.split(",");
-                        if (a[0].equals(Username.getText()) && a[3].equals(Password.getText())) {
+                        if (a[0].equals(id) && a[3].equals(Password.getText())) {
                             login = true;
                         }
                     }
 
                     if (login == true) {
                         WrongLogIn.setText("Success!");
-                        LogInFile(Username.getText(), Password.getText());  // Record log in data
+                        LogInFile(id, Password.getText());  // Record log in data
                         m.ChangeScene("AfterLogIn.fxml");
                     } else {
                         WrongLogIn.setText("Wrong Username or Password.");
@@ -90,13 +100,13 @@ public class LogIn implements Initializable{
                     while (myReader.hasNextLine()) {
                         String data = myReader.nextLine();
                         String a[] = data.split(",");
-                        if (a[0].equals(Username.getText()) && a[3].equals(Password.getText())) {
+                        if (a[0].equals(id) && a[3].equals(Password.getText())) {
                             login = true;
                         }
                     }
                     if (login == true) {
                         WrongLogIn.setText("Success!");
-                        LogInFile(Username.getText(), Password.getText());  // Record log in data
+                        LogInFile(id, Password.getText());  // Record log in data
                         m.ChangeScene("AfterLogIn.fxml");
                     } else {
                         WrongLogIn.setText("Wrong Username or Password.");
@@ -113,14 +123,14 @@ public class LogIn implements Initializable{
                     while (myReader.hasNextLine()) {
                         String data = myReader.nextLine();
                         String a[] = data.split(",");
-                        if (a[0].equals(Username.getText()) && a[3].equals(Password.getText())) {
+                        if (a[0].equals(id) && a[3].equals(Password.getText())) {
                             login = true;
                         }
                     }
 
                     if (login == true) {
                         WrongLogIn.setText("Success!");
-                        LogInFile(Username.getText(), Password.getText());  // Record log in data
+                        LogInFile(id, Password.getText());  // Record log in data
                         m.ChangeScene("AfterLogIn.fxml");
                     } else {
                         WrongLogIn.setText("Wrong Username or Password.");
@@ -130,7 +140,6 @@ public class LogIn implements Initializable{
                 }
             }
         }
-
     }
 
     public void LogInFile(String u, String p){
@@ -170,12 +179,57 @@ public class LogIn implements Initializable{
         }
     }
 
-    private void LoadData(){
+    public void ReadList(String nv){
+        ID.getItems().clear();
         list.removeAll(list);
-        String a = "Manager";
-        String b = "Doctor";
-        String c = "Nurse";
-        list.addAll(a,b,c);
-        ChoiceBox.getItems().addAll(list);
+        ArrayList<String> arr = new ArrayList<String>();
+        if(nv.equals("Doctor")) {
+            try {
+                File myObj = new File("./src/Archive/DoctorList.txt");
+                Scanner myReader = new Scanner(myObj);
+                while (myReader.hasNextLine()) {
+                    String data = myReader.nextLine();
+                    String a[] = data.split(",");
+                    arr.add(a[0]);
+                }
+                list.addAll(arr);
+                ID.getItems().addAll(list);
+                myReader.close();
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+        }
+        else if(nv.equals("Nurse")){
+            try {
+                File myObj = new File("./src/Archive/NurseList.txt");
+                Scanner myReader = new Scanner(myObj);
+                while (myReader.hasNextLine()) {
+                    String data = myReader.nextLine();
+                    String a[] = data.split(",");
+                    arr.add(a[0]);
+                }
+                list.addAll(arr);
+                ID.getItems().addAll(list);
+                myReader.close();
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+        }
+        else{
+            try {
+                File myObj = new File("./src/Archive/ManagerList.txt");
+                Scanner myReader = new Scanner(myObj);
+                while (myReader.hasNextLine()) {
+                    String data = myReader.nextLine();
+                    String a[] = data.split(",");
+                    arr.add(a[0]);
+                }
+                list.addAll(arr);
+                ID.getItems().addAll(list);
+                myReader.close();
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }

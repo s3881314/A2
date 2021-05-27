@@ -3,23 +3,29 @@ package Controller;
 import Classes.AbleCareHome;
 import GUI.MenuForAbleCareHome;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Spinner;
+import javafx.scene.control.SpinnerValueFactory;
 import javafx.scene.control.TextField;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 import java.util.Scanner;
 
-public class NewUpdatePrescription {
+public class NewUpdatePrescription implements Initializable {
 
     @FXML
-    private TextField Ward;
+    private Spinner<Integer> WardNumber;
 
     @FXML
-    private TextField room;
+    private Spinner<Integer> RoomNumber;
 
     @FXML
-    private TextField bed;
+    private Spinner<Integer> BedNumber;
+
 
     @FXML
     private TextField prescription;
@@ -29,6 +35,14 @@ public class NewUpdatePrescription {
 
     @FXML
     private Button Cancel;
+
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        // set spinner values
+        WardNumber.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 2));
+        RoomNumber.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 6));
+        BedNumber.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 4));
+    }
 
     @FXML
     void CancelBT(javafx.event.ActionEvent actionEvent) throws IOException {
@@ -50,7 +64,7 @@ public class NewUpdatePrescription {
                 sp = s[2];
             }
             AbleCareHome a = new AbleCareHome();
-            a.UpdatePrescription(sid, sp, Ward.getText(), room.getText(), bed.getText(), prescription.getText());
+            a.UpdatePrescription(sid, sp, String.valueOf(WardNumber.getValue()), String.valueOf(RoomNumber.getValue()), String.valueOf(BedNumber.getValue()), prescription.getText());
             MenuForAbleCareHome m = new MenuForAbleCareHome();
             m.ChangeScene("AfterLogIn.fxml");
         } catch (IOException e) {

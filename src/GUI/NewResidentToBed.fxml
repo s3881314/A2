@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Spinner?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
@@ -16,10 +17,6 @@
                   <Font size="43.0" />
                </font>
             </Label>
-            <TextField fx:id="newresidenttobedward" layoutX="350.0" layoutY="138.0" prefHeight="40.0" prefWidth="200.0" promptText="Ward" />
-            <TextField fx:id="newresidenttobedroom" layoutX="350.0" layoutY="206.0" prefHeight="40.0" prefWidth="200.0" promptText="Room" />
-            <TextField fx:id="newresidenttobedbed" layoutX="350.0" layoutY="282.0" prefHeight="40.0" prefWidth="200.0" promptText="Bed" />
-            <TextField fx:id="newresidenttobedid" layoutX="350.0" layoutY="360.0" prefHeight="40.0" prefWidth="200.0" promptText="Resident ID" />
             <Button fx:id="newresidenttobedconfirm" layoutX="283.0" layoutY="466.0" mnemonicParsing="false" onAction="#NewResidentToBedConfirm" prefHeight="70.0" prefWidth="100.0" text="Confirm" />
             <Label layoutX="202.0" layoutY="143.0" text="Ward Number" textFill="WHITE">
                <font>
@@ -42,6 +39,10 @@
                </font>
             </Label>
             <Button fx:id="Cancel" layoutX="500.0" layoutY="466.0" mnemonicParsing="false" onAction="#CancelBT" prefHeight="70.0" prefWidth="100.0" text="Cancel" />
+            <Spinner fx:id="WardNumber" layoutX="383.0" layoutY="146.0" />
+            <Spinner fx:id="RoomNumber" layoutX="384.0" layoutY="214.0" />
+            <Spinner fx:id="BedNumber" layoutX="385.0" layoutY="290.0" />
+            <ChoiceBox fx:id="ID" layoutX="382.0" layoutY="367.0" prefWidth="150.0" />
          </children>
       </AnchorPane>
    </center>

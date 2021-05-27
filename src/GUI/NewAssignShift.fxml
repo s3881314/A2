@@ -4,7 +4,6 @@
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
@@ -18,9 +17,6 @@
                   <Font size="41.0" />
                </font>
             </Label>
-            <TextField fx:id="newassignshiftid" layoutX="350.0" layoutY="236.0" prefHeight="40.0" prefWidth="200.0" promptText="ID" />
-            <TextField fx:id="newassignshiftst" layoutX="350.0" layoutY="385.0" prefHeight="40.0" prefWidth="200.0" promptText="START TIME" />
-            <TextField fx:id="newassignshiftet" layoutX="350.0" layoutY="465.0" prefHeight="40.0" prefWidth="200.0" promptText="END TIME" />
             <Button fx:id="newassignshiftconfirm" layoutX="300.0" layoutY="547.0" mnemonicParsing="false" onAction="#NewAssignShiftConfirm" prefHeight="70.0" prefWidth="100.0" text="Confirm" />
             <Label layoutX="246.0" layoutY="174.0" text="Position" textFill="WHITE">
                <font>
@@ -49,7 +45,10 @@
             </Label>
             <Button fx:id="Cancel" layoutX="456.0" layoutY="547.0" mnemonicParsing="false" onAction="#CancelBT" prefHeight="70.0" prefWidth="100.0" text="Cancel" />
             <ChoiceBox fx:id="position" layoutX="348.0" layoutY="176.0" prefHeight="26.0" prefWidth="202.0" />
-            <DatePicker fx:id="DayOfWeek" layoutX="354.0" layoutY="318.0" prefHeight="26.0" prefWidth="198.0" />
+            <DatePicker fx:id="DayOfWeek" layoutX="346.0" layoutY="318.0" prefHeight="26.0" prefWidth="205.0" />
+            <ChoiceBox fx:id="ID" layoutX="348.0" layoutY="244.0" prefHeight="26.0" prefWidth="202.0" />
+            <ChoiceBox fx:id="StartTime" layoutX="347.0" layoutY="392.0" prefHeight="26.0" prefWidth="202.0" />
+            <ChoiceBox fx:id="EndTime" layoutX="347.0" layoutY="471.0" prefHeight="26.0" prefWidth="202.0" />
          </children>
       </AnchorPane>
    </center>

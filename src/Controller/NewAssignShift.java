@@ -7,26 +7,18 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.ResourceBundle;
 import java.util.Scanner;
 
 public class NewAssignShift implements Initializable {
-
-    @FXML
-    private TextField newassignshiftid;
-
-    @FXML
-    private TextField newassignshiftst;
-
-    @FXML
-    private TextField newassignshiftet;
 
     @FXML
     private Button newassignshiftconfirm;
@@ -35,21 +27,45 @@ public class NewAssignShift implements Initializable {
     private Button Cancel;
 
     @FXML
+    private DatePicker DayOfWeek;
+
+    @FXML
+    private javafx.scene.control.ChoiceBox<String> ID;
+
+    @FXML
+    private javafx.scene.control.ChoiceBox<String> StartTime;
+
+    @FXML
+    private javafx.scene.control.ChoiceBox<String> EndTime;
+
+
+    @FXML
     private javafx.scene.control.ChoiceBox<String> position;
     ObservableList list = FXCollections.observableArrayList();
 
     @Override
     public void initialize(URL url, ResourceBundle rb){
+        // set position choicebox
         list.removeAll(list);
         String b = "Doctor";
         String c = "Nurse";
         list.addAll(b,c);
         position.getItems().addAll(list);
+
+        // Listen to position choicebox to set ID choicebox
+        position.getSelectionModel().selectedItemProperty().addListener((v, oldValue, newValue) -> ReadList(newValue));
+
+        // set StartTime and EndTime
+        ArrayList<String> starr = new ArrayList<String>();
+        String[] st = {"8","8.5","9","9.5","10","10.5","11","11.5","12","12.5","13","13.5","14","14.5","15","15.5","16","16.5","17","17.5","18","18.5","19","19.5","20","20.5","21","21.5"};
+        Collections.addAll(starr, st);
+        StartTime.getItems().addAll(starr);
+        // set choicebox for Time
+        ArrayList<String> etarr = new ArrayList<String>();
+        String[] tarray = {"8.5","9","9.5","10","10.5","11","11.5","12","12.5","13","13.5","14","14.5","15","15.5","16","16.5","17","17.5","18","18.5","19","19.5","20","20.5","21","21.5","22"};
+        Collections.addAll(etarr, tarray);
+        EndTime.getItems().addAll(etarr);
     }
-
-    @FXML
-    private DatePicker DayOfWeek;
-
 
     @FXML
     void CancelBT(javafx.event.ActionEvent actionEvent) throws IOException {
@@ -70,11 +86,65 @@ public class NewAssignShift implements Initializable {
                 sp = s[2];
             }
             AbleCareHome a = new AbleCareHome();
-            a.AssignShift(sid, sp, position.getValue(), newassignshiftid.getText(), DayOfWeek.getValue(), newassignshiftst.getText(),newassignshiftet.getText());
+            a.AssignShift(sid, sp, position.getValue(), ID.getValue(), DayOfWeek.getValue(), String.valueOf(StartTime.getValue()),String.valueOf(EndTime.getValue()));
             MenuForAbleCareHome m = new MenuForAbleCareHome();
             m.ChangeScene("AfterLogIn.fxml");
         } catch (IOException | ShiftException e) {
             e.printStackTrace();
+        }
+    }
+
+    public void ReadList(String nv){
+        ID.getItems().clear();
+        list.removeAll(list);
+        ArrayList<String> arr = new ArrayList<String>();
+        if(nv.equals("Doctor")) {
+            try {
+                File myObj = new File("./src/Archive/DoctorList.txt");
+                Scanner myReader = new Scanner(myObj);
+                while (myReader.hasNextLine()) {
+                    String data = myReader.nextLine();
+                    String a[] = data.split(",");
+                    arr.add(a[0]);
+                }
+                list.addAll(arr);
+                ID.getItems().addAll(list);
+                myReader.close();
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+        }
+        else if(nv.equals("Nurse")){
+            try {
+                File myObj = new File("./src/Archive/NurseList.txt");
+                Scanner myReader = new Scanner(myObj);
+                while (myReader.hasNextLine()) {
+                    String data = myReader.nextLine();
+                    String a[] = data.split(",");
+                    arr.add(a[0]);
+                }
+                list.addAll(arr);
+                ID.getItems().addAll(list);
+                myReader.close();
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+        }
+        else{
+            try {
+                File myObj = new File("./src/Archive/ManagerList.txt");
+                Scanner myReader = new Scanner(myObj);
+                while (myReader.hasNextLine()) {
+                    String data = myReader.nextLine();
+                    String a[] = data.split(",");
+                    arr.add(a[0]);
+                }
+                list.addAll(arr);
+                ID.getItems().addAll(list);
+                myReader.close();
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
         }
     }
 

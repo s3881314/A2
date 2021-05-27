@@ -268,7 +268,7 @@ public class AbleCareHome {
                     while (myReader.hasNextLine()) {
                         String data = myReader.nextLine();
                         String a[] = data.split(",");
-                        if (a[0].equals(id) && a[1].equals(dow) && a[2].equals(st) && a[3].equals(et)) {
+                        if (a[0].equals(id) && a[1].equals(String.valueOf(dow))) {
                             exist = true;
                         }
                     }
@@ -276,7 +276,7 @@ public class AbleCareHome {
                     e.printStackTrace();
                 }
 
-                if(exist == false) {
+                if(exist == true) {
                     String n = "";
                     try {
                         File myObj = new File("./src./Archive./DoctorShift.txt");
@@ -284,7 +284,7 @@ public class AbleCareHome {
                         while (myReader.hasNextLine()) {
                             String data = myReader.nextLine();
                             String a[] = data.split(",");
-                            if (a[0].equals(id)) {
+                            if (a[0].equals(id) && a[1].equals(String.valueOf(dow))) {
                                 n = n + id + "," + dow + "," + st + "," + et + "\n";
                             } else {
                                 n = n + data + "\n";
@@ -294,7 +294,6 @@ public class AbleCareHome {
                             FileWriter fileWriter =new FileWriter("./src/Archive/DoctorShift.txt");
                             fileWriter.write(n);
                             fileWriter.close();
-
 
                             // Record in Action.txt
                             try {
@@ -310,21 +309,18 @@ public class AbleCareHome {
                                 br.close();
                                 fr.close();
                             } catch (IOException e) {
-                                System.out.println("An error occurred while writing Action.txt.");
                                 e.printStackTrace();
                             }
                         } catch (IOException e) {
-                            System.out.println("Updating Doctor shift error.");
                             e.printStackTrace();
                         }
                         myReader.close();
                     } catch (FileNotFoundException e) {
-                        System.out.println("An error occurred while updating shift to Doctorshift.txt.");
                         e.printStackTrace();
                     }
                 }
                 else{
-                    System.out.println("Doctor shift exist.");
+                    System.out.println("Doctor shift is not exist.");
                 }
             } else if (p.equals("Nurse")) {
                 boolean exist = false;
@@ -334,14 +330,14 @@ public class AbleCareHome {
                     while (myReader.hasNextLine()) {
                         String data = myReader.nextLine();
                         String a[] = data.split(",");
-                        if (a[0].equals(id) && a[1].equals(dow) && a[2].equals(st) && a[3].equals(et)) {
+                        if (a[0].equals(id) && a[1].equals(String.valueOf(dow))) {
                             exist = true;
                         }
                     }
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
                 }
-                if(exist == false) {
+                if(exist == true) {
                     try {
                         String n = "";
                         File myObj = new File("./src/Archive/NurseShift.txt");
@@ -349,7 +345,7 @@ public class AbleCareHome {
                         while (myReader.hasNextLine()) {
                             String data = myReader.nextLine();
                             String a[] = data.split(",");
-                            if (a[0].equals(id)) {
+                            if (a[0].equals(id) && a[1].equals(String.valueOf(dow))) {
                                 n = n + id + "," + dow + "," + st + "," + et + "\n";
                             } else {
                                 n = n + data + "\n";
@@ -373,21 +369,18 @@ public class AbleCareHome {
                                 br.close();
                                 fr.close();
                             } catch (IOException e) {
-                                System.out.println("An error occurred while writing Action.txt.");
                                 e.printStackTrace();
                             }
                         } catch (IOException e) {
-                            System.out.println("Updating Nurse shift error.");
                             e.printStackTrace();
                         }
                         myReader.close();
                     } catch (FileNotFoundException e) {
-                        System.out.println("An error occurred while updating shift to NurseList.txt.");
-                        e.printStackTrace();
+                       e.printStackTrace();
                     }
                 }
                 else{
-                    System.out.println("Nurse shift exist");
+                    System.out.println("Nurse shift is not exist.");
                 }
             }
         }
@@ -396,9 +389,9 @@ public class AbleCareHome {
         }
     }
     public boolean checkComplience(String p, String st, String et) throws ShiftException {
-        int nst,net;
-        nst = Integer.parseInt(st);
-        net = Integer.parseInt(et);
+        float nst,net;
+        nst = Float.parseFloat(st);
+        net = Float.parseFloat(et);
         if(p.equals(("Doctor"))){
             if(nst< 8 || net > 22 || (net-nst) != 1){  // Assign 1 hour for doctor to write prescription
                 return false;
@@ -768,7 +761,7 @@ public class AbleCareHome {
         LocalDateTime now = LocalDateTime.now();
 
         try {
-            File myObj = new File("F:\\Textbook\\MasterOfIT\\COSC1295 Advanced Programming\\Assignment\\Assignment2\\A2_1\\src\\Archive\\Prescription.txt");
+            File myObj = new File("./src/Archive/Prescription.txt");
             Scanner myReader = new Scanner(myObj);
             while (myReader.hasNextLine()) {
                 String data = myReader.nextLine();
@@ -782,7 +775,7 @@ public class AbleCareHome {
 
             // Record action
             try {
-                File file = new File("F:\\Textbook\\MasterOfIT\\COSC1295 Advanced Programming\\Assignment\\Assignment2\\A2_1\\src\\Archive\\Action.txt");
+                File file = new File("./src/Archive/Action.txt");
                 FileWriter fr = new FileWriter(file, true);
                 BufferedWriter br = new BufferedWriter(fr);
                 PrintWriter pr = new PrintWriter(br);

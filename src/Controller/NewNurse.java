@@ -16,9 +16,6 @@ public class NewNurse {
     private TextField newnursename;
 
     @FXML
-    private TextField newnurseid;
-
-    @FXML
     private TextField newnursephone;
 
     @FXML
@@ -48,8 +45,23 @@ public class NewNurse {
                 sid = s[0];
                 sp = s[2];
             }
+            // Read the last ID for NurseList, assign new ID for new Nurse
+            String id = "0";
+            int id2 = -1;
+            File myObj2 = new File("./src/Archive/NurseList.txt");
+            Scanner myReader2 = new Scanner(myObj2);
+            while (myReader2.hasNextLine()) {
+                String data = myReader2.nextLine();
+                String s[] = data.split(",");
+                if(!s[0].equals("root")) {
+                    id = s[0];
+                }
+            }
+            id2 = Integer.valueOf(id);
+            id2 = id2 + 1;
+
             AbleCareHome a = new AbleCareHome();
-            a.AddNurse(sid, sp, newnursename.getText(), newnurseid.getText(), newnursephone.getText(), newnursepassword.getText());
+            a.AddNurse(sid, sp, newnursename.getText(), String.valueOf(id2), newnursephone.getText(), newnursepassword.getText());
             MenuForAbleCareHome m = new MenuForAbleCareHome();
             m.ChangeScene("AfterLogIn.fxml");
         } catch (IOException e) {

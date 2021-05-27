@@ -1,7 +1,11 @@
+Github link: https://github.com/s3881314/A2
+
 This is the sysmtem of Able Care Home for staff. In this system, I implemented the GUI and some basic functions.
 
 "DO NOT DELETE AuthorizationList.txt IN Archive"
 "DO NOT DELETE root IN DoctorList.txt"
+
+If user wants to execute this project from scratch, please delete "Archive" in project and copy "Default Archive" as new "Archive" in "src"
 
 For this system. I designed a few interfaces to implement log in/log out and the menu for each function. Using JavaFX and SceneBuilder to set up basic buttons and controllers. For the date, I used Datepicker to limit the input. Also, using choicebox for user to choose their position between manager, doctor and nurse.
 
@@ -15,6 +19,3 @@ There is a function to show the status of bed in each ward. Blue as male, red as
 
 //How To Use This System//
 In the login page, choose position and type in ID and password to get into the system. Choose the function which user would like to execute and fill in the information. On the right side of the page, there are two rows to show the current user position and ID. All the related files will be saved in Archive folder to store.
-
-Github link: https://github.com/s3881314/A2
-

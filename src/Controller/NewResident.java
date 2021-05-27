@@ -51,8 +51,23 @@ public class NewResident implements Initializable {
                 sid = s[0];
                 sp = s[2];
             }
+            // Read the last ID for ResidentList, assign new ID for new Resident
+            String id = "0";
+            int id2 = -1;
+            File myObj2 = new File("./src/Archive/ResidentList.txt");
+            Scanner myReader2 = new Scanner(myObj2);
+            while (myReader2.hasNextLine()) {
+                String data = myReader2.nextLine();
+                String s[] = data.split(",");
+                if(!s[0].equals("root")) {
+                    id = s[0];
+                }
+            }
+            id2 = Integer.valueOf(id);
+            id2 = id2 + 1;
+
             AbleCareHome a = new AbleCareHome();
-            a.AddResident(sid, sp, newresidentname.getText(), Gender.getValue(), newresidentid.getText(), DoB.getValue());
+            a.AddResident(sid, sp, newresidentname.getText(), Gender.getValue(), String.valueOf(id2), DoB.getValue());
             MenuForAbleCareHome m = new MenuForAbleCareHome();
             m.ChangeScene("AfterLogIn.fxml");
         } catch (IOException e) {

@@ -23,9 +23,6 @@ public class NewDoctor {
     private TextField newdoctorphone;
 
     @FXML
-    private TextField newdoctorid;
-
-    @FXML
     private Button newdoctorconfirm;
 
     @FXML
@@ -49,8 +46,23 @@ public class NewDoctor {
                 sid = s[0];
                 sp = s[2];
             }
+            // Read the last ID for DoctorList, assign new ID for new doctor
+            String id = "0";
+            int id2 = -1;
+            File myObj2 = new File("./src/Archive/DoctorList.txt");
+            Scanner myReader2 = new Scanner(myObj2);
+            while (myReader2.hasNextLine()) {
+                String data = myReader2.nextLine();
+                String s[] = data.split(",");
+                if(!s[0].equals("root")) {
+                    id = s[0];
+                }
+            }
+            id2 = Integer.valueOf(id);
+            id2 = id2 + 1;
+
             AbleCareHome a = new AbleCareHome();
-            a.AddDoctor(sid,sp,newdoctorname.getText(),newdoctorid.getText(),newdoctorphone.getText(),newdoctorpassword.getText());
+            a.AddDoctor(sid,sp,newdoctorname.getText(),String.valueOf(id2),newdoctorphone.getText(),newdoctorpassword.getText());
             MenuForAbleCareHome m = new MenuForAbleCareHome();
             m.ChangeScene("AfterLogIn.fxml");
         } catch (FileNotFoundException e) {
