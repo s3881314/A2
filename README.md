@@ -1,6 +1,6 @@
 Github link: https://github.com/s3881314/A2
 
-This is the sysmtem of Able Care Home for staff. In this system, I implemented the GUI and some basic functions.
+This is the sysmtem of Able Care Home for staff. In this system, I implemented the GUI and some basic functions. If you just downloaded this project, please open this project and run the "MenuForAbleCareHome.java" in Intellij.
 
 "DO NOT DELETE AuthorizationList.txt IN Archive"
 "DO NOT DELETE root IN DoctorList.txt"
