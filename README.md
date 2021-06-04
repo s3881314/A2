@@ -4,9 +4,6 @@ This is the sysmtem of Able Care Home for staff. In this system, I implemented t
 
 "DO NOT DELETE AuthorizationList.txt IN Archive"
 "DO NOT DELETE root IN MangerList.txt"
-"DO NOT DELETE root IN DoctorList.txt"
-"DO NOT DELETE root IN NurseList.txt"
-
 
 If user wants to execute this project from scratch, please delete "Archive" in project and copy "Default Archive" as new "Archive" in "src"
 
